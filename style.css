@@ -1,68 +1,192 @@
-/* Asas */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Import Font Moden & Profesional dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
     margin: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Navigasi */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f1115; /* Warna latar belakang gelap premium */
+    color: #e4e6eb;            /* Warna teks cerah berkontras tinggi */
+    line-height: 1.7;
+    padding-top: 80px;         /* Mengelakkan kandungan terlindung di bawah menu */
+}
+
+/* Navigasi / Header yang Kemas & Elegant */
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: rgba(15, 17, 21, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #262930;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    max-width: 1100px;
     margin: auto;
+    padding: 1.2rem 2rem;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    color: #fff;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    gap: 2rem;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #9ca3af;
     text-decoration: none;
-    padding: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-nav ul li a.active {
-    color: #ff9900;
-    font-weight: bold;
+nav ul li a:hover, nav ul li a.active {
+    color: #fff; /* Warna bertukar putih apabila di-hover atau aktif */
 }
 
-/* Hero Section */
+/* Halaman Utama / Hero Section */
 .hero {
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 2rem;
 }
 
-.btn {
-    background: #333;
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
     color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
 }
 
-/* Responsive untuk Mobile */
+.hero p {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+/* Gaya Butang Kontras Tinggi */
+.btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #0f1115;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e4e6eb;
+    transform: translateY(-2px);
+}
+
+/* Ruangan Kandungan (Untuk Halaman About, Blog, dan Contact) */
+.content-area {
+    max-width: 800px;
+    margin: 40px auto 60px auto;
+    padding: 0 2rem;
+}
+
+.content-area h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+/* Gaya Kotak Artikel Blog (Sangat Penting untuk Warna blog.html!) */
+.blog-card {
+    background-color: #161920; /* Kotak kelabu gelap */
+    border: 1px solid #262930;  /* Garisan sempadan halus */
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    transition: border-color 0.3s ease;
+    text-align: left;
+}
+
+.blog-card:hover {
+    border-color: #4b5563; /* Garisan bertukar lebih terang apabila di-hover */
+}
+
+.blog-card h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card .date {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.blog-card p {
+    color: #9ca3af;
+}
+
+/* Gaya Borang Hubungi (Contact Form) */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: #161920;
+    border: 1px solid #262930;
+    color: #fff;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #fff; /* Garisan putih apabila sedang ditaip */
+}
+
+/* Rekabentuk Responsif (Mesra Telefon Bimbit) */
 @media (max-width: 768px) {
+    body { padding-top: 140px; }
     nav {
         flex-direction: column;
+        gap: 1rem;
+        text-align: center;
     }
     nav ul {
-        padding: 10px 0;
+        gap: 1.5rem;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .content-area h2 {
+        font-size: 2rem;
     }
 }
