@@ -190,3 +190,39 @@ nav ul li a:hover, nav ul li a.active {
         font-size: 2rem;
     }
 }
+/* Elemen Tambahan untuk Rupa Portfolio */
+.badge {
+    display: inline-block;
+    background-color: #262930;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #4b5563;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Butang Kedua (Sisi Gelap) */
+.btn-secondary {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #4b5563 !important;
+}
+
+.btn-secondary:hover {
+    background-color: #161920 !important;
+    border-color: #fff !important;
+}
