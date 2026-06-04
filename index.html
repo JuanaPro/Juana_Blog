@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juana's Portfolio | Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Home | Juana_Blog</title>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
-    <!-- Butang Hamburger (Sebelah Atas Kiri) -->
+    <!-- Tombol Hamburger Menu Overlay -->
     <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
         <div></div>
         <div></div>
         <div></div>
     </button>
 
-    <!-- Panel Menu Overlay (Seperti Reka Bentuk Screenshot 2026-06-04 140214.jpg) -->
+    <!-- Menu Overlay (Kekal Berfungsi) -->
     <div class="menu-overlay" id="menuOverlay">
-        <!-- Butang Tutup (X) -->
         <button class="close-btn" id="closeBtn">&times;</button>
-        
         <div class="overlay-container">
-            <!-- Bahagian Kiri: Menu Navigasi -->
             <div class="overlay-left">
                 <nav class="overlay-nav">
                     <ul>
@@ -32,11 +29,9 @@
                     </ul>
                 </nav>
             </div>
-
-            <!-- Bahagian Kanan: Profil, Nama & Quotes -->
             <div class="overlay-right">
                 <div class="profile-box">
-                    <img src="image BG biru.png" alt="Nur Juana binti Ahmad Jalani" class="overlay-profile-img">
+                    <img src="images-BG-biru.png" alt="Nur Juana binti Ahmad Jalani" class="overlay-profile-img">
                     <h2>Nur Juana binti Ahmad Jalani</h2>
                     <span class="profile-subtitle">Software Development Student</span>
                     <hr class="divider">
@@ -52,34 +47,140 @@
         </div>
     </div>
 
-    <!-- Ruangan Utama Portfolio -->
-    <main class="hero">
+    <!-- ==================== 1. HERO SECTION (UTAMA) ==================== -->
+    <section class="hero">
         <div class="hero-content">
             <span class="badge">Software Development Student</span>
             <h1>Hi, I am Juana.</h1>
             <p>Crafting clean code and building modern web applications. Currently studying at Faculty of Informatics and Computing (FIK), UniSZA.</p>
-            
             <div class="cta-buttons">
-                <a href="about.html" class="btn">View My Profile</a>
-                <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                <!-- Apabila diklik, ia akan skrol automatik ke bahagian About di bawah -->
+                <a href="#about-section" class="btn">View My Profile</a>
+                <a href="#contact-section" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
+    </section>
+
+    <!-- KANDUNGAN BAWAH YANG BOLEH DISKROL -->
+    <main class="content-area" style="max-width: 1100px; margin: 0 auto; padding: 4rem 2rem;">
+
+        <!-- ==================== 2. ABOUT ME SECTION ==================== -->
+        <section id="about-section" class="about-centered-container" style="margin-top: 20px; border-bottom: 1px solid #262930; padding-bottom: 5rem;">
+            <div class="about-avatar-wrapper">
+                <img src="profil.jpeg" alt="Nur Juana binti Ahmad Jalani" class="about-avatar">
+            </div>
+            <h2 class="about-title">Hi, I'm Nur Juana binti Ahmad Jalani,</h2>
+            <div class="about-description">
+                <p>
+                    A creative and driven final-year student in Bachelor of Information Technology 
+                    (Informatics Media) with Honours at Universiti Sultan Zainal Abidin (UniSZA), seeking 
+                    an internship opportunity in UI/UX Design, Graphic Design or Digital Content about 
+                    crafting unique logo identities and intricate book illustrations to producing dynamic 
+                    video content and posters.
+                </p>
+                <p>
+                    I am dedicated to transforming creative concepts into functional designs that resonate 
+                    with audiences. With a strong foundation in both print and digital media, I am eager to 
+                    contribute my skills to a professional team while further honing my craft in a real-world 
+                    environment.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== 3. SKILLS SECTION ==================== -->
+        <section id="skills-section" class="skills-section" style="border-top: none;">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skills-column">
+                    <h3>Technical Skills:</h3>
+                    <ul>
+                        <li><strong>Programming:</strong> JavaScript, C++</li>
+                        <li><strong>Web Development:</strong> HTML, CSS, Responsive Design, CodeIgniter</li>
+                        <li><strong>Tools:</strong> Unity, Adobe Animate, Microsoft Office (Word, PowerPoint, Excel), Canva, Blender, Maya Autodesk</li>
+                        <li><strong>UI/UX Design:</strong> Augmented Reality (AR), Multimedia Development, 3D Modeling, 3D Animation</li>
+                    </ul>
+                </div>
+                <div class="skills-column">
+                    <h3>Soft Skills:</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Problem-solving</li>
+                        <li>Time management</li>
+                        <li>Leadership</li>
+                        <li>Creativity</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4. SOFTWARE SECTION ==================== -->
+        <section class="software-section">
+            <h2>Software</h2>
+            <p class="software-desc">Software that I use to complete projects and daily tasks.</p>
+            <div class="software-grid">
+                <div class="software-item"><img src="images 1.png" alt="JavaScript"><span>JavaScript</span></div>
+                <div class="software-item"><img src="images 2.jpg" alt="C++"><span>C++</span></div>
+                <div class="software-item"><img src="images 3.png" alt="GitHub"><span>GitHub</span></div>
+                <div class="software-item"><img src="images 4.png" alt="Unity"><span>Unity</span></div>
+                <div class="software-item"><img src="images 5.png" alt="Canva"><span>Canva</span></div>
+                <div class="software-item"><img src="images 6.jpg" alt="Adobe Animate"><span>Adobe Animate</span></div>
+                <div class="software-item"><img src="images 7.jpg" alt="Blender"><span>Blender</span></div>
+                <div class="software-item"><img src="images 8.jpg" alt="Maya Autodesk"><span>Maya Autodesk</span></div>
+            </div>
+        </section>
+
+        <!-- ==================== 5. ACHIEVEMENTS SECTION ==================== -->
+        <section class="achievements-section">
+            <h2>Achievements</h2>
+            <p class="achievements-desc">Academic performance and academic development throughout the semesters.</p>
+            <div class="achievements-grid">
+                <div class="achievement-item"><span class="sem-title">Semester 1</span><span class="sem-session">(SEM I 2023/2024)</span><span class="cgpa-label">C.G.P.A</span><span class="cgpa-value">3.35</span></div>
+                <div class="achievement-item"><span class="sem-title">Semester 2</span><span class="sem-session">(SEM II 2023/2024)</span><span class="cgpa-label">C.G.P.A</span><span class="cgpa-value">3.51</span></div>
+                <div class="achievement-item"><span class="sem-title">Semester 3</span><span class="sem-session">(SEM I 2024/2025)</span><span class="cgpa-label">C.G.P.A</span><span class="cgpa-value">3.51</span></div>
+                <div class="achievement-item"><span class="sem-title">Semester 4</span><span class="sem-session">(SEM II 2024/2025)</span><span class="cgpa-label">C.G.P.A</span><span class="cgpa-value">3.48</span></div>
+                <div class="achievement-item"><span class="sem-title">Semester 5</span><span class="sem-session">(SEM I 2025/2026)</span><span class="cgpa-label">C.G.P.A</span><span class="cgpa-value">3.58</span></div>
+            </div>
+        </section>
+
+        <!-- ==================== 6. CONTACT SECTION ==================== -->
+        <section id="contact-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #262930;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">Get In Touch</h2>
+            <form action="#" method="POST" style="max-width: 600px;">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+
     </main>
 
-    <!-- JavaScript Ringkas Untuk Fungsi On/Off Menu -->
+    <!-- Kod JavaScript Menu Overlay -->
     <script>
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
 
-        // Buka menu apabila hamburger ditekan
         hamburgerBtn.addEventListener('click', () => {
             menuOverlay.classList.add('open');
         });
 
-        // Tutup menu apabila butang (X) ditekan
         closeBtn.addEventListener('click', () => {
             menuOverlay.classList.remove('open');
+        });
+
+        // Menutup menu jika pautan sauh (anchor link) ditekan
+        document.querySelectorAll('.overlay-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOverlay.classList.remove('open');
+            });
         });
     </script>
 </body>
