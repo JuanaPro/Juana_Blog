@@ -558,7 +558,6 @@ nav ul li a:hover, nav ul li a.active {
 
 /* =======================================================
    KOD TAMBAHAN BARU: GAYA HALAMAN ABOUT (MEMUSAT & GLOW EMAS)
-   Berdasarkan rujukan Reka Bentuk Screenshot 2026-06-04 232307.jpg
    ======================================================= */
 
 .about-centered-container {
@@ -583,13 +582,15 @@ nav ul li a:hover, nav ul li a.active {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* Memastikan imej tidak terkeluar dari bulatan */
 }
 
 .about-avatar {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Memotong gambar secara nisbah seimbang tanpa herot */
     border-radius: 50%; /* Memastikan imej di dalam juga berbentuk bulat */
+    display: block;
 }
 
 /* Gaya Tajuk Nama Berwarna Emas */
