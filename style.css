@@ -576,8 +576,8 @@ nav ul li a:hover, nav ul li a.active {
     height: 210px;
     border-radius: 50%; /* Membentuk bulatan sempurna */
     padding: 2px;
-    background: #e0a92e; /* Warna asas emas */
-    box-shadow: 0 0 25px rgba(224, 169, 46, 0.45); /* Kesan pencahayaan glow emas */
+    background: hsl(189, 92%, 38%); /* Warna asas emas */
+    box-shadow: 0 0 25px rgba(33, 226, 244, 0.544); /* Kesan pencahayaan glow emas */
     margin-bottom: 2.5rem;
     display: flex;
     align-items: center;
@@ -597,7 +597,7 @@ nav ul li a:hover, nav ul li a.active {
 .about-title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: #e0a92e; /* Warna tulisan emas premium */
+    color: #0892b1; /* Warna tulisan emas premium */
     line-height: 1.4;
     margin-bottom: 2.5rem;
     max-width: 700px;
