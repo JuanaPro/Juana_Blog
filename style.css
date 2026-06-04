@@ -60,16 +60,23 @@ nav ul li a:hover, nav ul li a.active {
     color: #fff; /* Warna bertukar putih apabila di-hover atau aktif */
 }
 
-/* Halaman Utama / Hero Section */
+/* Halaman Utama / Hero Section dengan Gambar Latar Belakang */
 .hero {
-    height: 80vh;
+    height: 100vh; /* Ditukar ke 100vh supaya memenuhi skrin secara penuh */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 1100px;
+    width: 100%;   /* Memastikan background merentasi penuh skrin */
     margin: auto;
-    padding: 0 2rem;
+    padding: 0 10%; /* Memberikan ruang margin kiri-kanan yang lebih seimbang */
+    
+    /* Kod kesan gelap (overlay gradient) digabungkan bersama gambar anda */
+    background: linear-gradient(to right, rgba(15, 17, 21, 0.85), rgba(15, 17, 21, 0.2)), 
+                url('juana-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Kesan sinematik apabila diskrol */
 }
 
 .hero h1 {
@@ -78,16 +85,18 @@ nav ul li a:hover, nav ul li a.active {
     color: #fff;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); /* Memastikan teks nama mudah dibaca */
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #9ca3af;
+    color: #e4e6eb; /* Ditukar sedikit cerah berbanding kelabu lama agar lebih menyerlah */
     max-width: 600px;
     margin-bottom: 2.5rem;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* Gaya Butang Kontras Tinggi */
+/* Gaya Butang Utama Kontras Tinggi */
 .btn {
     display: inline-block;
     background-color: #fff;
@@ -106,6 +115,43 @@ nav ul li a:hover, nav ul li a.active {
     transform: translateY(-2px);
 }
 
+/* Butang Kedua (Sisi Gelap / Outline) */
+.btn-secondary {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #4b5563 !important;
+}
+
+.btn-secondary:hover {
+    background-color: #161920 !important;
+    border-color: #fff !important;
+}
+
+/* Elemen Tambahan untuk Rupa Portfolio */
+.badge {
+    display: inline-block;
+    background-color: #262930;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #4b5563;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 /* Ruangan Kandungan (Untuk Halaman About, Blog, dan Contact) */
 .content-area {
     max-width: 800px;
@@ -119,7 +165,7 @@ nav ul li a:hover, nav ul li a.active {
     margin-bottom: 1.5rem;
 }
 
-/* Gaya Kotak Artikel Blog (Sangat Penting untuk Warna blog.html!) */
+/* Gaya Kotak Artikel Blog */
 .blog-card {
     background-color: #161920; /* Kotak kelabu gelap */
     border: 1px solid #262930;  /* Garisan sempadan halus */
@@ -183,46 +229,14 @@ nav ul li a:hover, nav ul li a.active {
     nav ul {
         gap: 1.5rem;
     }
+    .hero {
+        padding: 0 2rem;
+        background-attachment: scroll; /* Mengelakkan ralat lag latar belakang pada telefon */
+    }
     .hero h1 {
         font-size: 2.5rem;
     }
     .content-area h2 {
         font-size: 2rem;
     }
-}
-/* Elemen Tambahan untuk Rupa Portfolio */
-.badge {
-    display: inline-block;
-    background-color: #262930;
-    color: #fff;
-    padding: 0.4rem 1rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid #4b5563;
-}
-
-.hero-content {
-    max-width: 700px;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-/* Butang Kedua (Sisi Gelap) */
-.btn-secondary {
-    background-color: transparent !important;
-    color: #fff !important;
-    border: 1px solid #4b5563 !important;
-}
-
-.btn-secondary:hover {
-    background-color: #161920 !important;
-    border-color: #fff !important;
 }
