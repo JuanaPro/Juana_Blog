@@ -48,6 +48,7 @@
     </div>
 
     <main class="content-area">
+
         <div class="skills-section">
             <h2>Skills</h2>
             <div class="skills-container">
@@ -73,7 +74,11 @@
                         <li>Creativity</li>
                     </ul>
                 </div>
-            </div> </div> <div class="software-section">
+            </div>
+        </div>
+
+
+        <div class="software-section">
             <h2>Software</h2>
             <p class="software-desc">Software that I use to complete projects and daily tasks.</p>
             
@@ -120,12 +125,10 @@
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
 
-        // Buka menu apabila hamburger ditekan
         hamburgerBtn.addEventListener('click', () => {
             menuOverlay.classList.add('open');
         });
 
-        // Tutup menu apabila butang (X) ditekan
         closeBtn.addEventListener('click', () => {
             menuOverlay.classList.remove('open');
         });

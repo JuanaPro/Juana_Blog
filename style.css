@@ -424,7 +424,7 @@ nav ul li a:hover, nav ul li a.active {
 .skills-section {
     margin-top: 4rem;
     padding-top: 2rem;
-    border-top: 1px solid #262930; /* Garisan pemisah halus di bahagian atas */
+    border-top: 1px solid #262930; 
 }
 
 .skills-section h2 {
@@ -443,7 +443,7 @@ nav ul li a:hover, nav ul li a.active {
 
 .skills-column {
     flex: 1;
-    background-color: #161920; /* Tona kotak kelabu gelap premium */
+    background-color: #161920; 
     border: 1px solid #262930;
     padding: 2rem;
     border-radius: 8px;
@@ -471,10 +471,9 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .skills-column ul li strong {
-    color: #e4e6eb; /* Warna teks kemahiran kecil yang lebih terang */
+    color: #e4e6eb; 
 }
 
-/* Responsif grid kemahiran untuk skrin telefon bimbit */
 @media (max-width: 768px) {
     .skills-container {
         flex-direction: column;
@@ -488,7 +487,7 @@ nav ul li a:hover, nav ul li a.active {
 .software-section {
     margin-top: 4rem;
     padding-top: 2rem;
-    border-top: 1px solid #262930; /* Garisan halus pemisah */
+    border-top: 1px solid #262930; 
     text-align: left;
 }
 
@@ -506,7 +505,6 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 1rem;
 }
 
-/* Susunan Grid 4 Kolom di Skrin Besar */
 .software-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -526,24 +524,22 @@ nav ul li a:hover, nav ul li a.active {
     transition: all 0.3s ease;
 }
 
-/* Efek Hover yang Menarik & Interaktif */
 .software-item:hover {
     border-color: #4b5563;
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Gaya Ukuran Logo Software */
 .software-item img {
     width: 60px;
     height: 60px;
     object-fit: contain;
-    filter: grayscale(20%); /* Kekalkan warna logo asal tetapi disatukan dengan tema */
+    filter: grayscale(20%); 
     transition: filter 0.3s ease;
 }
 
 .software-item:hover img {
-    filter: grayscale(0%); /* Warna penuh ikon apabila di-hover */
+    filter: grayscale(0%); 
 }
 
 .software-item span {
@@ -552,7 +548,6 @@ nav ul li a:hover, nav ul li a.active {
     color: #e4e6eb;
 }
 
-/* Responsif Skrin: Tukar ke 2 Kolom untuk Tablet & Telefon Bimbit */
 @media (max-width: 768px) {
     .software-grid {
         grid-template-columns: repeat(2, 1fr);
