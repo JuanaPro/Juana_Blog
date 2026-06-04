@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Juana_Blog</title>
-    <link rel="stylesheet" href="style.css">
+    <title>About | Juana_Blog</title>
+    <!-- Hubungan ke fail CSS utama -->
+    <link class="styles" rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
@@ -15,7 +16,7 @@
         <div></div>
     </button>
 
-    <!-- Panel Menu Overlay (Sama seperti halaman Utama) -->
+    <!-- Panel Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay">
         <!-- Butang Tutup (X) -->
         <button class="close-btn" id="closeBtn">&times;</button>
@@ -52,14 +53,35 @@
         </div>
     </div>
 
-    <!-- Ruangan Kandungan Utama (About Me) -->
-    <main class="content-area">
-        <section style="width: 80%; margin: 50px auto; text-align: center;">
-            <h2>About Me</h2>
-            <p>I am a student at the Faculty of Informatics and Computing (FIK), UniSZA.</p>
-            <p>This blog is part of my individual project portfolio for the course CSD 34203.</p>
-            <p>I have a deep interest in software development and am constantly striving to improve my technical skills over time.</p>
-        </section>
+    <!-- Ruangan Kandungan Utama (About Me Berdasarkan Screenshot 2026-06-04 232307.jpg) -->
+    <main class="about-centered-container">
+        
+        <!-- Gambar Profil Bulat dengan Kesan Glow Emas -->
+        <div class="about-avatar-wrapper">
+            <img src="profil.jpeg" alt="Nur Juana binti Ahmad Jalani" class="about-avatar">
+        </div>
+
+        <!-- Nama Pengenalan Berwarna Emas -->
+        <h1 class="about-title">Hi, I'm Nur Juana binti Ahmad Jalani,</h1>
+
+        <!-- Perenggan Penerangan Biodata Diri -->
+        <div class="about-description">
+            <p>
+                A creative and driven final-year student in Bachelor of Information Technology 
+                (Informatics Media) with Honours at Universiti Sultan Zainal Abidin (UniSZA), seeking 
+                an internship opportunity in UI/UX Design, Graphic Design or Digital Content about 
+                crafting unique logo identities and intricate book illustrations to producing dynamic 
+                video content and posters.
+            </p>
+            
+            <p>
+                I am dedicated to transforming creative concepts into functional designs that resonate 
+                with audiences. With a strong foundation in both print and digital media, I am eager to 
+                contribute my skills to a professional team while further honing my craft in a real-world 
+                environment.
+            </p>
+        </div>
+
     </main>
 
     <!-- JavaScript Ringkas Untuk Fungsi On/Off Menu -->
@@ -68,12 +90,10 @@
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
 
-        // Buka menu apabila hamburger ditekan
         hamburgerBtn.addEventListener('click', () => {
             menuOverlay.classList.add('open');
         });
 
-        // Tutup menu apabila butang (X) ditekan
         closeBtn.addEventListener('click', () => {
             menuOverlay.classList.remove('open');
         });
