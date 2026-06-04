@@ -4,25 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Juana_Blog</title>
-    <!-- BARIS INI WAJIB ADA UNTUK WARNA -->
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
-    <!-- Butang Hamburger (Sebelah Atas Kiri) -->
     <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
         <div></div>
         <div></div>
         <div></div>
     </button>
 
-    <!-- Panel Menu Overlay (Sama seperti halaman sebelumnya) -->
     <div class="menu-overlay" id="menuOverlay">
-        <!-- Butang Tutup (X) -->
         <button class="close-btn" id="closeBtn">&times;</button>
         
         <div class="overlay-container">
-            <!-- Bahagian Kiri: Menu Navigasi (Blog diaktifkan) -->
             <div class="overlay-left">
                 <nav class="overlay-nav">
                     <ul>
@@ -34,7 +29,6 @@
                 </nav>
             </div>
 
-            <!-- Bahagian Kanan: Profil, Nama & Quotes -->
             <div class="overlay-right">
                 <div class="profile-box">
                     <img src="profil.jpeg" alt="Nur Juana binti Ahmad Jalani" class="overlay-profile-img">
@@ -53,27 +47,53 @@
         </div>
     </div>
 
-    <!-- Ruangan Kandungan Utama (Blog) -->
     <main class="content-area">
         <h2>Writing & Articles</h2>
         <p style="color: #9ca3af; margin-bottom: 2rem;">Insights on technology, software development, and my personal learning journey.</p>
 
-        <!-- Article 1 -->
         <div class="blog-card">
             <h3>My Journey in Software Development</h3>
             <div class="date">Published on: June 2026</div>
             <p>My first steps in understanding programming logic, starting from the basics of HTML all the way to building complex software systems.</p>
         </div>
 
-        <!-- Article 2 -->
         <div class="blog-card">
             <h3>Why a GitHub Portfolio Matters for Students</h3>
             <div class="date">Published on: May 2026</div>
             <p>Platforms like GitHub are more than just code repositories; they serve as a digital resume that showcases our credibility to the industry.</p>
         </div>
+
+        <div class="skills-section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                
+                <div class="skills-column">
+                    <h3>Technical Skills:</h3>
+                    <ul>
+                        <li><strong>Programming:</strong> JavaScript, C++</li>
+                        <li><strong>Web Development:</strong> HTML, CSS, Responsive Design, CodeIgniter</li>
+                        <li><strong>Tools:</strong> Unity, Adobe Animate, Microsoft Office (Word, PowerPoint, Excel), Canva, Blender, Maya Autodesk</li>
+                        <li><strong>UI/UX Design:</strong> Augmented Reality (AR), Multimedia Development, 3D Modeling, 3D Animation</li>
+                    </ul>
+                </div>
+
+                <div class="skills-column">
+                    <h3>Soft Skills:</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Problem-solving</li>
+                        <li>Time management</li>
+                        <li>Leadership</li>
+                        <li>Creativity</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
-    <!-- JavaScript Ringkas Untuk Fungsi On/Off Menu -->
     <script>
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
