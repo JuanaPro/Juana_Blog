@@ -240,6 +240,7 @@ nav ul li a:hover, nav ul li a.active {
         font-size: 2rem;
     }
 }
+
 /* ==========================================
    GAYA HAMBURGER BUTTON & OVERLAY MENU 
    ========================================== */
@@ -482,7 +483,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 /* =======================================================
-   KOD TAMBAHAN: GAYA UNTUK BAHAGIAN SOFTWARE GRID 
+   GAYA UNTUK BAHAGIAN SOFTWARE GRID 
    ======================================================= */
 .software-section {
     margin-top: 4rem;
@@ -552,5 +553,81 @@ nav ul li a:hover, nav ul li a.active {
     .software-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.2rem;
+    }
+}        
+
+/* =======================================================
+   KOD TAMBAHAN BARU: GAYA HALAMAN ABOUT (MEMUSAT & GLOW EMAS)
+   Berdasarkan rujukan Reka Bentuk Screenshot 2026-06-04 232307.jpg
+   ======================================================= */
+
+.about-centered-container {
+    max-width: 850px;
+    margin: 60px auto 80px auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menyusun semua elemen tepat di tengah skrin */
+    text-align: center;  /* Memastikan teks dijajarkan ke tengah */
+}
+
+/* Bingkai Bulat Gambar dengan Cahaya Glow Keemasan */
+.about-avatar-wrapper {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%; /* Membentuk bulatan sempurna */
+    padding: 2px;
+    background: #e0a92e; /* Warna asas emas */
+    box-shadow: 0 0 25px rgba(224, 169, 46, 0.45); /* Kesan pencahayaan glow emas */
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Memastikan imej di dalam juga berbentuk bulat */
+}
+
+/* Gaya Tajuk Nama Berwarna Emas */
+.about-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e0a92e; /* Warna tulisan emas premium */
+    line-height: 1.4;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+}
+
+/* Gaya Blok Perenggan Teks Biodata */
+.about-description {
+    max-width: 780px;
+}
+
+.about-description p {
+    font-size: 1.1rem;
+    color: #cbd5e1; /* Warna putih kelabu lembut ber-kontras tinggi */
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+}
+
+/* Penyesuaian Responsif untuk Skrin Telefon Bimbit */
+@media (max-width: 768px) {
+    .about-centered-container {
+        margin-top: 40px;
+    }
+    .about-avatar-wrapper {
+        width: 160px;
+        height: 160px;
+    }
+    .about-title {
+        font-size: 1.7rem;
+    }
+    .about-description p {
+        font-size: 1rem;
     }
 }
