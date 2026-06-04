@@ -727,3 +727,27 @@ nav ul li a:hover, nav ul li a.active {
         font-size: 1.5rem;
     }
 }
+/* =======================================================
+   GAYA UNTUK LOGO UNISZA (ATAS KANAN HOMEPAGE)
+   ======================================================= */
+.unisza-top-logo {
+    height: 50px; /* Saiz tinggi logo yang ideal dan kemas */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.5)); /* Memberi bayang halus supaya logo menyerlah atas background gelap */
+    transition: transform 0.3s ease;
+}
+
+.unisza-top-logo:hover {
+    transform: scale(1.05); /* Efek membesar sedikit apabila tetikus lalu di atasnya */
+}
+
+/* Penyesuaian untuk Skrin Telefon Bimbit */
+@media (max-width: 768px) {
+    .unisza-top-logo {
+        height: 40px; /* Mengecilkan sedikit saiz pada skrin telefon */
+    }
+    header div {
+        padding: 25px 20px !important; /* Rapatkan sedikit margin ke tepi skrin telefon */
+    }
+}
