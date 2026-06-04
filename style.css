@@ -733,3 +733,19 @@ header > div {
         font-size: 1.5rem;
     }
 }
+/* =======================================================
+   KOD UTK HALAMAN SELAIN HOME (ABOUT, BLOG, CONTACT)
+   ======================================================= */
+
+/* Mengubah warna 3 garisan butang hamburger kepada putih bersih */
+.halaman-gelap .hamburger div {
+    background-color: #ffffff !important;
+}
+
+/* Memastikan kedudukan butang hamburger di halaman sub-menu kekal kemas */
+.halaman-gelap .hamburger {
+    position: fixed;
+    top: 20px;
+    left: 2rem;
+    z-index: 1000;
+}
