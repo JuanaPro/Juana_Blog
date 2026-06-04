@@ -8,17 +8,22 @@
 </head>
 <body>
 
-    <!-- Tombol Hamburger Menu Overlay -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
-        <div></div>
-        <div></div>
-        <div></div>
-    </button>
+    <!-- ==================== NAVIGATION & LOGO BAR ==================== -->
+    <header style="position: fixed; top: 0; left: 0; width: 100%; z-index: 999; background-color: #16171b; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 15px 2rem; display: flex; justify-content: space-between; align-items: center; position: relative;">
+            
+            <!-- Tombol Hamburger Menu Overlay (Kekal di Sebelah Kiri) -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu" style="position: relative; z-index: 1000; cursor: pointer;">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
 
-    <!-- ==================== LOGO BAR (ATAS KANAN) ==================== -->
-    <header style="background: transparent; border: none; position: fixed; width: 100%; top: 0; left: 0; z-index: 999; pointer-events: none;">
-        <div style="max-width: 100%; padding: 25px 40px; display: flex; justify-content: flex-end; align-items: center;">
-            <img src="unisza-logo.png" alt="Logo UniSZA" class="unisza-top-logo" style="pointer-events: auto;">
+            <!-- LOGO UNISZA (Tepat di Sebelah Kanan Dalam Kawasan Bulatan Merah) -->
+            <div class="logo-container-right">
+                <img src="unisza-logo.png" alt="Logo UniSZA" class="unisza-top-logo">
+            </div>
+            
         </div>
     </header>
 
@@ -55,7 +60,7 @@
     </div>
 
     <!-- ==================== 1. HERO SECTION (UTAMA) ==================== -->
-    <section class="hero">
+    <section class="hero" style="padding-top: 100px;"> <!-- Ditambah padding supaya kandungan hero tidak terlindung di bawah navbar fixed -->
         <div class="hero-content">
             <span class="badge">Software Development Student</span>
             <h1>Hi, I am Juana.</h1>
