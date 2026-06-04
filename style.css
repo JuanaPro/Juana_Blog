@@ -240,3 +240,180 @@ nav ul li a:hover, nav ul li a.active {
         font-size: 2rem;
     }
 }
+/* ==========================================
+   GAYA HAMBURGER BUTTON & OVERLAY MENU 
+   ========================================== */
+
+/* Butang Hamburger di Atas Kiri */
+.hamburger {
+    position: fixed;
+    top: 25px;
+    left: 30px;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Panel Menu Sorok (Overlay) */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Sembunyi di sebelah kiri skrin pada asal */
+    width: 100%;
+    height: 100vh;
+    background-color: #0f1115; /* Tema gelap premium anda */
+    z-index: 2000;
+    transition: left 0.5s ease-in-out;
+    overflow-y: auto;
+}
+
+/* Apabila menu dibuka, tukar posisi ke 0 */
+.menu-overlay.open {
+    left: 0;
+}
+
+/* Butang Tutup (X) */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+    font-size: 2.5rem;
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+/* Struktur Kandungan Dalam Menu Overlay */
+.overlay-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Bahagian Kiri: Menu Navigasi */
+.overlay-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #262930;
+    padding: 2rem;
+}
+
+.overlay-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.overlay-nav ul li {
+    margin: 1.5rem 0;
+}
+
+.overlay-nav ul li a {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.overlay-nav ul li a:hover, 
+.overlay-nav ul li a.active {
+    color: #fff;
+}
+
+/* Bahagian Kanan: Profil & Teks */
+.overlay-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    background-color: #161920; /* Kotak kelabu gelap kontras */
+}
+
+.profile-box {
+    max-width: 450px;
+    text-align: center;
+}
+
+/* Gambar Profil Mengikut Kedudukan Rujukan */
+.overlay-profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px; /* Sudut melengkung halus seperti di gambar rujukan */
+    margin-bottom: 1.5rem;
+    border: 2px solid #262930;
+}
+
+.profile-box h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+
+.profile-subtitle {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.divider {
+    width: 50px;
+    margin: 1.5rem auto;
+    border: none;
+    border-top: 2px solid #4b5563;
+}
+
+/* Gaya Teks Quotes */
+.quotes {
+    font-size: 0.95rem;
+    color: #9ca3af;
+    line-height: 1.6;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Rekabentuk Responsif Jika Dibuka Pada Skrin Telefon */
+@media (max-width: 768px) {
+    .overlay-container {
+        flex-direction: column;
+    }
+    .overlay-left {
+        border-right: none;
+        border-bottom: 1px solid #262930;
+        padding-top: 5rem;
+    }
+    .overlay-nav ul li a {
+        font-size: 1.6rem;
+    }
+    .overlay-right {
+        padding: 2rem 1rem;
+    }
+    .overlay-profile-img {
+        width: 140px;
+        height: 140px;
+    }
+}
