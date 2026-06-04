@@ -419,7 +419,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 /* =======================================================
-   KOD TAMBAHAN: GAYA UNTUK BAHAGIAN SKILLS (HALAMAN BLOG) 
+   GAYA UNTUK BAHAGIAN SKILLS (HALAMAN BLOG) 
    ======================================================= */
 .skills-section {
     margin-top: 4rem;
@@ -479,5 +479,83 @@ nav ul li a:hover, nav ul li a.active {
     .skills-container {
         flex-direction: column;
         gap: 1.5rem;
+    }
+}
+
+/* =======================================================
+   KOD TAMBAHAN: GAYA UNTUK BAHAGIAN SOFTWARE GRID 
+   ======================================================= */
+.software-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #262930; /* Garisan halus pemisah */
+    text-align: left;
+}
+
+.software-section h2 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.software-desc {
+    color: #9ca3af;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+}
+
+/* Susunan Grid 4 Kolom di Skrin Besar */
+.software-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.software-item {
+    background-color: #161920;
+    border: 1px solid #262930;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Efek Hover yang Menarik & Interaktif */
+.software-item:hover {
+    border-color: #4b5563;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Gaya Ukuran Logo Software */
+.software-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: grayscale(20%); /* Kekalkan warna logo asal tetapi disatukan dengan tema */
+    transition: filter 0.3s ease;
+}
+
+.software-item:hover img {
+    filter: grayscale(0%); /* Warna penuh ikon apabila di-hover */
+}
+
+.software-item span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e4e6eb;
+}
+
+/* Responsif Skrin: Tukar ke 2 Kolom untuk Tablet & Telefon Bimbit */
+@media (max-width: 768px) {
+    .software-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
     }
 }
