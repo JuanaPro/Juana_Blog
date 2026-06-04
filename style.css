@@ -632,3 +632,101 @@ nav ul li a:hover, nav ul li a.active {
         font-size: 1rem;
     }
 }
+/* =======================================================
+   GAYA UNTUK BAHAGIAN ACHIEVEMENTS (HALAMAN BLOG)
+   ======================================================= */
+.achievements-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #262930; 
+    text-align: left;
+}
+
+.achievements-section h2 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.achievements-desc {
+    color: #9ca3af;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+}
+
+/* Grid Susunan Kad Semester */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 Lajur untuk 5 Semester */
+    gap: 1.5rem;
+}
+
+.achievement-item {
+    background-color: #161920;
+    border: 1px solid #262930;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Kesan interaktif apabila tetikus lalu di atas kad */
+.achievement-item:hover {
+    border-color: #4b5563;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.achievement-item .sem-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.achievement-item .sem-session {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-item .cgpa-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    background-color: #262930;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+.achievement-item .cgpa-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff; /* Warna putih menyerlah, boleh ditukar ke #e0a92e (emas) jika mahu */
+    margin-top: 0.2rem;
+}
+
+/* Rekabentuk Responsif untuk Skrin Telefon Bimbit */
+@media (max-width: 1024px) {
+    .achievements-grid {
+        grid-template-columns: repeat(3, 1fr); /* Skrin tablet: 3 lajur */
+    }
+}
+
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr); /* Skrin telefon: 2 lajur */
+        gap: 1rem;
+    }
+    .achievement-item .cgpa-value {
+        font-size: 1.5rem;
+    }
+}
