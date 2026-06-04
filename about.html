@@ -7,25 +7,76 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Juana_Blog</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
+    <!-- Butang Hamburger (Sebelah Atas Kiri) -->
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+
+    <!-- Panel Menu Overlay (Sama seperti halaman Utama) -->
+    <div class="menu-overlay" id="menuOverlay">
+        <!-- Butang Tutup (X) -->
+        <button class="close-btn" id="closeBtn">&times;</button>
+        
+        <div class="overlay-container">
+            <!-- Bahagian Kiri: Menu Navigasi (About diaktifkan) -->
+            <div class="overlay-left">
+                <nav class="overlay-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Bahagian Kanan: Profil, Nama & Quotes -->
+            <div class="overlay-right">
+                <div class="profile-box">
+                    <img src="profil.jpeg" alt="Nur Juana binti Ahmad Jalani" class="overlay-profile-img">
+                    <h2>Nur Juana binti Ahmad Jalani</h2>
+                    <span class="profile-subtitle">Software Development Student</span>
+                    <hr class="divider">
+                    <p class="quotes">
+                        "Everything happens for a reason. The highs. The lows. The wins, the losses. 
+                        The people who come in and the ones who leave. None of it is random. 
+                        Every moment carries a lesson. Every lesson is guiding you closer to your purpose. 
+                        So when life feels heavy, pause, breathe, and remember: <br><br>
+                        <strong>There's meaning in this too.</strong>"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ruangan Kandungan Utama (About Me) -->
     <main class="content-area">
         <section style="width: 80%; margin: 50px auto; text-align: center;">
             <h2>About Me</h2>
             <p>I am a student at the Faculty of Informatics and Computing (FIK), UniSZA.</p>
             <p>This blog is part of my individual project portfolio for the course CSD 34203.</p>
-            <p>I have a deep interest in software development and am constantly striving to improve my technical skills over time[cite: 1].</p>
+            <p>I have a deep interest in software development and am constantly striving to improve my technical skills over time.</p>
         </section>
     </main>
+
+    <!-- JavaScript Ringkas Untuk Fungsi On/Off Menu -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        // Buka menu apabila hamburger ditekan
+        hamburgerBtn.addEventListener('click', () => {
+            menuOverlay.classList.add('open');
+        });
+
+        // Tutup menu apabila butang (X) ditekan
+        closeBtn.addEventListener('click', () => {
+            menuOverlay.classList.remove('open');
+        });
+    </script>
 </body>
 </html>
