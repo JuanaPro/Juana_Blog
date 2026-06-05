@@ -758,3 +758,44 @@ header > div {
 .aos-animate {
     pointer-events: auto;
 }
+/* =======================================================
+   GAYA UNTUK BAHAGIAN FOOTER (PREMIUM DARK)
+   ======================================================= */
+.site-footer {
+    background-color: #0c0e12; /* Warna hitam yang lebih pekat sedikit dari background utama */
+    border-top: 1px solid #262930; /* Garisan pemisah halus */
+    padding: 2.5rem 2rem;
+    margin-top: 5rem; /* Memberi ruang jarak dari borang contact di atas */
+    width: 100%;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-footer .copyright {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.site-footer .footer-subtext {
+    color: #6b7280; /* Warna kelabu lembut */
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* Responsif Skrin Telefon untuk Footer */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 2rem 1rem;
+        margin-top: 3rem;
+    }
+}
