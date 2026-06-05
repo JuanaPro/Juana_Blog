@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Juana_Blog</title>
     <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
@@ -55,13 +56,13 @@
 
     <section class="hero" style="padding-top: 100px;"> 
         <div class="hero-content">
-            <span class="badge fade-in-up">Software Development Student</span>
+            <span class="badge" data-aos="fade-up">Software Development Student</span>
             
-            <h1 class="kesan-menaip">Hi, I am Juana.</h1>
+            <h1 data-aos="fade-up" data-aos-delay="200">Hi, I am Juana.</h1>
             
-            <p class="fade-in-up delay-1">Crafting clean code and building modern web applications. Currently studying at Faculty of Informatics and Computing (FIK), UniSZA.</p>
+            <p data-aos="fade-up" data-aos-delay="400">Crafting clean code and building modern web applications. Currently studying at Faculty of Informatics and Computing (FIK), UniSZA.</p>
             
-            <div class="cta-buttons fade-in-up delay-2">
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
                 <a href="#about-section" class="btn">View My Profile</a>
                 <a href="#contact-section" class="btn btn-secondary">Get In Touch</a>
             </div>
@@ -71,11 +72,11 @@
     <main class="content-area" style="max-width: 1100px; margin: 0 auto; padding: 4rem 2rem;">
 
         <section id="about-section" class="about-centered-container" style="margin-top: 20px; border-bottom: 1px solid #262930; padding-bottom: 5rem;">
-            <div class="about-avatar-wrapper fade-in-up">
+            <div class="about-avatar-wrapper" data-aos="fade-up">
                 <img src="profil.jpeg" alt="Nur Juana binti Ahmad Jalani" class="about-avatar">
             </div>
-            <h2 class="about-title fade-in-up">Hi, I'm Nur Juana binti Ahmad Jalani,</h2>
-            <div class="about-description fade-in-up delay-1">
+            <h2 class="about-title" data-aos="fade-up" data-aos-delay="200">Hi, I'm Nur Juana binti Ahmad Jalani,</h2>
+            <div class="about-description" data-aos="fade-up" data-aos-delay="400">
                 <p>
                     A creative and driven final-year student in Bachelor of Information Technology 
                     (Informatics Media) with Honours at Universiti Sultan Zainal Abidin (UniSZA), seeking 
@@ -93,8 +94,8 @@
         </section>
 
         <section id="skills-section" class="skills-section" style="border-top: none;">
-            <h2 class="fade-in-up">Skills</h2>
-            <div class="skills-container fade-in-up delay-1">
+            <h2 data-aos="fade-up">Skills</h2>
+            <div class="skills-container" data-aos="fade-up" data-aos-delay="200">
                 <div class="skills-column">
                     <h3>Technical Skills:</h3>
                     <ul>
@@ -119,9 +120,9 @@
         </section>
 
         <section class="software-section">
-            <h2 class="fade-in-up">Software</h2>
-            <p class="software-desc fade-in-up delay-1">Software that I use to complete projects and daily tasks.</p>
-            <div class="software-grid fade-in-up delay-2">
+            <h2 data-aos="fade-up">Software</h2>
+            <p class="software-desc" data-aos="fade-up" data-aos-delay="100">Software that I use to complete projects and daily tasks.</p>
+            <div class="software-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="software-item"><img src="images 1.png" alt="JavaScript"><span>JavaScript</span></div>
                 <div class="software-item"><img src="images 2.jpg" alt="C++"><span>C++</span></div>
                 <div class="software-item"><img src="images 3.png" alt="GitHub"><span>GitHub</span></div>
@@ -134,9 +135,9 @@
         </section>
 
         <section class="achievements-section">
-            <h2 class="fade-in-up">Achievements</h2>
-            <p class="achievements-desc fade-in-up delay-1">Academic performance and academic development throughout the semesters.</p>
-            <div class="achievements-grid fade-in-up delay-2">
+            <h2 data-aos="fade-up">Achievements</h2>
+            <p class="achievements-desc" data-aos="fade-up" data-aos-delay="100">Academic performance and academic development throughout the semesters.</p>
+            <div class="achievements-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="achievement-item"><span class="sem-title">Semester 1</span><span class="sem-session">(SEM I 2023/2024)</span><span class="cgpa-label">C.G.P.A</span><span class="cgpa-value">3.35</span></div>
                 <div class="achievement-item"><span class="sem-title">Semester 2</span><span class="sem-session">(SEM II 2023/2024)</span><span class="cgpa-label">C.G.P.A</span><span class="cgpa-value">3.51</span></div>
                 <div class="achievement-item"><span class="sem-title">Semester 3</span><span class="sem-session">(SEM I 2024/2025)</span><span class="cgpa-label">C.G.P.A</span><span class="cgpa-value">3.51</span></div>
@@ -146,8 +147,8 @@
         </section>
 
         <section id="contact-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #262930;">
-            <h2 class="fade-in-up" style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">Get In Touch</h2>
-            <form action="#" method="POST" class="fade-in-up delay-1" style="max-width: 600px;">
+            <h2 data-aos="fade-up" style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">Get In Touch</h2>
+            <form action="#" method="POST" data-aos="fade-up" data-aos-delay="200" style="max-width: 600px;">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
@@ -180,6 +181,14 @@
             link.addEventListener('click', () => {
                 menuOverlay.classList.remove('open');
             });
+        });
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, /* Kelajuan pergerakan animasi (1 saat) */
+            once: true      /* Animasi hanya berjalan sekali sahaja apabila skrin diskrol */
         });
     </script>
 </body>

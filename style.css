@@ -733,6 +733,7 @@ header > div {
         font-size: 1.5rem;
     }
 }
+
 /* =======================================================
    KOD UTK HALAMAN SELAIN HOME (ABOUT, BLOG, CONTACT)
    ======================================================= */
@@ -749,51 +750,11 @@ header > div {
     left: 2rem;
     z-index: 1000;
 }
-/* =======================================================
-   SISTEM ANIMASI CSS PORTFOLIO JUANA (KEMASKINI)
-   ======================================================= */
 
-/* Kesan 1: Kesan Menaip (Typing Effect) */
-.kesan-menaip {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #16171b; /* Kursor kelip hitam */
-    width: 0;
-    animation: 
-        menaipTeks 2.5s steps(18, end) forwards,
-        kelipKursor 0.75s step-end infinite;
+/* Kegunaan sandaran (fallback) sekiranya AOS lambat dimuatkan */
+[data-aos] {
+    pointer-events: none;
 }
-
-/* Kesan 2: Kesan Muncul Dari Bawah (Fade-In Up) */
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(25px);
-    animation: pergerakanFadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-/* Sistem Kelewatan Masa (Animation Delay) */
-.delay-1 {
-    animation-delay: 0.4s;
-}
-.delay-2 {
-    animation-delay: 0.8s;
-}
-
-/* --- LOGIK KEYFRAMES ANIMASI (YANG DAH DIBAIKI) --- */
-@keyframes menaipTeks {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes kelipKursor {
-    from, to { border-color: transparent; }
-    50% { border-color: #16171b; }
-}
-
-@keyframes pergerakanFadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.aos-animate {
+    pointer-events: auto;
 }
