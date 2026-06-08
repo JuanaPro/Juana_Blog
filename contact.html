@@ -6,23 +6,18 @@
     <title>Contact | Juana_Blog</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<!-- Ditambah class "halaman-gelap" supaya butang hamburger bertukar menjadi putih bersih -->
 <body class="halaman-gelap">
 
-    <!-- Butang Hamburger (Sebelah Atas Kiri) -->
     <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
         <div></div>
         <div></div>
         <div></div>
     </button>
 
-    <!-- Panel Menu Overlay (Sama seperti halaman sebelumnya) -->
     <div class="menu-overlay" id="menuOverlay">
-        <!-- Butang Tutup (X) -->
         <button class="close-btn" id="closeBtn">&times;</button>
         
         <div class="overlay-container">
-            <!-- Bahagian Kiri: Menu Navigasi (Contact diaktifkan) -->
             <div class="overlay-left">
                 <nav class="overlay-nav">
                     <ul>
@@ -34,7 +29,6 @@
                 </nav>
             </div>
 
-            <!-- Bahagian Kanan: Profil, Nama & Quotes -->
             <div class="overlay-right">
                 <div class="profile-box">
                     <img src="image-BG-biru.png" alt="Nur Juana binti Ahmad Jalani" class="overlay-profile-img">
@@ -53,27 +47,33 @@
         </div>
     </div>
 
-    <!-- Ruangan Kandungan Utama (Contact Me) -->
-    <main class="content-area" style="text-align: center;">
+    <main class="content-area" style="text-align: center; padding-top: 100px;">
         <h2>Contact Me</h2>
         <p style="color: #9ca3af; margin-bottom: 2rem;">Have a project in mind or a collaboration opportunity? Please leave your message below.</p>
         
-        <form style="max-width: 500px; margin: auto;">
+        <form id="contactForm" style="max-width: 500px; margin: auto;">
             <div class="form-group">
-                <input type="text" placeholder="Full Name">
+                <input type="text" placeholder="Full Name" required>
             </div>
             <div class="form-group">
-                <input type="email" placeholder="Email Address">
+                <input type="email" placeholder="Email Address" required>
             </div>
             <div class="form-group">
-                <textarea placeholder="Write your message here..." style="height: 120px;"></textarea>
+                <textarea placeholder="Write your message here..." style="height: 120px;" required></textarea>
             </div>
-            <button type="button" class="btn" style="width: 100%;">Send Message</button>
+            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
         </form>
     </main>                                 
 
-    <!-- JavaScript Ringkas Untuk Fungsi On/Off Menu -->
+    <div id="toastPopup" class="toast-popup">
+        <div class="toast-content">
+            <span class="toast-icon">✓</span>
+            <p class="toast-message">Message has been sent!</p>
+        </div>
+    </div>
+
     <script>
+        // 1. Logik Pengawalan Menu Overlay Hamburger
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -86,6 +86,22 @@
         // Tutup menu apabila butang (X) ditekan
         closeBtn.addEventListener('click', () => {
             menuOverlay.classList.remove('open');
+        });
+
+
+        // 2. Logik Pengawalan Popup Apabila Borang Dihantar
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Menghentikan kelakuan refresh asal halaman browser
+            
+            const toast = document.getElementById('toastPopup');
+            toast.classList.add('show'); // Memaparkan reka bentuk kapsul popup ke skrin
+            
+            this.reset(); // Mengosongkan semula semua ruang input borang selepas dihantar
+            
+            // Sembunyikan semula elemen popup selepas 3 saat
+            setTimeout(function() {
+                toast.classList.remove('show');
+            }, 3000);
         });
     </script>
 </body>
