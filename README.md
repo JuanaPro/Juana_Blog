@@ -26,3 +26,6 @@ This project was developed utilizing the following core frontend technologies an
 
 ## Demo Link (if deployed)
 * Live Demo: [https://juanapro.github.io/Juana_Blog/]
+
+## Github repository
+[https://github.com/JuanaPro/Juana_Blog]
