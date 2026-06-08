@@ -20,6 +20,7 @@ This project was developed utilizing the following core frontend technologies an
 - JavaScript (ES6) – Used to manage UI logic, state control for the overlay navigation panel, and handle dynamic interactive elements.
 - AOS (Animate On Scroll) Library – A performance-optimized third-party animation library used to synchronize transition events with the user's scroll behavior.
 - Google Fonts (Inter) – A clean, modern sans-serif typeface integrated to establish high readability and a professional visual tone.
+
 ## How to run the project
 [https://drive.google.com/drive/folders/11VGj4sxiui7Goi10eOSovCWWg5pK7wAs?usp=sharing]
 
