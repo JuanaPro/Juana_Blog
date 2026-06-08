@@ -80,8 +80,7 @@
                 <p>
                     I am a final-year student pursuing a Bachelor's Degree in Information Technology (Media Informatics) at Universiti Sultan Zainal Abidin, with a strong interest in multimedia development, animation, interactive applications, and digital technologies. 
                     I aspire to become a professional who can combine creativity and technology to create innovative, user-friendly digital products that bring value to society. 
-                    After completing my studies, I hope to build a career in the information technology and digital media industry while continuously enhancing my skills in application development, multimedia, and emerging technologies.
-
+                    I hope to build a career in the information technology and digital media industry while continuously enhancing my skills in application development, multimedia, and emerging technologies.
                 </p>
             </div>
         </section>
@@ -141,7 +140,7 @@
 
         <section id="contact-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #262930;">
             <h2 data-aos="fade-up" style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">Get In Touch</h2>
-            <form action="#" method="POST" data-aos="fade-up" data-aos-delay="200" style="max-width: 600px;">
+            <form id="contactForm" action="#" method="POST" data-aos="fade-up" data-aos-delay="200" style="max-width: 600px;">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
@@ -157,7 +156,29 @@
 
     </main>
 
+    <footer class="site-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 Juana_Blog. All Rights Reserved.</p>
+            <p class="footer-subtext">Designed & Built with ❤️ by Juana</p>
+        </div>
+    </footer>
+
+    <div id="toastPopup" class="toast-popup">
+        <div class="toast-content">
+            <span class="toast-icon">✓</span>
+            <p class="toast-message">Message has been sent!</p>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        // 1. Inisialisasi Sistem Animasi AOS
+        AOS.init({
+            duration: 1000, 
+            once: true      
+        });
+
+        // 2. Logik Pengawalan Menu Overlay Hamburger
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -175,22 +196,20 @@
                 menuOverlay.classList.remove('open');
             });
         });
-    </script>
-<!-- =======================================================
-         BAHAGIAN FOOTER (PENUTUP HALAMAN)
-         ======================================================= -->
-    <footer class="site-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <div class="footer-container">
-            <p class="copyright">&copy; 2026 Juana_Blog. All Rights Reserved.</p>
-            <p class="footer-subtext">Designed & Built with ❤️ by Juana</p>
-        </div>
-    </footer>
-    
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000, /* Kelajuan pergerakan animasi (1 saat) */
-            once: true      /* Animasi hanya berjalan sekali sahaja apabila skrin diskrol */
+
+        // 3. Logik Pengawalan Popup Apabila Borang Dihantar
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Menghalang refresh halaman automatik
+            
+            const toast = document.getElementById('toastPopup');
+            toast.classList.add('show'); // Meluncurkan turun popup notifikasi
+            
+            this.reset(); // Mengosongkan semula semua kotak input borang
+            
+            // Sembunyikan semula popup selepas 3 saat
+            setTimeout(function() {
+                toast.classList.remove('show');
+            }, 3000);
         });
     </script>
 </body>

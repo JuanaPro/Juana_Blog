@@ -2,7 +2,7 @@
    FAKTI & KLASAS GLOBAL (SMOOTH SCROLL INCLUDED)
    ======================================================= */
 /* Import Font Moden & Profesional dari Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 html {
     scroll-behavior: smooth; /* Membuatkan efek scroll dari butang menjadi smooth dan lancar */
@@ -758,6 +758,7 @@ header > div {
 .aos-animate {
     pointer-events: auto;
 }
+
 /* =======================================================
    GAYA UNTUK BAHAGIAN FOOTER (WARNA CERAH MATTE MATATCHING NAVBAR)
    ======================================================= */
@@ -806,4 +807,53 @@ header > div {
         padding: 2rem 1rem;
         margin-top: 3rem;
     }
+}
+
+/* =======================================================
+   GAYA UNTUK POPUP NOTIFIKASI (TOAST MESSAGE)
+   ======================================================= */
+.toast-popup {
+    position: fixed;
+    top: -100px; /* Sembunyi di atas skrin pada permulaan */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(240, 242, 245, 0.98); /* Warna cerah matte sepadan dengan navbar */
+    backdrop-filter: blur(10px);
+    border: 1px solid #d1d5db;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 30px; /* Bentuk kapsul yang moden */
+    z-index: 9999; /* Sentiasa di lapisan paling atas */
+    transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animasi meluncur lancar */
+}
+
+/* Apabila kelas 'show' dipanggil oleh skrip HTML, popup akan meluncur turun */
+.toast-popup.show {
+    top: 40px; 
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.toast-icon {
+    background-color: #10b981; /* Warna hijau tanda raka */
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.toast-message {
+    color: #0f1115;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0;
 }
