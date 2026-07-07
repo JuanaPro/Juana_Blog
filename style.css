@@ -30,26 +30,30 @@ header {
     background-color: #ffffff !important; /* Mengubah latar belakang header kepada putih di semua page */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
-/* Memastikan elemen di dalam header tersebar rapat ke hujung kiri & kanan */
-header div {
-    display: flex;
-    justify-content: space-between; /* Memastikan hamburger di kiri dan logo ditolak rapat ke kanan */
-    align-items: center;
-    max-width: 100%; /* Menggunakan lebar penuh supaya rapat ke tepi */
-    margin: 0; /* Ditukar dari '0 auto' supaya tiada sekatan margin di tengah */
-    width: 100%;
+
+/* Memastikan elemen <div> di dalam header (index.html) mengambil lebar penuh */
+header > div {
+    display: flex !important;
+    justify-content: space-between !important; /* Menolak hamburger ke kiri, logo ke kanan */
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important; /* Membuang sekatan piksel supaya logo boleh rapat ke dinding skrin */
+    margin: 0 !important; /* Membuang margin auto tengah */
 }
+
 /* Container logo di sebelah kanan */
 .logo-container-right {
-    display: flex;
-    align-items: center;
-    pointer-events: auto;
-    margin-left: auto; /* Memaksa elemen ini melekat di dinding sebelah kanan */
+    display: flex !important;
+    align-items: center !important;
+    pointer-events: auto !important;
+    margin-left: auto !important; /* Memaksa logo melekat rapat di sebelah kanan skrin */
 }
+
 .unisza-top-logo {
-    height: 45px;
-    width: auto;
-    object-fit: contain;
+    height: 45px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
 }
 /* =======================================================
    3. HAMBURGER BUTTON (BLACK COLOR & ALIGNED LEFT)
