@@ -571,16 +571,18 @@ header > div {
     margin-bottom: 1rem;
 }
 
+/* Cari bahagian ini di bawah Section 10 dalam style.css dan gantikan */
 .resume-icon {
-    font-size: 2rem;
-    margin-bottom: 0 !important;       /* Buang margin bawah asal supaya tidak senget */
+    font-size: 2rem !important;        /* Ditukar dari 2.5rem ke 2rem supaya sama besar dengan tulisan */
+    margin-bottom: 0 !important;       
     display: inline-block;
     animation: floatIcon 3s ease-in-out infinite;
 }
+
 .resume-box .resume-title {
-    font-size: 2rem;
+    font-size: 2rem;                   /* Kekal 2rem */
     color: #fff;
-    margin-bottom: 0 !important;       /* Buang margin bawah asal supaya sebaris rapat */
+    margin-bottom: 0 !important;       
     font-weight: 700;
     letter-spacing: 0.5px;
 }
