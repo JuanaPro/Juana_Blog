@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-
     <header>
         <div>
             <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
@@ -16,13 +15,11 @@
                 <div></div>
                 <div></div>
             </button>
-
             <div class="logo-container-right">
                 <img src="unisza-logo.png" alt="Logo UniSZA" class="unisza-top-logo">
             </div>
         </div>
     </header>
-
     <div class="menu-overlay" id="menuOverlay">
         <button class="close-btn" id="closeBtn">&times;</button>
         <div class="overlay-container">
@@ -32,6 +29,8 @@
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="blog.html">Blog</a></li>
+                        <!-- TAMBAHAN: Pautan Projects diletakkan selepas Blog -->
+                        <li><a href="#projects-section" id="navProjects">Projects</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -53,7 +52,6 @@
             </div>
         </div>
     </div>
-
     <section class="hero" style="padding-top: 100px;"> 
         <div class="hero-content">
             <span class="badge" data-aos="fade-up">Software Development Student</span>
@@ -68,9 +66,7 @@
             </div>
         </div>
     </section>
-
     <main class="content-area" style="max-width: 1100px; margin: 0 auto; padding: 4rem 2rem;">
-
         <section id="about-section" class="about-centered-container" style="margin-top: 20px; border-bottom: 1px solid #262930; padding-bottom: 5rem;">
             <div class="about-avatar-wrapper" data-aos="fade-up">
                 <img src="profil.jpeg" alt="Nur Juana binti Ahmad Jalani" class="about-avatar">
@@ -84,7 +80,6 @@
                 </p>
             </div>
         </section>
-
         <section id="skills-section" class="skills-section" style="border-top: none;">
             <h2 data-aos="fade-up">Skills</h2>
             <div class="skills-container" data-aos="fade-up" data-aos-delay="200">
@@ -110,7 +105,6 @@
                 </div>
             </div>
         </section>
-
         <section class="software-section">
             <h2 data-aos="fade-up">Software</h2>
             <p class="software-desc" data-aos="fade-up" data-aos-delay="100">Software that I use to complete projects and daily tasks.</p>
@@ -125,8 +119,7 @@
                 <div class="software-item"><img src="images 8.jpg" alt="Maya Autodesk"><span>Maya Autodesk</span></div>
             </div>
         </section>
-
-        <section class="achievements-section">
+        <section class="achievements-section" style="border-bottom: 1px solid #262930; padding-bottom: 4rem;">
             <h2 data-aos="fade-up">Achievements</h2>
             <p class="achievements-desc" data-aos="fade-up" data-aos-delay="100">Academic performance and academic development throughout the semesters.</p>
             <div class="achievements-grid" data-aos="fade-up" data-aos-delay="200">
@@ -138,9 +131,117 @@
             </div>
         </section>
 
+        <!-- TAMBAHAN: Ruangan Kandungan Projects Baru dengan Sistem Tab -->
+        <section id="projects-section" class="content-area" style="margin-top: 4rem; padding-top: 2rem;">
+            <h2 style="text-align: center; text-transform: uppercase; letter-spacing: 1px;" data-aos="fade-down">My Projects</h2>
+            <p style="text-align: center; color: #9ca3af; margin-bottom: 3rem;" data-aos="fade-up">Select a category to view project descriptions and media.</p>
+
+            <!-- Menu Butang Tab Subjek -->
+            <div class="project-tabs" data-aos="fade-up">
+                <button class="tab-btn active" onclick="openProject(event, '3d-animation')">3D Animation</button>
+                <button class="tab-btn" onclick="openProject(event, '3d-modeling')">3D Modeling</button>
+                <button class="tab-btn" onclick="openProject(event, 'web-app')">Web Application Development</button>
+                <button class="tab-btn" onclick="openProject(event, 'digital-audio')">Digital Audio & Video</button>
+                <button class="tab-btn" onclick="openProject(event, 'software-dev')">Software Development</button>
+                <button class="tab-btn" onclick="openProject(event, 'game-dev')">Computer Game Development</button>
+                <button class="tab-btn" onclick="openProject(event, 'multimedia')">Multimedia Application Development</button>
+            </div>
+
+            <!-- Kandungan Tab Projek -->
+            <!-- 1. 3D Animation -->
+            <div id="3d-animation" class="project-tab-content active-content">
+                <div class="project-showcase">
+                    <div class="project-info">
+                        <h3>3D Animation</h3>
+                        <p>Detailed exploration of keyframing, rigging, and character fluid motion controls. This project demonstrates high-quality rendering passes and cinematic timing sequences tailored for creative storytelling.</p>
+                    </div>
+                    <div class="project-media">
+                        <img src="project-images/3d-animation.png" alt="3D Animation Showcase">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. 3D Modeling -->
+            <div id="3d-modeling" class="project-tab-content">
+                <div class="project-showcase">
+                    <div class="project-info">
+                        <h3>3D Modeling</h3>
+                        <p>Focuses on hard-surface modeling, complex polygon topologies, and realistic PBR texturing techniques. Developed structural and character models using advanced digital sculpting tools.</p>
+                    </div>
+                    <div class="project-media">
+                        <img src="project-images/3d-modeling.png" alt="3D Modeling Showcase">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Web Application Development -->
+            <div id="web-app" class="project-tab-content">
+                <div class="project-showcase">
+                    <div class="project-info">
+                        <h3>Web Application Development</h3>
+                        <p>A full-stack deployment project utilizing clean database logic and intuitive client-side UI workflows. Features optimized API integration and seamless state management systems.</p>
+                    </div>
+                    <div class="project-media">
+                        <img src="project-images/web-app.png" alt="Web App Showcase">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Digital Audio & Video -->
+            <div id="digital-audio" class="project-tab-content">
+                <div class="project-showcase">
+                    <div class="project-info">
+                        <h3>Digital Audio & Video</h3>
+                        <p>Showcasing video compositing techniques, precise multi-track sound engineering, color grading parameters, and post-production asset generation for immersive broadcasting quality.</p>
+                    </div>
+                    <div class="project-media">
+                        <img src="project-images/digital-audio.png" alt="Audio Video Showcase">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Software Development -->
+            <div id="software-dev" class="project-tab-content">
+                <div class="project-showcase">
+                    <div class="project-info">
+                        <h3>Software Development</h3>
+                        <p>Architected using industry-standard structural design patterns. Emphasizes clean syntax execution, system performance profiling, and effective automated unit testing operations.</p>
+                    </div>
+                    <div class="project-media">
+                        <img src="project-images/software-dev.png" alt="Software Showcase">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Computer Game Development -->
+            <div id="game-dev" class="project-tab-content">
+                <div class="project-showcase">
+                    <div class="project-info">
+                        <h3>Computer Game Development</h3>
+                        <p>Interactive gameplay mechanisms constructed with real-time physics engines, asset state machines, smart non-player character AI pathfinding, and dynamic particle systems.</p>
+                    </div>
+                    <div class="project-media">
+                        <img src="project-images/game-dev.png" alt="Game Showcase">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Multimedia Application Development -->
+            <div id="multimedia" class="project-tab-content">
+                <div class="project-showcase">
+                    <div class="project-info">
+                        <h3>Multimedia Application Development</h3>
+                        <p>An integration platform bridging interactive graphic interfaces, user experience responsiveness guidelines, hypermedia linkages, and high-fidelity localized media formats.</p>
+                    </div>
+                    <div class="project-media">
+                        <img src="project-images/multimedia.png" alt="Multimedia Showcase">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #262930;">
             <h2 data-aos="fade-up" style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">Get In Touch</h2>
-            <!-- Sempadan hantaran borang (action & method) telah dibuang untuk mengelakkan ralat 405 GitHub -->
             <form id="contactForm" data-aos="fade-up" data-aos-delay="200" style="max-width: 600px;">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
@@ -154,16 +255,13 @@
                 <button type="submit" class="btn">Send Message</button>
             </form>
         </section>
-
     </main>
-
     <footer class="site-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div class="footer-container">
             <p class="copyright">&copy; 2026 Juana_Blog. All Rights Reserved.</p>
             <p class="footer-subtext">Designed & Built with ❤️ by Juana</p>
         </div>
     </footer>
-
     <div id="toastPopup" class="toast-popup">
         <div class="toast-content">
             <span class="toast-icon">✓</span>
@@ -178,26 +276,21 @@
             duration: 1000, 
             once: true      
         });
-
         // 2. Logik Pengawalan Menu Overlay Hamburger
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
-
         hamburgerBtn.addEventListener('click', () => {
             menuOverlay.classList.add('open');
         });
-
         closeBtn.addEventListener('click', () => {
             menuOverlay.classList.remove('open');
         });
-
         document.querySelectorAll('.overlay-nav a').forEach(link => {
             link.addEventListener('click', () => {
                 menuOverlay.classList.remove('open');
             });
         });
-
         // 3. Logik Pengawalan Popup Apabila Borang Dihantar
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Menghalang refresh halaman automatik
@@ -212,6 +305,36 @@
                 toast.classList.remove('show');
             }, 3000);
         });
+
+        // TAMBAHAN: Logik Pengawalan Klik Tab Projek & Penutupan Menu Overlay
+        function openProject(evt, projectName) {
+            const tabContents = document.getElementsByClassName("project-tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active-content");
+                tabContents[i].style.display = "none";
+            }
+
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            const targetTab = document.getElementById(projectName);
+            if (targetTab) {
+                targetTab.style.display = "block";
+                setTimeout(() => {
+                    targetTab.classList.add("active-content");
+                }, 10);
+            }
+            evt.currentTarget.classList.add("active");
+        }
+
+        const navProjects = document.getElementById('navProjects');
+        if (navProjects && menuOverlay) {
+            navProjects.addEventListener('click', () => {
+                menuOverlay.classList.remove('open');
+            });
+        }
     </script>
 </body>
 </html>

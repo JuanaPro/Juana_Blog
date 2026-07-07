@@ -3,24 +3,20 @@
    ======================================================= */
 /* Import Font Moden & Profesional dari Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 html {
     scroll-behavior: smooth; /* Membuatkan efek scroll dari butang menjadi smooth dan lancar */
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Inter', sans-serif;
     background-color: #0f1115; /* Warna latar belakang gelap premium */
     color: #e4e6eb;            /* Warna teks cerah berkontras tinggi */
     line-height: 1.7;
 }
-
 /* =======================================================
    NAVIGASI / HEADER (WARNA CERAH SELESAI KONTRAST LOGO)
    ======================================================= */
@@ -36,8 +32,7 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid #d1d5db;
 }
-
-/* Container Di Dalam Header */
+/* Container Di Inside Header */
 header > div {
     max-width: 100%; /* Ditukar ke 100% supaya elemen boleh rapat ke tepi skrin */
     margin: 0 auto;
@@ -47,7 +42,6 @@ header > div {
     align-items: center;
     position: relative;
 }
-
 /* =======================================================
    GAYA BUTANG HAMBURGER (RAPAT KE KIRI & WARNA DIUBAH)
    ======================================================= */
@@ -61,7 +55,6 @@ header > div {
     padding: 10px 0px; /* Padding kiri & kanan dibuang (0px) supaya butang rapat ke dinding kiri skrin */
     margin: 0;
 }
-
 .hamburger div {
     width: 30px;
     height: 3px;
@@ -69,7 +62,6 @@ header > div {
     transition: all 0.3s ease;
     border-radius: 2px;
 }
-
 /* =======================================================
    GAYA LOGO UNISZA (ATAS KANAN NAVBAR)
    ======================================================= */
@@ -77,7 +69,6 @@ header > div {
     display: flex;
     align-items: center;
 }
-
 .unisza-top-logo {
     height: 40px; /* Saiz tinggi ideal yang kemas di dalam bar */
     width: auto;
@@ -85,11 +76,9 @@ header > div {
     filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1));
     transition: transform 0.3s ease;
 }
-
 .unisza-top-logo:hover {
     transform: scale(1.05); /* Kesan membesar sedikit apabila di-hover */
 }
-
 /* =======================================================
    HALAMAN UTAMA / HERO SECTION 
    ======================================================= */
@@ -110,7 +99,6 @@ header > div {
     background-position: center;
     background-attachment: fixed; /* Kesan sinematik apabila diskrol */
 }
-
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -119,7 +107,6 @@ header > div {
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); /* Memastikan teks nama mudah dibaca */
 }
-
 .hero p {
     font-size: 1.2rem;
     color: #e4e6eb; 
@@ -127,7 +114,6 @@ header > div {
     margin-bottom: 2.5rem;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
 }
-
 /* Gaya Butang Utama Kontras Tinggi */
 .btn {
     display: inline-block;
@@ -142,24 +128,20 @@ header > div {
     cursor: pointer;
     text-align: center;
 }
-
 .btn:hover {
     background-color: #e4e6eb;
     transform: translateY(-2px);
 }
-
 /* Butang Kedua (Sisi Gelap / Outline) */
 .btn-secondary {
     background-color: transparent !important;
     color: #fff !important;
     border: 1px solid #4b5563 !important;
 }
-
 .btn-secondary:hover {
     background-color: #161920 !important;
     border-color: #fff !important;
 }
-
 /* Elemen Tambahan untuk Rupa Portfolio */
 .badge {
     display: inline-block;
@@ -174,17 +156,14 @@ header > div {
     letter-spacing: 1px;
     border: 1px solid #4b5563;
 }
-
 .hero-content {
     max-width: 700px;
 }
-
 .cta-buttons {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
 }
-
 /* =======================================================
    RUANGAN KANDUNGAN GLOBAL 
    ======================================================= */
@@ -193,13 +172,11 @@ header > div {
     margin: 0 auto;
     padding: 0 2rem;
 }
-
 .content-area h2 {
     font-size: 2.5rem;
     color: #fff;
     margin-bottom: 1.5rem;
 }
-
 /* Gaya Kotak Artikel Blog */
 .blog-card {
     background-color: #161920; /* Kotak kelabu gelap */
@@ -210,33 +187,27 @@ header > div {
     transition: border-color 0.3s ease;
     text-align: left;
 }
-
 .blog-card:hover {
     border-color: #4b5563; /* Garisan bertukar lebih terang apabila di-hover */
 }
-
 .blog-card h3 {
     color: #fff;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
-
 .blog-card .date {
     font-size: 0.85rem;
     color: #6b7280;
     margin-bottom: 1rem;
 }
-
 .blog-card p {
     color: #9ca3af;
 }
-
 /* Gaya Borang Hubungi (Contact Form) */
 .form-group {
     margin-bottom: 1.5rem;
     text-align: left;
 }
-
 .form-group input, .form-group textarea {
     width: 100%;
     padding: 1rem;
@@ -247,12 +218,10 @@ header > div {
     font-family: inherit;
     font-size: 1rem;
 }
-
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: #fff; /* Garisan putih apabila sedang ditaip */
 }
-
 /* Panel Menu Sorok (Overlay) */
 .menu-overlay {
     position: fixed;
@@ -265,12 +234,10 @@ header > div {
     transition: left 0.5s ease-in-out;
     overflow-y: auto;
 }
-
 /* Apabila menu dibuka, tukar posisi ke 0 */
 .menu-overlay.open {
     left: 0;
 }
-
 /* Butang Tutup (X) */
 .close-btn {
     position: absolute;
@@ -283,18 +250,15 @@ header > div {
     cursor: pointer;
     transition: color 0.3s ease;
 }
-
 .close-btn:hover {
     color: #fff;
 }
-
 /* Struktur Kandungan Dalam Menu Overlay */
 .overlay-container {
     display: flex;
     width: 100%;
     min-height: 100vh;
 }
-
 /* Bahagian Kiri: Menu Navigasi */
 .overlay-left {
     flex: 1;
@@ -304,17 +268,14 @@ header > div {
     border-right: 1px solid #262930;
     padding: 2rem;
 }
-
 .overlay-nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
 }
-
 .overlay-nav ul li {
     margin: 1.5rem 0;
 }
-
 .overlay-nav ul li a {
     font-size: 2rem;
     font-weight: 600;
@@ -322,12 +283,10 @@ header > div {
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .overlay-nav ul li a:hover, 
 .overlay-nav ul li a.active {
     color: #fff;
 }
-
 /* Bahagian Kanan: Profil & Teks */
 .overlay-right {
     flex: 1;
@@ -337,12 +296,10 @@ header > div {
     padding: 3rem 2rem;
     background-color: #161920; 
 }
-
 .profile-box {
     max-width: 450px;
     text-align: center;
 }
-
 .overlay-profile-img {
     width: 180px;
     height: 180px;
@@ -351,27 +308,23 @@ header > div {
     margin-bottom: 1.5rem;
     border: 2px solid #262930;
 }
-
 .profile-box h2 {
     font-size: 1.8rem;
     color: #fff;
     margin-bottom: 0.2rem;
 }
-
 .profile-subtitle {
     font-size: 0.9rem;
     color: #9ca3af;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .divider {
     width: 50px;
     margin: 1.5rem auto;
     border: none;
     border-top: 2px solid #4b5563;
 }
-
 .quotes {
     font-size: 0.95rem;
     color: #9ca3af;
@@ -379,7 +332,6 @@ header > div {
     font-style: italic;
     text-align: center;
 }
-
 /* =======================================================
    GAYA UNTUK BAHAGIAN SKILLS 
    ======================================================= */
@@ -388,7 +340,6 @@ header > div {
     padding-top: 2rem;
     border-top: 1px solid #262930; 
 }
-
 .skills-section h2 {
     font-size: 2.2rem;
     text-transform: uppercase;
@@ -396,13 +347,11 @@ header > div {
     margin-bottom: 2rem;
     color: #fff;
 }
-
 .skills-container {
     display: flex;
     gap: 3rem;
     text-align: left;
 }
-
 .skills-column {
     flex: 1;
     background-color: #161920; 
@@ -410,7 +359,6 @@ header > div {
     padding: 2rem;
     border-radius: 8px;
 }
-
 .skills-column h3 {
     font-size: 1.3rem;
     font-style: italic;
@@ -419,23 +367,19 @@ header > div {
     border-bottom: 1px solid #262930;
     padding-bottom: 0.5rem;
 }
-
 .skills-column ul {
     list-style-type: disc;
     padding-left: 1.2rem;
     color: #9ca3af;
 }
-
 .skills-column ul li {
     margin-bottom: 0.8rem;
     line-height: 1.6;
     font-size: 1rem;
 }
-
 .skills-column ul li strong {
     color: #e4e6eb; 
 }
-
 /* =======================================================
    GAYA UNTUK BAHAGIAN SOFTWARE GRID 
    ======================================================= */
@@ -445,7 +389,6 @@ header > div {
     border-top: 1px solid #262930; 
     text-align: left;
 }
-
 .software-section h2 {
     font-size: 2.2rem;
     text-transform: uppercase;
@@ -453,19 +396,16 @@ header > div {
     margin-bottom: 0.5rem;
     color: #fff;
 }
-
 .software-desc {
     color: #9ca3af;
     margin-bottom: 2.5rem;
     font-size: 1rem;
 }
-
 .software-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
-
 .software-item {
     background-color: #161920;
     border: 1px solid #262930;
@@ -478,13 +418,11 @@ header > div {
     gap: 1rem;
     transition: all 0.3s ease;
 }
-
 .software-item:hover {
     border-color: #4b5563;
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
-
 .software-item img {
     width: 60px;
     height: 60px;
@@ -492,17 +430,14 @@ header > div {
     filter: grayscale(20%); 
     transition: filter 0.3s ease;
 }
-
 .software-item:hover img {
     filter: grayscale(0%); 
 }
-
 .software-item span {
     font-size: 0.95rem;
     font-weight: 500;
     color: #e4e6eb;
 }
-
 /* =======================================================
    GAYA HALAMAN ABOUT (MEMUSAT & CYAN GLOW)
    ======================================================= */
@@ -515,7 +450,6 @@ header > div {
     align-items: center; 
     text-align: center;  
 }
-
 .about-avatar-wrapper {
     width: 210px;
     height: 210px;
@@ -529,7 +463,6 @@ header > div {
     justify-content: center;
     overflow: hidden; 
 }
-
 .about-avatar {
     width: 100%;
     height: 100%;
@@ -537,7 +470,6 @@ header > div {
     border-radius: 50%; 
     display: block;
 }
-
 .about-title {
     font-size: 2.2rem;
     font-weight: 700;
@@ -546,11 +478,9 @@ header > div {
     margin-bottom: 2.5rem;
     max-width: 700px;
 }
-
 .about-description {
     max-width: 780px;
 }
-
 .about-description p {
     font-size: 1.1rem;
     color: #cbd5e1; 
@@ -558,7 +488,6 @@ header > div {
     margin-bottom: 1.8rem;
     font-weight: 400;
 }
-
 /* =======================================================
    GAYA UNTUK BAHAGIAN ACHIEVEMENTS 
    ======================================================= */
@@ -568,7 +497,6 @@ header > div {
     border-top: 1px solid #262930; 
     text-align: left;
 }
-
 .achievements-section h2 {
     font-size: 2.2rem;
     text-transform: uppercase;
@@ -576,19 +504,16 @@ header > div {
     margin-bottom: 0.5rem;
     color: #fff;
 }
-
 .achievements-desc {
     color: #9ca3af;
     margin-bottom: 2.5rem;
     font-size: 1rem;
 }
-
 .achievements-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 Lajur untuk 5 Semester */
     gap: 1.5rem;
 }
-
 .achievement-item {
     background-color: #161920;
     border: 1px solid #262930;
@@ -602,13 +527,11 @@ header > div {
     transition: all 0.3s ease;
     text-align: center;
 }
-
 .achievement-item:hover {
     border-color: #4b5563;
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
-
 .achievement-item .sem-title {
     font-size: 0.9rem;
     font-weight: 600;
@@ -616,13 +539,11 @@ header > div {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .achievement-item .sem-session {
     font-size: 0.75rem;
     color: #6b7280;
     margin-bottom: 0.5rem;
 }
-
 .achievement-item .cgpa-label {
     font-size: 0.8rem;
     font-weight: 500;
@@ -631,14 +552,12 @@ header > div {
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
 }
-
 .achievement-item .cgpa-value {
     font-size: 1.8rem;
     font-weight: 700;
     color: #fff; 
     margin-top: 0.2rem;
 }
-
 /* =======================================================
    REKABENTUK RESPONSIF (MESRA TELEFON / TABLET)
    ======================================================= */
@@ -647,7 +566,6 @@ header > div {
         grid-template-columns: repeat(3, 1fr); /* Skrin tablet: 3 lajur */
     }
 }
-
 @media (max-width: 768px) {
     body { 
         padding-top: 0px; /* Dibuat 0px supaya tidak merosakkan skrol halaman hero penuh */
@@ -656,11 +574,9 @@ header > div {
     header > div {
         padding: 12px 1rem !important; /* Merapatkan lagi bar pada skrin telefon */
     }
-
     .unisza-top-logo {
         height: 32px; /* Dikecilkan sedikit pada mobile supaya seimbang */
     }
-
     .hero {
         padding: 0 2rem;
         background-attachment: scroll; /* Mengelakkan ralat lag latar belakang pada telefon */
@@ -673,7 +589,6 @@ header > div {
     .content-area h2 {
         font-size: 2rem;
     }
-
     .overlay-container {
         flex-direction: column;
     }
@@ -696,17 +611,14 @@ header > div {
         width: 140px;
         height: 140px;
     }
-
     .skills-container {
         flex-direction: column;
         gap: 1.5rem;
     }
-
     .software-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.2rem;
     }
-
     .about-centered-container {
         margin-top: 40px;
     }
@@ -723,7 +635,6 @@ header > div {
     .about-description p {
         font-size: 1rem;
     }
-
     .achievements-grid {
         grid-template-columns: repeat(2, 1fr); /* Skrin telefon: 2 lajur */
         gap: 1rem;
@@ -733,16 +644,13 @@ header > div {
         font-size: 1.5rem;
     }
 }
-
 /* =======================================================
    KOD UTK HALAMAN SELAIN HOME (ABOUT, BLOG, CONTACT)
    ======================================================= */
-
 /* Mengubah warna 3 garisan butang hamburger kepada putih bersih */
 .halaman-gelap .hamburger div {
     background-color: #ffffff !important;
 }
-
 /* Memastikan kedudukan butang hamburger di halaman sub-menu kekal kemas */
 .halaman-gelap .hamburger {
     position: fixed;
@@ -750,7 +658,6 @@ header > div {
     left: 2rem;
     z-index: 1000;
 }
-
 /* Kegunaan sandaran (fallback) sekiranya AOS lambat dimuatkan */
 [data-aos] {
     pointer-events: none;
@@ -758,7 +665,6 @@ header > div {
 .aos-animate {
     pointer-events: auto;
 }
-
 /* =======================================================
    GAYA UNTUK BAHAGIAN FOOTER (WARNA CERAH MATTE MATATCHING NAVBAR)
    ======================================================= */
@@ -776,7 +682,6 @@ header > div {
     width: 100%;
     text-align: center;
 }
-
 .footer-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -786,21 +691,18 @@ header > div {
     align-items: center;
     justify-content: center;
 }
-
 .site-footer .copyright {
     /* Ditukar ke warna gelap #0f1115 (warna teks asal body) supaya kontra dan mudah dibaca */
     color: #0f1115; 
     font-size: 0.95rem;
     font-weight: 600; /* Ditebalkan sedikit untuk kekemasan */
 }
-
 .site-footer .footer-subtext {
     /* Menggunakan warna kelabu gelap yang profesional untuk latar belakang cerah */
     color: #4b5563; 
     font-size: 0.85rem;
     letter-spacing: 0.5px;
 }
-
 /* Responsif Skrin Telefon untuk Footer */
 @media (max-width: 768px) {
     .site-footer {
@@ -808,7 +710,6 @@ header > div {
         margin-top: 3rem;
     }
 }
-
 /* =======================================================
    GAYA UNTUK POPUP NOTIFIKASI (TOAST MESSAGE)
    ======================================================= */
@@ -826,18 +727,15 @@ header > div {
     z-index: 9999; /* Sentiasa di lapisan paling atas */
     transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animasi meluncur lancar */
 }
-
 /* Apabila kelas 'show' dipanggil oleh skrip HTML, popup akan meluncur turun */
 .toast-popup.show {
     top: 40px; 
 }
-
 .toast-content {
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
-
 .toast-icon {
     background-color: #10b981; /* Warna hijau tanda raka */
     color: white;
@@ -850,10 +748,103 @@ header > div {
     font-size: 0.85rem;
     font-weight: bold;
 }
-
 .toast-message {
     color: #0f1115;
     font-weight: 600;
     font-size: 0.95rem;
     margin: 0;
+}
+
+/* =======================================================
+   TAMBAHAN BARU: GAYA SISTEM TAB PROJECTS DENGAN GRID
+   ======================================================= */
+.project-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+    background-color: #161920;
+    border: 1px solid #262930;
+    color: #9ca3af;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background-color: #fff;
+    color: #0f1115;
+    border-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.project-tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s ease-out;
+}
+
+.project-tab-content.active-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    background-color: #161920;
+    border: 1px solid #262930;
+    padding: 2.5rem;
+    border-radius: 8px;
+    align-items: center;
+    text-align: left;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.project-info p {
+    color: #9ca3af;
+    line-height: 1.8;
+}
+
+.project-media img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #262930;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.project-media img:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .project-showcase {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
