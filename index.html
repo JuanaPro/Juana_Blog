@@ -29,7 +29,6 @@
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <!-- TAMBAHAN: Pautan Projects diletakkan selepas Blog -->
                         <li><a href="#projects-section" id="navProjects">Projects</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -131,14 +130,12 @@
             </div>
         </section>
 
-        <!-- TAMBAHAN: Ruangan Kandungan Projects Baru dengan Sistem Tab -->
         <section id="projects-section" class="content-area" style="margin-top: 4rem; padding-top: 2rem;">
             <h2 style="text-align: center; text-transform: uppercase; letter-spacing: 1px;" data-aos="fade-down">My Projects</h2>
-            <p style="text-align: center; color: #9ca3af; margin-bottom: 3rem;" data-aos="fade-up">Select a category to view project descriptions and media.</p>
+            <p style="text-align: center; color: #9ca3af; margin-bottom: 3rem;" data-aos="fade-up">Select a category below to view project descriptions and media.</p>
 
-            <!-- Menu Butang Tab Subjek -->
             <div class="project-tabs" data-aos="fade-up">
-                <button class="tab-btn active" onclick="openProject(event, '3d-animation')">3D Animation</button>
+                <button class="tab-btn" onclick="openProject(event, '3d-animation')">3D Animation</button>
                 <button class="tab-btn" onclick="openProject(event, '3d-modeling')">3D Modeling</button>
                 <button class="tab-btn" onclick="openProject(event, 'web-app')">Web Application Development</button>
                 <button class="tab-btn" onclick="openProject(event, 'digital-audio')">Digital Audio & Video</button>
@@ -147,9 +144,7 @@
                 <button class="tab-btn" onclick="openProject(event, 'multimedia')">Multimedia Application Development</button>
             </div>
 
-            <!-- Kandungan Tab Projek -->
-            <!-- 1. 3D Animation -->
-            <div id="3d-animation" class="project-tab-content active-content">
+            <div id="3d-animation" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
                         <h3>3D Animation</h3>
@@ -161,7 +156,6 @@
                 </div>
             </div>
 
-            <!-- 2. 3D Modeling -->
             <div id="3d-modeling" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -174,7 +168,6 @@
                 </div>
             </div>
 
-            <!-- 3. Web Application Development -->
             <div id="web-app" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -187,7 +180,6 @@
                 </div>
             </div>
 
-            <!-- 4. Digital Audio & Video -->
             <div id="digital-audio" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -200,7 +192,6 @@
                 </div>
             </div>
 
-            <!-- 5. Software Development -->
             <div id="software-dev" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -213,7 +204,6 @@
                 </div>
             </div>
 
-            <!-- 6. Computer Game Development -->
             <div id="game-dev" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -226,7 +216,6 @@
                 </div>
             </div>
 
-            <!-- 7. Multimedia Application Development -->
             <div id="multimedia" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -271,12 +260,10 @@
     
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // 1. Inisialisasi Sistem Animasi AOS
         AOS.init({
             duration: 1000, 
             once: true      
         });
-        // 2. Logik Pengawalan Menu Overlay Hamburger
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -291,22 +278,20 @@
                 menuOverlay.classList.remove('open');
             });
         });
-        // 3. Logik Pengawalan Popup Apabila Borang Dihantar
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Menghalang refresh halaman automatik
+            event.preventDefault(); 
             
             const toast = document.getElementById('toastPopup');
-            toast.classList.add('show'); // Meluncurkan turun popup notifikasi
+            toast.classList.add('show'); 
             
-            this.reset(); // Mengosongkan semula semua kotak input borang
+            this.reset(); 
             
-            // Sembunyikan semula popup selepas 3 saat
             setTimeout(function() {
                 toast.classList.remove('show');
             }, 3000);
         });
 
-        // TAMBAHAN: Logik Pengawalan Klik Tab Projek & Penutupan Menu Overlay
+        // LOGIK KLIK TAB PROJEK (DITUKAR UNTUK MENYOKONG PARSING TEPAT TANPA SEBARANG MASALAH KOSONG PADA AWAL)
         function openProject(evt, projectName) {
             const tabContents = document.getElementsByClassName("project-tab-content");
             for (let i = 0; i < tabContents.length; i++) {
