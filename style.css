@@ -100,7 +100,7 @@ header > div {
     color: #fff;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 15 rgba(0, 0, 0, 0.6); 
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); 
 }
 .hero p {
     font-size: 1.2rem;
@@ -799,25 +799,26 @@ header > div {
     transform: scale(1.02);
 }
 
-/* GAYA TAMBAHAN KHUSUS UNTUK MEMASTIKAN VIDEO RESPONSIVE & SAIZ KECIL */
+/* KEMASKINI GAYA: KUNCI SAIZ VIDEO SUPAYA KEKAL KECIL SEMASA PLAY */
 .project-media .video-wrapper {
     width: 100%;
-    max-width: 320px; /* Mengecilkan lebar kotak video */
-    margin: 0 auto;    /* Letak video di tengah ruangan kanan */
+    max-width: 320px; 
+    margin: 0 auto;    
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid #262930;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    background-color: #000;
 }
 
 .project-media .video-wrapper video {
-    width: 100%;
-    height: auto;
-    max-height: 200px; /* Had ketinggian video yang ideal */
+    width: 100% !important;
+    height: auto !important;
+    max-width: 320px !important; /* Kunci lebar maksimum */
+    max-height: 200px !important; /* Kunci tinggi maksimum */
     display: block;
-    object-fit: contain; /* Mengekalkan nisbah paparan agar tidak terpotong */
+    object-fit: contain !important; /* Memastikan tiada regangan imej (no stretching) */
     outline: none;
-    background-color: #000;
 }
 
 @media (max-width: 768px) {

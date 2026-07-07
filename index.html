@@ -224,7 +224,7 @@
                     </div>
                     <div class="project-media">
                         <div class="video-wrapper">
-                            <video controls poster="image_69e57b.png" preload="metadata">
+                            <video controls poster="image_69e57b.png" preload="metadata" playsinline webkit-playsinline>
                                 <source src="077510_Digital Content.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -246,7 +246,9 @@
                 <div class="form-group">
                     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 </div>
-                <button type="submit" class="btn">Send Message</button>
+                <div style="text-align: left;">
+                    <button type="submit" class="btn">Send Message</button>
+                </div>
             </form>
         </section>
     </main>
@@ -299,7 +301,6 @@
                 tabContents[i].classList.remove("active-content");
                 tabContents[i].style.display = "none";
                 
-                // Matikan video jika user tukar ke tab lain
                 const videoElement = tabContents[i].querySelector('video');
                 if (videoElement) {
                     videoElement.pause();
