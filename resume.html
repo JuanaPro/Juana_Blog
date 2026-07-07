@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Juana_Blog</title>
+    <link class="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <header>
+        <div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div class="logo-container-right">
+                <img src="unisza-logo.png" alt="Logo UniSZA" class="unisza-top-logo">
+            </div>
+        </div> 
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <div class="overlay-container">
+            <div class="overlay-left">
+                <nav class="overlay-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="resume.html" class="active">Resume</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="overlay-right">
+                <div class="profile-box">
+                    <img src="image-BG-biru.png" alt="Nur Juana binti Ahmad Jalani" class="overlay-profile-img">
+                    <h2>Nur Juana binti Ahmad Jalani</h2>
+                    <span class="profile-subtitle">Software Development Student</span>
+                    <hr class="divider">
+                    <p class="quotes">
+                        "Everything happens for a reason. The highs. The lows. The wins, the losses. 
+                        The people who come in and the ones who leave. None of it is random. 
+                        Every moment carries a lesson. Every lesson is guiding you closer to your purpose. 
+                        So when life feels heavy, pause, breathe, and remember: <br><br>
+                        <strong>There's meaning in this too.</strong>"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="content-area" style="max-width: 1100px; margin: 0 auto; padding: 140px 2rem 6rem 2rem;">
+        
+        <section id="resume-section" class="resume-section">
+            <div class="resume-container" data-aos="fade-up">
+                <div class="resume-box">
+                    <div class="resume-header">
+                        <span class="resume-icon-inline"> 📄 </span>
+                        <h2 class="resume-title">My Resume</h2>
+                    </div>
+
+                    <p class="resume-desc">
+                        Review my academic qualifications, technical proficiencies, and structural multimedia project histories. 
+                        You can view the full document or save a copy directly to your device.
+                    </p>
+                    
+                    <div class="resume-cta-buttons">
+                        <a href="resume.pdf" target="_blank" class="btn btn-resume-view">View Resume</a>
+                        <a href="resume.pdf" download="Nur_Juana_Resume.pdf" class="btn btn-resume-download">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 Juana_Blog. All Rights Reserved.</p>
+            <p class="footer-subtext">Designed & Built with  ❤️  by Juana</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Kontrol Hamburger Menu
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        hamburgerBtn.addEventListener('click', () => {
+            menuOverlay.classList.add('open');
+        });
+        closeBtn.addEventListener('click', () => {
+            menuOverlay.classList.remove('open');
+        });
+    </script>
+</body>
+</html>
