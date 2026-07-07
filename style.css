@@ -571,10 +571,10 @@ header > div {
     margin-bottom: 1rem;
 }
 
-/* Cari bahagian ini di bawah Section 10 dalam style.css dan gantikan */
+/* Gantikan kod .resume-icon yang sedia ada dengan ini */
 .resume-icon {
-    font-size: 2rem !important;        /* Ditukar dari 2.5rem ke 2rem supaya sama besar dengan tulisan */
-    margin-bottom: 0 !important;       
+    font-size: 2rem !important;        /* Ditukar kepada 2rem supaya sama besar dengan tulisan My Resume */
+    margin-bottom: 0 !important;       /* Mengekalkan kedudukan sebaris rapat */
     display: inline-block;
     animation: floatIcon 3s ease-in-out infinite;
 }
