@@ -25,21 +25,22 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 0; /* Ubah suai padding atas/bawah, padding tepi dipindahkan ke div di bawah */
+    padding: 1rem 0; /* Jarak atas/bawah header */
     z-index: 100;
     background-color: #ffffff !important; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
-/* Memperbaiki jarak logo dan hamburger supaya tidak terlalu ketepi skrin */
+/* Memastikan elemen tersebar sepenuhnya ke hujung kiri & kanan macam dalam gambar */
 header > div {
     display: flex !important;
-    justify-content: space-between !important; 
+    justify-content: space-between !important; /* Menolak hamburger ke kiri, logo ke kanan */
     align-items: center !important;
     width: 100% !important;
-    max-width: 1200px !important;  /* Menyekat kelebaran maksima supaya sama sejajar dengan body */
-    margin: 0 auto !important;     /* Memastikan kedudukan kekal di tengah skrin */
-    padding: 0 2rem !important;    /* Memberi ruang kosong di tepi kiri & kanan supaya logo tidak melekat di dinding skrin */
+    max-width: 100% !important;   /* Menggunakan 100% lebar skrin (Full Width) */
+    margin: 0 !important;          /* Membuang auto-centering */
+    padding: 0 2.5rem !important;  /* Jarak kemas dari dinding kiri & kanan skrin supaya tidak terlampau rapat */
+    box-sizing: border-box !important;
 }
 
 /* Container logo di sebelah kanan */
