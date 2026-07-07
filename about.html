@@ -3,23 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Juana_Blog</title>
-    <link class="styles" rel="stylesheet" href="style.css"> 
+    <title>About Me | Juana_Blog</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* FIX HEADER STYLING */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* FIX HAMBURGER WARNA HITAM */
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #000000;
+            transition: 0.3s;
+        }
+        /* FIX LOGO UNISZA SEBELAH KANAN */
+        .unisza-top-logo {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+        /* FIX TULISAN TERLALU KETEPI */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        /* Tambahan gaya ringkas untuk layout About */
+        .about-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            color: #ffffff;
+        }
+        @media (min-width: 768px) {
+            .about-wrapper {
+                flex-direction: row;
+                align-items: center;
+            }
+            .about-text { flex: 1; }
+            .about-img-box { flex: 1; text-align: center; }
+        }
+        .about-profile-img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div>
-            <button class="hamburger nav-light" id="hamburgerBtn" aria-label="Open Menu">
+        <div class="header-container">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
                 <div></div>
                 <div></div>
                 <div></div>
             </button>
             <div class="logo-container-right">
-                <img src="unisza-logo.png" alt="UniSZA Logo" class="unisza-top-logo"> 
+                <img src="unisza-logo.png" alt="Logo UniSZA" class="unisza-top-logo">
             </div>
-        </div>
+        </div> 
     </header>
 
+    <!-- NAVIGATION OVERLAY SYSTEM -->
     <div class="menu-overlay" id="menuOverlay">
         <button class="close-btn" id="closeBtn">&times;</button>
         <div class="overlay-container">
@@ -29,8 +101,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html" class="active">About</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#projects">Projects</a></li>
-                        <li><a href="index.html#resume">Resume</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="resume.html">Resume</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -53,32 +125,48 @@
         </div>
     </div>
 
-    <main class="about-centered-container" style="padding-top: 140px;">
-        <div class="about-avatar-wrapper">
-            <img src="profil.jpeg" alt="Nur Juana binti Ahmad Jalani" class="about-avatar">
-        </div>
-        <h1 class="about-title">Hi, I'm Nur Juana binti Ahmad Jalani,</h1>
-        <div class="about-description">
-            <p>
-                I am a final-year student pursuing a Bachelor's Degree in Information Technology (Media Informatics) at Universiti Sultan Zainal Abidin, with a strong interest in multimedia development, animation, interactive applications, and digital technologies. 
-                I aspire to become a professional who can combine creativity and technology to create innovative, user-friendly digital products that bring value to society. 
-                After completing my studies, I hope to build a career in the information technology and digital media industry while continuously enhancing my skills in application development, multimedia, and emerging technologies.
-            </p>
+    <!-- MAIN CONTENT AREA WITH CONTAINER FIX -->
+    <main class="content-area" style="padding: 140px 0 4rem 0;">
+        <div class="page-container">
+            
+            <section id="about-section" data-aos="fade-up">
+                <h2 style="text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2rem;">About Me</h2>
+                <div class="about-wrapper">
+                    <div class="about-text">
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: #9ca3af; margin-bottom: 1.5rem;">
+                            Hi, I am <strong>Nur Juana binti Ahmad Jalani</strong>, a dedicated Software Development student. I have a deep passion for logical software design, application workflows, and building engaging multimedia experiences.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: #9ca3af;">
+                            Through my academic journey, I have explored various domains including 3D animation, game mechanisms, and responsive web systems. I love bridging technical requirements with aesthetic interfaces to solve actual problems.
+                        </p>
+                    </div>
+                    <div class="about-img-box">
+                        <img src="image-BG-biru.png" alt="Juana Profile" class="about-profile-img">
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
 
+    <!-- SITE FOOTER -->
+    <footer class="site-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 Juana_Blog. All Rights Reserved.</p>
+            <p class="footer-subtext">Designed & Built with ❤️ by Juana</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        AOS.init({ duration: 1000, once: true });
+
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
 
-        hamburgerBtn.addEventListener('click', () => {
-            menuOverlay.classList.add('open');
-        });
-
-        closeBtn.addEventListener('click', () => {
-            menuOverlay.classList.remove('open');
-        });
+        hamburgerBtn.addEventListener('click', () => { menuOverlay.classList.add('open'); });
+        closeBtn.addEventListener('click', () => { menuOverlay.classList.remove('open'); });
     </script>
 </body>
 </html>

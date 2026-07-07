@@ -3,23 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Juana_Blog</title>
+    <title>Blog & Skills | Juana_Blog</title>
     <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* FIX HEADER STYLING */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* FIX HAMBURGER WARNA HITAM */
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #000000;
+            transition: 0.3s;
+        }
+        /* FIX LOGO UNISZA SEBELAH KANAN */
+        .unisza-top-logo {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+        /* FIX TULISAN TERLALU KETEPI */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        /* Layout Pembahagian Skills */
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 2rem;
+            color: #ffffff;
+        }
+        @media (min-width: 768px) {
+            .skills-grid {
+                flex-direction: row;
+            }
+            .skills-col { flex: 1; }
+        }
+        .skills-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #262930;
+            padding-bottom: 0.5rem;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+        .skills-list li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #9ca3af;
+        }
+        .skills-list strong {
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div>
-            <button class="hamburger nav-light" id="hamburgerBtn" aria-label="Open Menu">
+        <div class="header-container">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
                 <div></div>
                 <div></div>
                 <div></div>
             </button>
             <div class="logo-container-right">
-                <img src="unisza-logo.png" alt="UniSZA Logo" class="unisza-top-logo"> 
+                <img src="unisza-logo.png" alt="Logo UniSZA" class="unisza-top-logo">
             </div>
-        </div>
+        </div> 
     </header>
 
+    <!-- NAVIGATION OVERLAY SYSTEM -->
     <div class="menu-overlay" id="menuOverlay">
         <button class="close-btn" id="closeBtn">&times;</button>
         <div class="overlay-container">
@@ -29,8 +112,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="blog.html" class="active">Blog</a></li>
-                        <li><a href="index.html#projects">Projects</a></li>
-                        <li><a href="index.html#resume">Resume</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="resume.html">Resume</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -53,120 +136,61 @@
         </div>
     </div>
 
-    <main class="content-area" style="padding-top: 140px;">
-        <div class="skills-section">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skills-column">
-                    <h3>Technical Skills:</h3>
-                    <ul>
-                        <li><strong>Programming:</strong> JavaScript, C++</li>
-                        <li><strong>Web Development:</strong> HTML, CSS, Responsive Design, CodeIgniter</li>
-                        <li><strong>Tools:</strong> Unity, Adobe Animate, Microsoft Office (Word, PowerPoint, Excel), Canva, Blender, Maya Autodesk</li>
-                        <li><strong>UI/UX Design:</strong> Augmented Reality (AR), Multimedia Development, 3D Modeling, 3D Animation</li>
-                    </ul>
-                </div>
-                <div class="skills-column">
-                    <h3>Soft Skills:</h3>
-                    <ul>
-                        <li>Communication</li>
-                        <li>Teamwork</li>
-                        <li>Problem-solving</li>
-                        <li>Time management</li>
-                        <li>Leadership</li>
-                        <li>Creativity</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <!-- MAIN CONTENT AREA WITH CONTAINER FIX -->
+    <main class="content-area" style="padding: 140px 0 4rem 0;">
+        <div class="page-container">
+            
+            <section id="blog-skills-section" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem; text-transform: uppercase; letter-spacing: 1px; color: #ffffff;">Skills</h2>
+                
+                <div class="skills-grid">
+                    <!-- Technical Skills -->
+                    <div class="skills-col">
+                        <h3>Technical Skills:</h3>
+                        <ul class="skills-list">
+                            <li><strong>Programming:</strong> JavaScript, C++</li>
+                            <li><strong>Web Development:</strong> HTML, CSS, Responsive Design, CodeIgniter</li>
+                            <li><strong>Tools:</strong> Unity, Adobe Animate, Microsoft Office (Word, PowerPoint, Excel), Canva, Blender, Maya Autodesk</li>
+                            <li><strong>UI/UX Design:</strong> Augmented Reality (AR), Multimedia Development, 3D Modeling, 3D Animation</li>
+                        </ul>
+                    </div>
 
-        <div class="software-section">
-            <h2>Software</h2>
-            <p class="software-desc">Software that I use to complete projects and daily tasks.</p>
-            <div class="software-grid">
-                <div class="software-item">
-                    <img src="images 1.png" alt="JavaScript Logo">
-                    <span>JavaScript</span>
+                    <!-- Soft Skills -->
+                    <div class="skills-col">
+                        <h3>Soft Skills:</h3>
+                        <ul class="skills-list">
+                            <li>• Communication</li>
+                            <li>• Teamwork</li>
+                            <li>• Problem-solving</li>
+                            <li>• Time management</li>
+                            <li>• Leadership</li>
+                            <li>• Creativity</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="software-item">
-                    <img src="images 2.jpg" alt="C++ Logo">
-                    <span>C++</span>
-                </div>
-                <div class="software-item">
-                    <img src="images 3.png" alt="GitHub Logo">
-                    <span>GitHub</span>
-                </div>
-                <div class="software-item">
-                    <img src="images 4.png" alt="Unity Logo">
-                    <span>Unity</span>
-                </div>
-                <div class="software-item">
-                    <img src="images 5.png" alt="Canva Logo">
-                    <span>Canva</span>
-                </div>
-                <div class="software-item">
-                    <img src="images 6.jpg" alt="Adobe Animate Logo">
-                    <span>Adobe Animate</span>
-                </div>
-                <div class="software-item">
-                    <img src="images 7.jpg" alt="Blender Logo">
-                    <span>Blender</span>
-                </div>
-                <div class="software-item">
-                    <img src="images 8.jpg" alt="Maya Autodesk Logo">
-                    <span>Maya Autodesk</span>
-                </div>
-            </div>
-        </div>
+            </section>
 
-        <section class="achievements-section">
-            <h2>Achievements</h2>
-            <p class="achievements-desc">Academic performance and academic development throughout the semesters.</p>
-            <div class="achievements-grid">
-                <div class="achievement-item">
-                    <span class="sem-title">Semester 1</span>
-                    <span class="sem-session">(SEM I 2023/2024)</span>
-                    <span class="cgpa-label">C.G.P.A</span>
-                    <span class="cgpa-value">3.35</span>
-                </div>
-                <div class="achievement-item">
-                    <span class="sem-title">Semester 2</span>
-                    <span class="sem-session">(SEM II 2023/2024)</span>
-                    <span class="cgpa-label">C.G.P.A</span>
-                    <span class="cgpa-value">3.51</span>
-                </div>
-                <div class="achievement-item">
-                    <span class="sem-title">Semester 3</span>
-                    <span class="sem-session">(SEM I 2024/2025)</span>
-                    <span class="cgpa-label">C.G.P.A</span>
-                    <span class="cgpa-value">3.51</span>
-                </div>
-                <div class="achievement-item">
-                    <span class="sem-title">Semester 4</span>
-                    <span class="sem-session">(SEM II 2024/2025)</span>
-                    <span class="cgpa-label">C.G.P.A</span>
-                    <span class="cgpa-value">3.48</span>
-                </div>
-                <div class="achievement-item">
-                    <span class="sem-title">Semester 5</span>
-                    <span class="sem-session">(SEM I 2025/2026)</span>
-                    <span class="cgpa-label">C.G.P.A</span>
-                    <span class="cgpa-value">3.58</span>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
 
+    <!-- SITE FOOTER -->
+    <footer class="site-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 Juana_Blog. All Rights Reserved.</p>
+            <p class="footer-subtext">Designed & Built with ❤️ by Juana</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        AOS.init({ duration: 1000, once: true });
+
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
-        hamburgerBtn.addEventListener('click', () => {
-            menuOverlay.classList.add('open');
-        });
-        closeBtn.addEventListener('click', () => {
-            menuOverlay.classList.remove('open');
-        });
+
+        hamburgerBtn.addEventListener('click', () => { menuOverlay.classList.add('open'); });
+        closeBtn.addEventListener('click', () => { menuOverlay.classList.remove('open'); });
     </script>
 </body>
 </html>

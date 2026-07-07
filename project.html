@@ -6,21 +6,73 @@
     <title>Projects | Juana_Blog</title>
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* FIX FIX HEADER STYLING */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* FIX HAMBURGER WARNA HITAM */
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #000000; /* Warna Hitam */
+            transition: 0.3s;
+        }
+        /* FIX LOGO UNISZA SEBELAH KANAN */
+        .unisza-top-logo {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+        /* FIX TULISAN TERLALU KETEPI */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div>
+        <div class="header-container">
+            <!-- Hamburger di kiri -->
             <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
                 <div></div>
                 <div></div>
                 <div></div>
             </button>
+            <!-- Logo UniSZA di kanan -->
             <div class="logo-container-right">
                 <img src="unisza-logo.png" alt="Logo UniSZA" class="unisza-top-logo">
             </div>
         </div> 
     </header>
 
+    <!-- NAVIGATION OVERLAY SYSTEM -->
     <div class="menu-overlay" id="menuOverlay">
         <button class="close-btn" id="closeBtn">&times;</button>
         <div class="overlay-container">
@@ -54,95 +106,171 @@
         </div>
     </div>
 
-    <main class="content-area" style="max-width: 1100px; margin: 0 auto; padding: 120px 2rem 4rem 2rem;">
-        
-        <section id="projects-section" class="content-area" style="padding-top: 0;">
-            <h2 style="text-align: center; text-transform: uppercase; letter-spacing: 1px;" data-aos="fade-down">My Projects</h2>
-            <p style="text-align: center; color: #9ca3af; margin-bottom: 3rem;" data-aos="fade-up">Select a category below to view project descriptions and media.</p>
+    <!-- MAIN CONTENT AREA WITH CONTAINER FIX -->
+    <main class="content-area" style="padding: 140px 0 4rem 0;">
+        <div class="page-container">
             
-            <div class="project-tabs" data-aos="fade-up">
-                <button class="tab-btn" onclick="openProject(event, '3d-animation')">3D Animation</button>
-                <button class="tab-btn" onclick="openProject(event, '3d-modeling')">3D Modeling</button>
-                <button class="tab-btn" onclick="openProject(event, 'web-app')">Web Application Development</button>
-                <button class="tab-btn" onclick="openProject(event, 'digital-audio')">Digital Audio & Video</button>
-                <button class="tab-btn" onclick="openProject(event, 'software-dev')">Software Development</button>
-                <button class="tab-btn" onclick="openProject(event, 'game-dev')">Computer Game Development</button>
-                <button class="tab-btn" onclick="openProject(event, 'multimedia')">Multimedia Application Development</button>
-            </div>
-
-            <div id="3d-animation" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>3D Animation</h3>
-                        <p>Detailed exploration of keyframing, rigging, and character fluid motion controls. This project demonstrates high-quality rendering passes and cinematic timing sequences tailored for creative storytelling.</p>
-                    </div>
-                    <div class="project-media">
-                        <img src="project-images/3d-animation.png" alt="3D Animation Showcase">
-                    </div>
+            <!-- RUANGAN PROJECTS -->
+            <section id="projects-section" style="padding-top: 0;">
+                <h2 style="text-align: center; text-transform: uppercase; letter-spacing: 1px;" data-aos="fade-down">My Projects</h2>
+                <p style="text-align: center; color: #9ca3af; margin-bottom: 3rem;" data-aos="fade-up">Select a category below to view project descriptions and media.</p>
+                
+                <!-- Menu Butang Tab Subjek -->
+                <div class="project-tabs" data-aos="fade-up">
+                    <button class="tab-btn" onclick="openProject(event, '3d-animation')">3D Animation</button>
+                    <button class="tab-btn" onclick="openProject(event, '3d-modeling')">3D Modeling</button>
+                    <button class="tab-btn" onclick="openProject(event, 'web-app')">Web Application Development</button>
+                    <button class="tab-btn" onclick="openProject(event, 'digital-audio')">Digital Audio & Video</button>
+                    <button class="tab-btn" onclick="openProject(event, 'software-dev')">Software Development</button>
+                    <button class="tab-btn" onclick="openProject(event, 'game-dev')">Computer Game Development</button>
+                    <button class="tab-btn" onclick="openProject(event, 'multimedia')">Multimedia Application Development</button>
                 </div>
-            </div>
 
-            <div id="3d-modeling" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>3D Modeling</h3>
-                        <p>Focuses on hard-surface modeling, complex polygon topologies, and realistic PBR texturing techniques. Developed structural and character models using advanced digital sculpting tools.</p>
-                    </div>
-                    <div class="project-media">
-                        <img src="project-images/3d-modeling.png" alt="3D Modeling Showcase">
-                    </div>
-                </div>
-            </div>
-
-            <div id="web-app" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>Web Application Development</h3>
-                        <p>A full-stack deployment project utilizing clean database logic and intuitive client-side UI workflows. Features optimized API integration and seamless state management systems.</p>
-                    </div>
-                    <div class="project-media">
-                        <img src="project-images/web-app.png" alt="Web App Showcase">
-                    </div>
-                </div>
-            </div>
-
-            <div id="digital-audio" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>Digital Audio & Video</h3>
-                        <p>Showcasing video compositing techniques, precise multi-track sound engineering, color grading parameters, and post-production asset generation for immersive broadcasting quality.</p>
-                    </div>
-                    <div class="project-media">
-                        <div class="video-wrapper">
-                            <video controls poster="project-images/digital-audio.png" preload="metadata" playsinline webkit-playsinline>
-                                <source src="3D Animation.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                <!-- Kandungan Tab Projek -->
+                <div id="3d-animation" class="project-tab-content">
+                    <div class="project-showcase">
+                        <div class="project-info">
+                            <h3>3D Animation</h3>
+                            <p>Detailed exploration of keyframing, rigging, and character fluid motion controls. This project demonstrates high-quality rendering passes and cinematic timing sequences tailored for creative storytelling.</p>
+                        </div>
+                        <div class="project-media">
+                            <img src="project-images/3d-animation.png" alt="3D Animation Showcase">
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="software-dev" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>Software Development</h3>
-                        <p>Architected using industry-standard structural design patterns. Emphasizes clean syntax execution, system performance profiling, and effective automated unit testing operations.</p>
-                    </div>
-                    <div class="project-media">
-                        <img src="project-images/software-dev.png" alt="Software Showcase">
+                <div id="3d-modeling" class="project-tab-content">
+                    <div class="project-showcase">
+                        <div class="project-info">
+                            <h3>3D Modeling</h3>
+                            <p>Focuses on hard-surface modeling, complex polygon topologies, and realistic PBR texturing techniques. Developed structural and character models using advanced digital sculpting tools.</p>
+                        </div>
+                        <div class="project-media">
+                            <img src="project-images/3d-modeling.png" alt="3D Modeling Showcase">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="game-dev" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>Computer Game Development</h3>
-                        <p>Interactive gameplay mechanisms constructed with real-time physics engines, asset state machines, smart non-player character AI pathfinding, and dynamic particle systems.</p>
+                <div id="web-app" class="project-tab-content">
+                    <div class="project-showcase">
+                        <div class="project-info">
+                            <h3>Web Application Development</h3>
+                            <p>A full-stack deployment project utilizing clean database logic and intuitive client-side UI workflows. Features optimized API integration and seamless state management systems.</p>
+                        </div>
+                        <div class="project-media">
+                            <img src="project-images/web-app.png" alt="Web App Showcase">
+                        </div>
                     </div>
-                    <div class="project-media">
-                        <div class="video-wrapper">
-                            <video controls poster="project-images/game-dev.png" preload="metadata" playsinline webkit-playsinline>
-                                <source src="game-video.mp4" type="video/mp4">
-                                Your browser does not support the
+                </div>
+
+                <div id="digital-audio" class="project-tab-content">
+                    <div class="project-showcase">
+                        <div class="project-info">
+                            <h3>Digital Audio & Video</h3>
+                            <p>Showcasing video compositing techniques, precise multi-track sound engineering, color grading parameters, and post-production asset generation for immersive broadcasting quality.</p>
+                        </div>
+                        <div class="project-media">
+                            <div class="video-wrapper">
+                                <video controls poster="project-images/digital-audio.png" preload="metadata" playsinline webkit-playsinline>
+                                    <source src="3D Animation.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="software-dev" class="project-tab-content">
+                    <div class="project-showcase">
+                        <div class="project-info">
+                            <h3>Software Development</h3>
+                            <p>Architected using industry-standard structural design patterns. Emphasizes clean syntax execution, system performance profiling, and effective automated unit testing operations.</p>
+                        </div>
+                        <div class="project-media">
+                            <img src="project-images/software-dev.png" alt="Software Showcase">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="game-dev" class="project-tab-content">
+                    <div class="project-showcase">
+                        <div class="project-info">
+                            <h3>Computer Game Development</h3>
+                            <p>Interactive gameplay mechanisms constructed with real-time physics engines, asset state machines, smart non-player character AI pathfinding, and dynamic particle systems.</p>
+                        </div>
+                        <div class="project-media">
+                            <div class="video-wrapper">
+                                <video controls poster="project-images/game-dev.png" preload="metadata" playsinline webkit-playsinline>
+                                    <source src="game-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="multimedia" class="project-tab-content">
+                    <div class="project-showcase">
+                        <div class="project-info">
+                            <h3>Multimedia Application Development</h3>
+                            <p>An integration platform bridging interactive graphic interfaces, user experience responsiveness guidelines, hypermedia linkages, and high-fidelity localized media formats.</p>
+                        </div>
+                        <div class="project-media">
+                            <div class="video-wrapper">
+                                <video controls poster="image_69e57b.png" preload="metadata" playsinline webkit-playsinline>
+                                    <source src="077510_Digital Content.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 Juana_Blog. All Rights Reserved.</p>
+            <p class="footer-subtext">Designed & Built with ❤️ by Juana</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        hamburgerBtn.addEventListener('click', () => { menuOverlay.classList.add('open'); });
+        closeBtn.addEventListener('click', () => { menuOverlay.classList.remove('open'); });
+
+        function openProject(evt, projectName) {
+            const tabContents = document.getElementsByClassName("project-tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active-content");
+                tabContents[i].style.display = "none";
+                const videoElement = tabContents[i].querySelector('video');
+                if (videoElement) { videoElement.pause(); }
+            }
+            const tabButtons = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabButtons.length; i++) { tabButtons[i].classList.remove("active"); }
+            const targetTab = document.getElementById(projectName);
+            if (targetTab) {
+                targetTab.style.display = "block";
+                setTimeout(() => { targetTab.classList.add('active-content'); }, 10);
+            }
+            evt.currentTarget.classList.add("active");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const firstTabBtn = document.querySelector(".tab-btn");
+            if (firstTabBtn) { firstTabBtn.click(); }
+        });
+    </script>
+</body>
+</html>

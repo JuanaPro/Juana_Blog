@@ -4,23 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Juana_Blog</title>
-    <link class="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* FIX FIX HEADER STYLING */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px 0;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* FIX HAMBURGER WARNA HITAM */
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #000000; /* Warna Hitam */
+            transition: 0.3s;
+        }
+        /* FIX LOGO UNISZA SEBELAH KANAN */
+        .unisza-top-logo {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+        /* FIX TULISAN TERLALU KETEPI */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div>
+        <div class="header-container">
+            <!-- Hamburger di kiri -->
             <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
                 <div></div>
                 <div></div>
                 <div></div>
             </button>
+            <!-- Logo UniSZA di kanan -->
             <div class="logo-container-right">
                 <img src="unisza-logo.png" alt="Logo UniSZA" class="unisza-top-logo">
             </div>
         </div> 
     </header>
 
+    <!-- NAVIGATION OVERLAY SYSTEM -->
     <div class="menu-overlay" id="menuOverlay">
         <button class="close-btn" id="closeBtn">&times;</button>
         <div class="overlay-container">
@@ -54,56 +106,53 @@
         </div>
     </div>
 
-    <main class="content-area" style="max-width: 1100px; margin: 0 auto; padding: 140px 2rem 6rem 2rem;">
-        
-        <section id="resume-section" class="resume-section">
-            <div class="resume-container" data-aos="fade-up">
-                <div class="resume-box">
-                    <div class="resume-header">
-                        <span class="resume-icon-inline"> 📄 </span>
-                        <h2 class="resume-title">My Resume</h2>
-                    </div>
+    <!-- MAIN CONTENT AREA WITH CONTAINER FIX -->
+    <main class="content-area" style="padding: 160px 0 6rem 0;">
+        <div class="page-container">
+            
+            <!-- RUANGAN RESUME -->
+            <section id="resume-section" class="resume-section" style="padding-top: 0;">
+                <div class="resume-container" data-aos="fade-up">
+                    <div class="resume-box">
+                        <div class="resume-header">
+                            <span class="resume-icon-inline"> 📄 </span>
+                            <h2 class="resume-title">My Resume</h2>
+                        </div>
 
-                    <p class="resume-desc">
-                        Review my academic qualifications, technical proficiencies, and structural multimedia project histories. 
-                        You can view the full document or save a copy directly to your device.
-                    </p>
-                    
-                    <div class="resume-cta-buttons">
-                        <a href="resume.pdf" target="_blank" class="btn btn-resume-view">View Resume</a>
-                        <a href="resume.pdf" download="Nur_Juana_Resume.pdf" class="btn btn-resume-download">Download CV</a>
+                        <p class="resume-desc">
+                            Review my academic qualifications, technical proficiencies, and structural multimedia project histories. 
+                            You can view the full document or save a copy directly to your device.
+                        </p>
+                        
+                        <div class="resume-cta-buttons">
+                            <a href="resume.pdf" target="_blank" class="btn btn-resume-view">View Resume</a>
+                            <a href="resume.pdf" download="Nur_Juana_Resume.pdf" class="btn btn-resume-download">Download CV</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
+        </div>
     </main>
 
+    <!-- SITE FOOTER -->
     <footer class="site-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div class="footer-container">
             <p class="copyright">&copy; 2026 Juana_Blog. All Rights Reserved.</p>
-            <p class="footer-subtext">Designed & Built with  ❤️  by Juana</p>
+            <p class="footer-subtext">Designed & Built with ❤️ by Juana</p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+        AOS.init({ duration: 1000, once: true });
 
-        // Kontrol Hamburger Menu
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
 
-        hamburgerBtn.addEventListener('click', () => {
-            menuOverlay.classList.add('open');
-        });
-        closeBtn.addEventListener('click', () => {
-            menuOverlay.classList.remove('open');
-        });
+        hamburgerBtn.addEventListener('click', () => { menuOverlay.classList.add('open'); });
+        closeBtn.addEventListener('click', () => { menuOverlay.classList.remove('open'); });
     </script>
 </body>
 </html>
