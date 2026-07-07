@@ -561,16 +561,26 @@ header > div {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(8, 146, 177, 0.15);
 }
+
+/* PEMBETULAN: Memastikan ikon dan tajuk sebaris di tengah */
+.resume-header {
+    display: flex !important;
+    align-items: center !important;    /* Menjadikan ikon dan tulisan sejajar secara menegak */
+    justify-content: center !important; /* Kekalkan kedudukan di tengah kotak */
+    gap: 12px !important;              /* Jarak antara ikon dan teks */
+    margin-bottom: 1rem;
+}
+
 .resume-icon {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0 !important;       /* Buang margin bawah asal supaya tidak senget */
     display: inline-block;
     animation: floatIcon 3s ease-in-out infinite;
 }
 .resume-box .resume-title {
     font-size: 2rem;
     color: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: 0 !important;       /* Buang margin bawah asal supaya sebaris rapat */
     font-weight: 700;
     letter-spacing: 0.5px;
 }
