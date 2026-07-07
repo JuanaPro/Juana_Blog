@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        /* FIX FIX HEADER STYLING */
+        /* FIX HEADER STYLING */
         header {
             position: fixed;
             top: 0;
@@ -19,12 +19,14 @@
             padding: 10px 0;
         }
         .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100% !important;        /* Menggunakan kelebaran penuh skrin */
+            max-width: 100% !important;    /* Membuang sekatan 1200px supaya logo boleh pergi rapat ke kanan */
+            margin: 0 !important;          /* Memastikan tiada margin auto di tengah */
             padding: 0 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between;/* Menolak hamburger ke kiri dan logo ke kanan */
             align-items: center;
+            box-sizing: border-box;
         }
         /* FIX HAMBURGER WARNA HITAM */
         .hamburger {
@@ -39,10 +41,15 @@
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #000000; /* Warna Hitam */
+            background-color: #000000;
             transition: 0.3s;
         }
         /* FIX LOGO UNISZA SEBELAH KANAN */
+        .logo-container-right {
+            display: flex;
+            align-items: center;
+            margin-left: auto;             /* Memaksa elemen melekat pada dinding kanan skrin */
+        }
         .unisza-top-logo {
             height: 50px;
             width: auto;
