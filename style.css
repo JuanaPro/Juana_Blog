@@ -748,7 +748,6 @@ header > div {
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
 }
 
-/* Disembunyikan penuh pada permulaan lawatan */
 .project-tab-content {
     display: none;
     opacity: 0;
@@ -756,7 +755,6 @@ header > div {
     transition: all 0.4s ease-out;
 }
 
-/* Aktif apabila dipanggil oleh klik butang */
 .project-tab-content.active-content {
     display: block;
     opacity: 1;
@@ -786,19 +784,33 @@ header > div {
     line-height: 1.8;
 }
 
-.project-media img {
+.project-media img, .project-media .video-wrapper {
     width: 100%;
     height: auto;
-    max-height: 300px;
-    object-fit: cover;
     border-radius: 6px;
     border: 1px solid #262930;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.project-media img {
+    max-height: 300px;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
 .project-media img:hover {
     transform: scale(1.02);
+}
+
+/* GAYA TAMBAHAN KHUSUS UNTUK MEMASTIKAN VIDEO RESPONSIVE */
+.project-media .video-wrapper video {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    display: block;
+    object-fit: cover;
+    outline: none;
 }
 
 @media (max-width: 768px) {

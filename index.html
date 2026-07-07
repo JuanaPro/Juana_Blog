@@ -223,7 +223,12 @@
                         <p>An integration platform bridging interactive graphic interfaces, user experience responsiveness guidelines, hypermedia linkages, and high-fidelity localized media formats.</p>
                     </div>
                     <div class="project-media">
-                        <img src="project-images/multimedia.png" alt="Multimedia Showcase">
+                        <div class="video-wrapper">
+                            <video controls poster="image_69e57b.png" preload="metadata">
+                                <source src="077510_Digital Content.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -280,23 +285,25 @@
         });
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); 
-            
             const toast = document.getElementById('toastPopup');
             toast.classList.add('show'); 
-            
             this.reset(); 
-            
             setTimeout(function() {
                 toast.classList.remove('show');
             }, 3000);
         });
 
-        // LOGIK KLIK TAB PROJEK (DITUKAR UNTUK MENYOKONG PARSING TEPAT TANPA SEBARANG MASALAH KOSONG PADA AWAL)
         function openProject(evt, projectName) {
             const tabContents = document.getElementsByClassName("project-tab-content");
             for (let i = 0; i < tabContents.length; i++) {
                 tabContents[i].classList.remove("active-content");
                 tabContents[i].style.display = "none";
+                
+                // Hentikan video secara automatik jika bertukar tab lain semasa ia dimainkan
+                const videoElement = tabContents[i].querySelector('video');
+                if (videoElement) {
+                    videoElement.pause();
+                }
             }
 
             const tabButtons = document.getElementsByClassName("tab-btn");
