@@ -594,10 +594,9 @@ header div {
 }
 
 /* =======================================================
-   10. MY RESUME SECTION (KAD INTERAKTIF BARU)
+   10. MY RESUME SECTION (LEFT ALIGNED WITH INLINE ICON)
    ======================================================= */
 .resume-section {
-    text-align: center;
     width: 100%;
 }
 
@@ -610,52 +609,62 @@ header div {
 .resume-box {
     background-color: #161920;
     border: 1px solid #262930;
-    padding: 3rem 2rem;
+    padding: 3rem 2.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
+    text-align: left; /* Berubah kepada susun atur kiri */
 }
 
-/* Hover Glow Effect Menyamai Tema Identiti Media */
+/* Hover Glow Effect */
 .resume-box:hover {
     border-color: #0892b1;
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(8, 146, 177, 0.15);
 }
 
-.resume-icon {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    display: inline-block;
-    animation: floatIcon 3s ease-in-out infinite; 
+/* Kontainer Sebaris Ikon & Tajuk */
+.resume-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
 }
 
-.resume-title {
+/* Reka Bentuk Saiz Ikon Sebaris */
+.resume-icon-inline {
+    font-size: 2.2rem; 
+    display: inline-block;
+    line-height: 1;
+    animation: floatIconInline 3s ease-in-out infinite; 
+}
+
+.resume-box .resume-title {
     font-size: 2rem;
     color: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: 0; 
     font-weight: 700;
     letter-spacing: 0.5px;
+    line-height: 1.2;
 }
 
 .resume-desc {
     color: #9ca3af;
     font-size: 1.05rem;
     line-height: 1.7;
-    max-width: 550px;
-    margin: 0 auto 2.5rem auto;
+    margin: 0 0 2.5rem 0;
 }
 
 .resume-cta-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Butang bermula di kiri */
     gap: 1.5rem;
     flex-wrap: wrap;
 }
 
-/* Custom Buttons Inside Resume Card */
+/* Custom Buttons Design */
 .btn-resume-view {
     background-color: #fff !important;
     color: #0f1115 !important;
@@ -679,10 +688,10 @@ header div {
     box-shadow: 0 0 15px rgba(8, 146, 177, 0.5);
 }
 
-/* Keyframes Terapung Lembut */
-@keyframes floatIcon {
+/* Keyframes Terapung Mikro */
+@keyframes floatIconInline {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-4px); }
     100% { transform: translateY(0px); }
 }
 
@@ -817,7 +826,7 @@ header div {
 
 @media (max-width: 600px) {
     .resume-box {
-        padding: 2rem 1rem;
+        padding: 2rem 1.5rem;
     }
     .resume-cta-buttons {
         flex-direction: column;
