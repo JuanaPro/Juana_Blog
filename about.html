@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Juana_Blog</title>
-    <!-- Hubungan ke fail CSS utama -->
     <link class="styles" rel="stylesheet" href="style.css"> 
 </head>
-<!-- Ditambah class "halaman-gelap" supaya CSS tahu halaman ini perlukan hamburger warna putih -->
 <body class="halaman-gelap">
-    <!-- Butang Hamburger (Sebelah Atas Kiri) -->
-    <button class="hamburger" id="hamburger-btn" aria-label="Open Menu">
-        <div></div>
-        <div></div>
-        <div></div>
-    </button>
-    <!-- Panel Menu Overlay -->
+
+    <header>
+        <div>
+            <button class="hamburger nav-light" id="hamburgerBtn" aria-label="Open Menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div class="logo-container-right">
+                <img src="logo-unisza.png" alt="UniSZA Logo" class="unisza-top-logo"> 
+            </div>
+        </div>
+    </header>
+
     <div class="menu-overlay" id="menuOverlay">
-        <!-- Butang Tutup (X) -->
         <button class="close-btn" id="closeBtn">&times;</button>
         
         <div class="overlay-container">
-            <!-- Bahagian Kiri: Menu Navigasi (About diaktifkan) -->
             <div class="overlay-left">
                 <nav class="overlay-nav">
                     <ul>
@@ -32,7 +35,6 @@
                     </ul>
                 </nav>
             </div>
-            <!-- Bahagian Kanan: Profil, Nama & Quotes -->
             <div class="overlay-right">
                 <div class="profile-box">
                     <img src="image-BG-biru.png" alt="Nur Juana binti Ahmad Jalani" class="overlay-profile-img">
@@ -50,8 +52,8 @@
             </div>
         </div>
     </div>
-    <main class="about-centered-container">
-        
+
+    <main class="about-centered-container" style="padding-top: 140px;">
         <div class="about-avatar-wrapper">
             <img src="profil.jpeg" alt="Nur Juana binti Ahmad Jalani" class="about-avatar">
         </div>
@@ -62,17 +64,18 @@
                 I aspire to become a professional who can combine creativity and technology to create innovative, user-friendly digital products that bring value to society. 
                 After completing my studies, I hope to build a career in the information technology and digital media industry while continuously enhancing my skills in application development, multimedia, and emerging technologies.
             </p>
-            
         </div>
     </main>
-    <!-- JavaScript Ringkas Untuk Fungsi On/Off Menu -->
+
     <script>
-        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
+
         hamburgerBtn.addEventListener('click', () => {
             menuOverlay.classList.add('open');
         });
+
         closeBtn.addEventListener('click', () => {
             menuOverlay.classList.remove('open');
         });
