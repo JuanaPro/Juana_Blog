@@ -187,7 +187,12 @@
                         <p>Showcasing video compositing techniques, precise multi-track sound engineering, color grading parameters, and post-production asset generation for immersive broadcasting quality.</p>
                     </div>
                     <div class="project-media">
-                        <img src="project-images/digital-audio.png" alt="Audio Video Showcase">
+                        <div class="video-wrapper">
+                            <video controls poster="project-images/digital-audio.png" preload="metadata" playsinline webkit-playsinline>
+                                <source src="3D Animation.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -300,7 +305,7 @@
             }, 3000);
         });
 
-        // FUNGSI TAB: Automatik menutup dan 'pause' semua video jika tab bertukar
+        // FUNGSI UTK KAWAL TAB PROJEK & PAUSE VIDEO BILA BERALIH TAB
         function openProject(evt, projectName) {
             const tabContents = document.getElementsByClassName("project-tab-content");
             for (let i = 0; i < tabContents.length; i++) {
