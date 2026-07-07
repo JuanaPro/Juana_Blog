@@ -8,54 +8,19 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    /* FIX HEADER STYLING */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 10px 0;
-        }
-        .header-container {
-            width: 100% !important;        /* Menggunakan kelebaran penuh skrin */
-            max-width: 100% !important;    /* Membuang sekatan 1200px supaya logo boleh pergi rapat ke kanan */
-            margin: 0 !important;          /* Memastikan tiada margin auto di tengah */
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;/* Menolak hamburger ke kiri dan logo ke kanan */
-            align-items: center;
-            box-sizing: border-box;
-        }
-        /* FIX HAMBURGER WARNA HITAM */
-        .hamburger {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: #000000;
-            transition: 0.3s;
-        }
-        /* FIX LOGO UNISZA SEBELAH KANAN */
-        .logo-container-right {
-            display: flex;
-            align-items: center;
-            margin-left: auto;             /* Memaksa elemen melekat pada dinding kanan skrin */
-        }
-        .unisza-top-logo {
-            height: 50px;
-            width: auto;
-            display: block;
-        }
+        <header>
+        <div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div class="logo-container-right">
+                <img src="unisza-logo.png" alt="Logo UniSZA" class="unisza-top-logo">
+            </div>
+        </div>
+    </header>
+
     <div class="menu-overlay" id="menuOverlay">
         <button class="close-btn" id="closeBtn">&times;</button>
         <div class="overlay-container">
