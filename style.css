@@ -33,10 +33,10 @@ header {
 /* Memastikan elemen di dalam header tersebar rapat ke hujung kiri & kanan */
 header div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Memastikan hamburger di kiri dan logo ditolak rapat ke kanan */
     align-items: center;
     max-width: 100%; /* Menggunakan lebar penuh supaya rapat ke tepi */
-    margin: 0 auto;
+    margin: 0; /* Ditukar dari '0 auto' supaya tiada sekatan margin di tengah */
     width: 100%;
 }
 /* Container logo di sebelah kanan */
@@ -44,6 +44,7 @@ header div {
     display: flex;
     align-items: center;
     pointer-events: auto;
+    margin-left: auto; /* Memaksa elemen ini melekat di dinding sebelah kanan */
 }
 .unisza-top-logo {
     height: 45px;
