@@ -215,7 +215,7 @@ header div {
     text-align: center;
     padding: 0 2rem;
     /* Gantikan 'gambar-juana.jpg' dengan nama fail imej sebenar anda */
-    background-image: linear-gradient(rgba(15, 17, 21, 0.4), rgba(15, 17, 21, 0.4)), url('gambar-juana.jpg');
+    background-image: linear-gradient(rgba(15, 17, 21, 0.4), rgba(15, 17, 21, 0.4)), url('juana-bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
