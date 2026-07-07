@@ -7,732 +7,471 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 html {
     scroll-behavior: smooth;
     background-color: #0f1115;
     color: #e4e6eb;
 }
+
 body {
     overflow-x: hidden;
     background-color: #0f1115;
 }
+
+/* Container utama untuk mengelakkan tulisan terlalu rapat ke tepi skrin */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
 /* =======================================================
-   2. HEADER CONFIGURATION (WHITE BACKGROUND FOR ALL PAGES)
+   2. FIXED HEADER & LOGO CONFIGURATION
    ======================================================= */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 2rem; /* Jarak atas/bawah dan tepi skrin */
-    z-index: 100;
-    background-color: #ffffff !important; /* Mengubah latar belakang header kepada putih di semua page */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    z-index: 1000;
+    background-color: #ffffff !important; /* Latar belakang putih */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
 }
-/* Memastikan elemen di dalam header tersebar rapat ke hujung kiri & kanan */
-header div {
+
+/* Memastikan hamburger di kiri sekali & logo UniSZA di kanan sekali */
+.header-container {
+    width: 100%;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%; /* Menggunakan lebar penuh supaya rapat ke tepi */
-    margin: 0 auto;
-    width: 100%;
+    box-sizing: border-box;
 }
-/* Container logo di sebelah kanan */
-.logo-container-right {
-    display: flex;
-    align-items: center;
-    pointer-events: auto;
-}
-.unisza-top-logo {
-    height: 45px;
-    width: auto;
-    object-fit: contain;
-}
-/* =======================================================
-   3. HAMBURGER BUTTON (BLACK COLOR & ALIGNED LEFT)
-   ======================================================= */
+
+/* Butang Hamburger Warna Hitam */
 .hamburger {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     z-index: 101;
-    pointer-events: auto;
-    padding: 10px 0; /* padding kiri/kanan di-reset 0 supaya betul-betul rapat ke kiri */
 }
+
 .hamburger div {
-    width: 28px;
+    width: 25px;
     height: 3px;
-    background-color: #000000 !important; /* Memaksa warna butang hamburger kepada hitam di semua page */
+    background-color: #000000; /* Warna Hitam Semut */
     transition: all 0.3s ease;
-    border-radius: 2px;
 }
-/* Memaksa hamburger menjadi putih jika butang mempunyai class 'nav-light' */
-.hamburger.nav-light div {
-    background-color: #ffffff !important;
+
+/* Logo UniSZA di sebelah kanan */
+.logo-container-right {
+    display: flex;
+    align-items: center;
 }
+
+.unisza-top-logo {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 /* =======================================================
-   4. NAVIGATION OVERLAY SYSTEM
+   3. NAVIGATION OVERLAY SYSTEM
    ======================================================= */
 .menu-overlay {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
-    height: 100vh;
-    background-color: #0f1115;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    height: 100%;
+    background-color: #0b0c10;
+    z-index: 2000;
+    transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .menu-overlay.open {
-    opacity: 1;
-    visibility: visible;
+    left: 0;
 }
+
 .close-btn {
     position: absolute;
     top: 2rem;
     left: 2rem;
     background: none;
     border: none;
-    color: #fff;
+    color: #ffffff;
     font-size: 3rem;
     cursor: pointer;
-    z-index: 1000;
-    transition: transform 0.3s ease;
+    line-height: 1;
+    transition: transform 0.3s;
 }
+
 .close-btn:hover {
     transform: rotate(90deg);
 }
+
 .overlay-container {
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    gap: 4rem;
 }
+
 .overlay-left {
     flex: 1;
     display: flex;
     align-items: center;
-    padding-left: 10%;
-    background-color: #0f1115;
 }
+
 .overlay-nav ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
-.overlay-nav li {
-    margin-bottom: 2rem;
-}
+
 .overlay-nav a {
-    color: #4b5563;
-    text-decoration: none;
+    color: #8f94a0;
     font-size: 2.5rem;
     font-weight: 700;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
 }
+
 .overlay-nav a:hover,
 .overlay-nav a.active {
-    color: #fff;
+    color: #ffffff;
     padding-left: 15px;
 }
+
+.overlay-nav a.active::before {
+    content: '— ';
+    color: #ffffff;
+}
+
 .overlay-right {
     flex: 1;
-    background-color: #161920;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4rem;
-    border-left: 1px solid #262930;
+    border-left: 1px solid #20232a;
+    padding-left: 4rem;
 }
-/* Profile Inside Menu */
+
+/* =======================================================
+   4. PROFILE BOX (INSIDE OVERLAY)
+   ======================================================= */
 .profile-box {
-    max-width: 450px;
     text-align: center;
+    max-width: 400px;
 }
+
 .overlay-profile-img {
-    width: 160px;
-    height: 160px;
-    border-radius: 12px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1.5rem;
-    border: 1px solid #262930;
+    border: 3px solid #20232a;
 }
+
 .profile-box h2 {
-    font-size: 1.8rem;
-    color: #fff;
+    font-size: 1.6rem;
+    color: #ffffff;
     margin-bottom: 0.3rem;
 }
+
 .profile-subtitle {
-    color: #0892b1;
+    color: #9ca3af;
     font-size: 0.95rem;
-    text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: 600;
+    display: block;
+    margin-bottom: 1.5rem;
 }
+
 .divider {
     border: 0;
     height: 1px;
-    background: #262930;
-    margin: 1.5rem auto;
-    width: 50px;
+    background: #20232a;
+    margin-bottom: 1.5rem;
 }
+
 .quotes {
-    color: #9ca3af;
     font-style: italic;
-    line-height: 1.6;
-    font-size: 1rem;
-}
-/* =======================================================
-   5. HERO SECTION (WITH BACKGROUND IMAGE)
-   ======================================================= */
-.hero {
-    min-height: 100vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 2rem;
-    background-image: linear-gradient(rgba(15, 17, 21, 0.4), rgba(15, 17, 21, 0.4)), url('juana-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.hero-content {
-    max-width: 800px;
-    margin-top: 60px; 
-}
-.badge {
-    background-color: rgba(22, 25, 32, 0.8);
-    border: 1px solid #262930;
     color: #9ca3af;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.5px;
-}
-.hero h1 {
-    font-size: 4rem;
-    color: #fff;
-    margin-bottom: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-.hero p {
-    font-size: 1.25rem;
-    color: #e4e6eb;
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
-}
-/* Buttons */
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-.btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.btn:not(.btn-secondary):not(.btn-resume-view):not(.btn-resume-download) {
-    background-color: #fff;
-    color: #0f1115;
-    border: 1px solid #fff;
-}
-.btn:not(.btn-secondary):not(.btn-resume-view):not(.btn-resume-download):hover {
-    background-color: #e4e6eb;
-    transform: translateY(-2px);
-}
-.btn-secondary {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #262930;
-}
-.btn-secondary:hover {
-    background-color: #161920;
-    border-color: #4b5563;
-    transform: translateY(-2px);
-}
-/* =======================================================
-   6. ABOUT ME SECTION (CENTERED STYLE)
-   ======================================================= */
-.about-centered-container {
-    text-align: center;
-    max-width: 850px;
-    margin: 0 auto;
-}
-.about-avatar-wrapper {
-    display: inline-block;
-    margin-bottom: 2rem;
-    position: relative;
-}
-.about-avatar {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #262930;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-.about-title {
-    font-size: 2.2rem;
-    color: #fff;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-.about-description p {
-    color: #9ca3af;
-    font-size: 1.1rem;
-    line-height: 1.75;
-}
-/* =======================================================
-   7. SKILLS & SOFTWARE SECTION
-   ======================================================= */
-.skills-section, .software-section, .achievements-section {
-    padding: 4rem 0;
-    border-top: 1px solid #262930;
-}
-.skills-section h2, .software-section h2, .achievements-section h2 {
-    font-size: 2rem;
-    color: #fff;
-    margin-bottom: 2rem;
-    font-weight: 700;
-}
-.skills-container {
-    display: flex;
-    gap: 4rem;
-}
-.skills-column {
-    flex: 1;
-}
-.skills-column h3 {
-    font-size: 1.2rem;
-    color: #fff;
-    margin-bottom: 1.2rem;
-    font-weight: 600;
-}
-.skills-column ul {
-    list-style: none;
-}
-.skills-column li {
-    color: #9ca3af;
-    margin-bottom: 0.8rem;
-    line-height: 1.5;
-    position: relative;
-    padding-left: 15px;
-}
-.skills-column li::before {
-    content: "•";
-    color: #4b5563;
-    position: absolute;
-    left: 0;
-}
-/* Software Grid */
-.software-desc, .achievements-desc {
-    color: #4b5563;
-    margin-top: -1.5rem;
-    margin-bottom: 2.5rem;
-    font-size: 1rem;
-}
-.software-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1.5rem;
-}
-.software-item {
-    background-color: #161920;
-    border: 1px solid #262930;
-    border-radius: 8px;
-    padding: 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-}
-.software-item:hover {
-    border-color: #4b5563;
-    transform: translateY(-3px);
-}
-.software-item img {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-    border-radius: 4px;
-}
-.software-item span {
-    color: #e4e6eb;
     font-size: 0.95rem;
-    font-weight: 500;
+    line-height: 1.6;
 }
+
+/* Responsive Overlay */
+@media (max-width: 768px) {
+    .overlay-container {
+        flex-direction: column;
+        height: auto;
+        gap: 2rem;
+    }
+    .overlay-right {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid #20232a;
+        padding-top: 2rem;
+    }
+    .overlay-nav a {
+        font-size: 1.8rem;
+    }
+}
+
 /* =======================================================
-   8. ACHIEVEMENTS SECTION
-   ======================================================= */
-.achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: 1.5rem;
-}
-.achievement-item {
-    background-color: #161920;
-    border: 1px solid #262930;
-    border-radius: 8px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-}
-.sem-title {
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-.sem-session {
-    color: #4b5563;
-    font-size: 0.8rem;
-    margin-bottom: 1.5rem;
-}
-.cgpa-label {
-    color: #9ca3af;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-.cgpa-value {
-    color: #fff;
-    font-size: 2.2rem;
-    font-weight: 700;
-    line-height: 1;
-    margin-top: 0.2rem;
-}
-/* =======================================================
-   9. INTERACTIVE PROJECTS SYSTEM (TABS)
+   5. INTERACTIVE PROJECTS SECTION (TABS)
    ======================================================= */
 .project-tabs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.8rem;
-    margin-bottom: 3.5rem;
-    max-width: 950px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 10px;
+    margin-bottom: 2.5rem;
 }
+
 .tab-btn {
     background-color: #161920;
     color: #9ca3af;
     border: 1px solid #262930;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 10px 20px;
     font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.tab-btn:hover {
-    color: #fff;
-    border-color: #4b5563;
-    transform: translateY(-1px);
-}
-.tab-btn.active {
-    background-color: #fff;
-    color: #0f1115;
-    border-color: #fff;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(255,255,255,0.15);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
-/* Tab Content Window */
+
+.tab-btn:hover,
+.tab-btn.active {
+    background-color: #ffffff;
+    color: #0f1115;
+    border-color: #ffffff;
+}
+
 .project-tab-content {
-    display: none; 
-    width: 100%;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out forwards;
 }
-.project-tab-content:first-of-type {
-    display: block; 
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
+
 .project-showcase {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
+    display: flex;
+    flex-direction: column;
     background-color: #161920;
     border: 1px solid #262930;
     border-radius: 12px;
-    padding: 3rem;
-    align-items: center;
-    min-height: 380px;
+    overflow: hidden;
+    gap: 1.5rem;
 }
-/* Animation on Tab Switching */
-.active-content {
-    animation: fadeInTab 0.5s ease forwards;
-}
-@keyframes fadeInTab {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+@media (min-width: 768px) {
+    .project-showcase {
+        flex-direction: row;
     }
 }
+
+.project-info {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .project-info h3 {
     font-size: 1.8rem;
-    color: #fff;
-    margin-bottom: 1.2rem;
-    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
 }
+
 .project-info p {
     color: #9ca3af;
-    font-size: 1.05rem;
     line-height: 1.7;
+    font-size: 1rem;
 }
-/* Media Element Configurations */
+
 .project-media {
+    flex: 1;
+    background-color: #090a0d;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    min-height: 250px;
 }
+
 .project-media img {
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 8px;
+    height: 100%;
     object-fit: cover;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.4);
-}
-/* Media Video Wrappers */
-.video-wrapper {
-    width: 100%;
-    max-width: 320px; 
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    background-color: #000;
-    border: 1px solid #262930;
-    line-height: 0; 
-}
-.video-wrapper video {
-    width: 100%;
-    height: auto;
     display: block;
 }
-/* =======================================================
-   10. MY RESUME SECTION (ORIGINAL SIGNATURE STYLE)
-   ======================================================= */
-.resume-section {
+
+/* Video Wrapper */
+.video-wrapper {
     width: 100%;
-}
-.resume-container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-.resume-box {
-    background-color: #161920;
-    border: 1px solid #262930;
-    padding: 3rem 2.5rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
     position: relative;
     overflow: hidden;
 }
-/* Hover Glow Effect */
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #000000;
+}
+
+/* =======================================================
+   6. MY RESUME SECTION (GLOW EFFECT)
+   ======================================================= */
+.resume-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.resume-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.resume-box {
+    background: linear-gradient(145deg, #161920, #0f1115);
+    border: 1px solid #262930;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+/* Kesan glow apabila resume di-hover */
 .resume-box:hover {
-    border-color: #0892b1;
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(8, 146, 177, 0.15);
+    border-color: #4a4d53;
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05);
 }
-.resume-icon {
-    font-size: 2.5rem;
+
+.resume-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     margin-bottom: 1rem;
-    display: inline-block;
-    animation: floatIcon 3s ease-in-out infinite;
 }
-.resume-box .resume-title {
+
+.resume-icon-inline {
     font-size: 2rem;
-    color: #fff;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    animation: float 3s ease-in-out infinite;
 }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.resume-title {
+    font-size: 2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .resume-desc {
     color: #9ca3af;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-    max-width: 550px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
+
 .resume-cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 15px;
     flex-wrap: wrap;
 }
-/* Custom Buttons Design */
-.btn-resume-view {
-    background-color: #fff !important;
-    color: #0f1115 !important;
-    border: 1px solid #fff !important;
-}
-.btn-resume-view:hover {
-    background-color: #e4e6eb !important;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-}
-.btn-resume-download {
-    background-color: transparent !important;
-    color: #0892b1 !important;
-    border: 1px solid #0892b1 !important;
-}
-.btn-resume-download:hover {
-    background-color: #0892b1 !important;
-    color: #fff !important;
-    box-shadow: 0 0 15px rgba(8, 146, 177, 0.5);
-}
-/* Keyframes original float */
-@keyframes floatIcon {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-    100% { transform: translateY(0px); }
-}
-/* =======================================================
-   11. CONTACT SECTION & CONTACT FORM
-   ======================================================= */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    background-color: #161920;
-    border: 1px solid #262930;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: #4b5563;
-}
-/* Toast Message Notification */
-.toast-popup {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: #161920;
-    border: 1px solid #262930;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    z-index: 1000;
-    transform: translateY(150%);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.toast-popup.show {
-    transform: translateY(0);
-}
-.toast-content {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-.toast-icon {
-    color: #10b981;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-.toast-message {
-    color: #fff;
+
+/* Butang CTA General */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
+
+.btn-resume-view {
+    background-color: #ffffff;
+    color: #0f1115;
+    border: 1px solid #ffffff;
+}
+
+.btn-resume-view:hover {
+    background-color: #e4e6eb;
+}
+
+.btn-resume-download {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #262930;
+}
+
+.btn-resume-download:hover {
+    background-color: #161920;
+    border-color: #ffffff;
+}
+
 /* =======================================================
-   12. FOOTER DESIGN
+   7. SITE FOOTER
    ======================================================= */
 .site-footer {
-    border-top: 1px solid #262930;
-    padding: 3rem 0;
-    margin-top: 6rem;
+    background-color: #090a0d;
+    border-top: 1px solid #161920;
+    padding: 2rem 0;
+    margin-top: 5rem;
     text-align: center;
 }
+
 .footer-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
+
 .copyright {
-    color: #fff;
+    color: #ffffff;
     font-size: 0.95rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
+
 .footer-subtext {
-    color: #4b5563;
+    color: #6b7280;
     font-size: 0.85rem;
-}
-/* =======================================================
-   13. MEDIA QUERIES (RESPONSIVENESS)
-   ======================================================= */
-@media (max-width: 960px) {
-    .overlay-container {
-        flex-direction: column;
-    }
-    .overlay-right {
-        border-left: none;
-        border-top: 1px solid #262930;
-        padding: 3rem 2rem;
-    }
-    .overlay-left {
-        padding-left: 2rem;
-        padding-top: 6rem;
-        align-items: flex-start;
-    }
-    .overlay-nav a {
-        font-size: 2rem;
-    }
-    .project-showcase {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem;
-        text-align: center;
-    }
-    .project-media {
-        order: -1; 
-    }
-}
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-    .skills-container {
-        flex-direction: column;
-        gap: 2rem;
-    }
-}
-@media (max-width: 600px) {
-    .resume-box {
-        padding: 2rem 1.5rem;
-    }
-    .resume-cta-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .resume-cta-buttons .btn {
-        width: 100%;
-    }
 }
