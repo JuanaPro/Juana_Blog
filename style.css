@@ -594,7 +594,7 @@ header div {
 }
 
 /* =======================================================
-   10. MY RESUME SECTION (CENTERED BACK & INLINE HEADER)
+   10. MY RESUME SECTION (ORIGINAL ORIGINAL)
    ======================================================= */
 .resume-section {
     width: 100%;
@@ -611,11 +611,11 @@ header div {
     border: 1px solid #262930;
     padding: 3rem 2.5rem;
     border-radius: 12px;
+    text-align: center;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
-    text-align: center; /* KEMBALI KEPADA CENTER */
 }
 
 /* Hover Glow Effect */
@@ -625,43 +625,34 @@ header div {
     box-shadow: 0 10px 30px rgba(8, 146, 177, 0.15);
 }
 
-/* Kontainer tengah untuk meletakkan Ikon & Tajuk sebaris */
-.resume-header {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Memastikan ia kekal di tengah */
-    gap: 0.8rem;
-    margin-bottom: 1.2rem;
-}
-
-/* Reka Bentuk Saiz Ikon Sebaris */
-.resume-icon-inline {
-    font-size: 2.2rem; 
+.resume-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     display: inline-block;
-    line-height: 1;
-    animation: floatIconInline 3s ease-in-out infinite; 
+    animation: floatIcon 3s ease-in-out infinite;
 }
 
 .resume-box .resume-title {
     font-size: 2rem;
     color: #fff;
-    margin-bottom: 0; 
+    margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    line-height: 1.2;
 }
 
 .resume-desc {
     color: #9ca3af;
     font-size: 1.05rem;
     line-height: 1.7;
-    margin: 0 auto 2.5rem auto; /* Kekal center */
+    margin-bottom: 2.5rem;
     max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .resume-cta-buttons {
     display: flex;
-    justify-content: center; /* Kekal center */
+    justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
 }
@@ -690,10 +681,10 @@ header div {
     box-shadow: 0 0 15px rgba(8, 146, 177, 0.5);
 }
 
-/* Keyframes Terapung Mikro */
-@keyframes floatIconInline {
+/* Keyframes original float */
+@keyframes floatIcon {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-4px); }
+    50% { transform: translateY(-6px); }
     100% { transform: translateY(0px); }
 }
 
