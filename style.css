@@ -25,20 +25,21 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 2rem; /* Jarak atas/bawah dan tepi skrin */
+    padding: 1rem 0; /* Ubah suai padding atas/bawah, padding tepi dipindahkan ke div di bawah */
     z-index: 100;
-    background-color: #ffffff !important; /* Mengubah latar belakang header kepada putih di semua page */
+    background-color: #ffffff !important; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
-/* Memastikan elemen <div> di dalam header (index.html) mengambil lebar penuh */
+/* Memperbaiki jarak logo dan hamburger supaya tidak terlalu ketepi skrin */
 header > div {
     display: flex !important;
-    justify-content: space-between !important; /* Menolak hamburger ke kiri, logo ke kanan */
+    justify-content: space-between !important; 
     align-items: center !important;
     width: 100% !important;
-    max-width: 100% !important; /* Membuang sekatan piksel supaya logo boleh rapat ke dinding skrin */
-    margin: 0 !important; /* Membuang margin auto tengah */
+    max-width: 1200px !important;  /* Menyekat kelebaran maksima supaya sama sejajar dengan body */
+    margin: 0 auto !important;     /* Memastikan kedudukan kekal di tengah skrin */
+    padding: 0 2rem !important;    /* Memberi ruang kosong di tepi kiri & kanan supaya logo tidak melekat di dinding skrin */
 }
 
 /* Container logo di sebelah kanan */
@@ -46,7 +47,6 @@ header > div {
     display: flex !important;
     align-items: center !important;
     pointer-events: auto !important;
-    margin-left: auto !important; /* Memaksa logo melekat rapat di sebelah kanan skrin */
 }
 
 .unisza-top-logo {
