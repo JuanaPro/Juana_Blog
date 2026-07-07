@@ -299,7 +299,7 @@
                 tabContents[i].classList.remove("active-content");
                 tabContents[i].style.display = "none";
                 
-                // Hentikan video secara automatik jika bertukar tab lain semasa ia dimainkan
+                // Matikan video jika user tukar ke tab lain
                 const videoElement = tabContents[i].querySelector('video');
                 if (videoElement) {
                     videoElement.pause();
