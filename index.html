@@ -211,7 +211,12 @@
                         <p>Interactive gameplay mechanisms constructed with real-time physics engines, asset state machines, smart non-player character AI pathfinding, and dynamic particle systems.</p>
                     </div>
                     <div class="project-media">
-                        <img src="project-images/game-dev.png" alt="Game Showcase">
+                        <div class="video-wrapper">
+                            <video controls poster="project-images/game-dev.png" preload="metadata" playsinline webkit-playsinline>
+                                <source src="NAMA_VIDEO_GAME_ANDA.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -295,6 +300,7 @@
             }, 3000);
         });
 
+        // FUNGSI TAB: Automatik menutup dan 'pause' semua video jika tab bertukar
         function openProject(evt, projectName) {
             const tabContents = document.getElementsByClassName("project-tab-content");
             for (let i = 0; i < tabContents.length; i++) {
