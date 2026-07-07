@@ -9,14 +9,12 @@
 </head>
 <!-- Ditambah class "halaman-gelap" supaya CSS tahu halaman ini perlukan hamburger warna putih -->
 <body class="halaman-gelap">
-
     <!-- Butang Hamburger (Sebelah Atas Kiri) -->
-    <button class="hamburger nav-light" id="hamburger-btn" aria-label="Open Menu">
+    <button class="hamburger" id="hamburger-btn" aria-label="Open Menu">
         <div></div>
         <div></div>
         <div></div>
     </button>
-
     <!-- Panel Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay">
         <!-- Butang Tutup (X) -->
@@ -34,7 +32,6 @@
                     </ul>
                 </nav>
             </div>
-
             <!-- Bahagian Kanan: Profil, Nama & Quotes -->
             <div class="overlay-right">
                 <div class="profile-box">
@@ -53,37 +50,29 @@
             </div>
         </div>
     </div>
-
     <main class="about-centered-container">
         
         <div class="about-avatar-wrapper">
             <img src="profil.jpeg" alt="Nur Juana binti Ahmad Jalani" class="about-avatar">
         </div>
-
         <h1 class="about-title">Hi, I'm Nur Juana binti Ahmad Jalani,</h1>
-
         <div class="about-description">
             <p>
                 I am a final-year student pursuing a Bachelor's Degree in Information Technology (Media Informatics) at Universiti Sultan Zainal Abidin, with a strong interest in multimedia development, animation, interactive applications, and digital technologies. 
                 I aspire to become a professional who can combine creativity and technology to create innovative, user-friendly digital products that bring value to society. 
                 After completing my studies, I hope to build a career in the information technology and digital media industry while continuously enhancing my skills in application development, multimedia, and emerging technologies.
-
             </p>
             
         </div>
-
     </main>
-
     <!-- JavaScript Ringkas Untuk Fungsi On/Off Menu -->
     <script>
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const hamburgerBtn = document.getElementById('hamburger-btn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
-
         hamburgerBtn.addEventListener('click', () => {
             menuOverlay.classList.add('open');
         });
-
         closeBtn.addEventListener('click', () => {
             menuOverlay.classList.remove('open');
         });

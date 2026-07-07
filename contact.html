@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="halaman-gelap">
-
     <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
         <div></div>
         <div></div>
         <div></div>
     </button>
-
     <div class="menu-overlay" id="menuOverlay">
         <button class="close-btn" id="closeBtn">&times;</button>
         
@@ -28,7 +26,6 @@
                     </ul>
                 </nav>
             </div>
-
             <div class="overlay-right">
                 <div class="profile-box">
                     <img src="image-BG-biru.png" alt="Nur Juana binti Ahmad Jalani" class="overlay-profile-img">
@@ -46,7 +43,6 @@
             </div>
         </div>
     </div>
-
     <main class="content-area" style="text-align: center; padding-top: 100px;">
         <h2>Contact Me</h2>
         <p style="color: #9ca3af; margin-bottom: 2rem;">Have a project in mind or a collaboration opportunity? Please leave your message below.</p>
@@ -59,36 +55,30 @@
                 <input type="email" placeholder="Email Address" required>
             </div>
             <div class="form-group">
-                <textarea placeholder="Write your message here..." style="height: 120px;" required></textarea>
+                <input type="textarea" placeholder="Write your message here..." style="height: 120px;" required>
             </div>
             <button type="submit" class="btn" style="width: 100%;">Send Message</button>
         </form>
-    </main>                                 
-
+    </main>                                  
     <div id="toastPopup" class="toast-popup">
         <div class="toast-content">
             <span class="toast-icon">✓</span>
             <p class="toast-message">Message has been sent!</p>
         </div>
     </div>
-
     <script>
         // 1. Logik Pengawalan Menu Overlay Hamburger
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
-
         // Buka menu apabila hamburger ditekan
         hamburgerBtn.addEventListener('click', () => {
             menuOverlay.classList.add('open');
         });
-
         // Tutup menu apabila butang (X) ditekan
         closeBtn.addEventListener('click', () => {
             menuOverlay.classList.remove('open');
         });
-
-
         // 2. Logik Pengawalan Popup Apabila Borang Dihantar
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Menghentikan kelakuan refresh asal halaman browser
@@ -97,7 +87,6 @@
             toast.classList.add('show'); // Memaparkan reka bentuk kapsul popup ke skrin
             
             this.reset(); // Mengosongkan semula semua ruang input borang selepas dihantar
-            
             // Sembunyikan semula elemen popup selepas 3 saat
             setTimeout(function() {
                 toast.classList.remove('show');
