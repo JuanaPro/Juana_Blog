@@ -572,7 +572,7 @@ header > div {
 }
 
 .resume-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 0 !important;       /* Buang margin bawah asal supaya tidak senget */
     display: inline-block;
     animation: floatIcon 3s ease-in-out infinite;
