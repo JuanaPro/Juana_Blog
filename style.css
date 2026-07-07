@@ -1,503 +1,436 @@
 /* =======================================================
-   FAKTI & KLASAS GLOBAL (SMOOTH SCROLL INCLUDED)
+   1. GLOBAL STYLES & RESET
    ======================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-html {
-    scroll-behavior: smooth; 
-}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+html {
+    scroll-behavior: smooth;
+    background-color: #0f1115;
+    color: #e4e6eb;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0f1115; 
-    color: #e4e6eb;            
-    line-height: 1.7;
+    overflow-x: hidden;
+    background-color: #0f1115;
 }
+
 /* =======================================================
-   NAVIGASI / HEADER (WARNA CERAH SELESAI KONTRAST LOGO)
+   2. HEADER & LOGO CONFIGURATION
    ======================================================= */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
-    background-color: rgba(240, 242, 245, 0.95); 
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #d1d5db;
+    padding: 1.5rem 2rem;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(15, 17, 21, 0.9), rgba(15, 17, 21, 0));
+    pointer-events: none; 
 }
-header > div {
-    max-width: 100%; 
-    margin: 0 auto;
-    padding: 12px 1.5rem; 
+
+header div {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
+
+.logo-container-right {
+    pointer-events: auto;
+}
+
+.unisza-top-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+}
+
 /* =======================================================
-   GAYA BUTANG HAMBURGER (RAPAT KE KIRI & WARNA DIUBAH)
+   3. HAMBURGER BUTTON
    ======================================================= */
 .hamburger {
-    background: transparent;
+    background: none;
     border: none;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 6px;
-    padding: 10px 0px; 
-    margin: 0;
+    z-index: 101;
+    pointer-events: auto;
+    padding: 10px;
 }
+
 .hamburger div {
     width: 30px;
     height: 3px;
-    background-color: #0f1115; 
+    background-color: #fff;
     transition: all 0.3s ease;
     border-radius: 2px;
 }
+
 /* =======================================================
-   GAYA LOGO UNISZA (ATAS KANAN NAVBAR)
+   4. NAVIGATION OVERLAY SYSTEM
    ======================================================= */
-.logo-container-right {
-    display: flex;
-    align-items: center;
-}
-.unisza-top-logo {
-    height: 40px; 
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.1));
-    transition: transform 0.3s ease;
-}
-.unisza-top-logo:hover {
-    transform: scale(1.05); 
-}
-/* =======================================================
-   HALAMAN UTAMA / HERO SECTION 
-   ======================================================= */
-.hero {
-    height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;   
-    margin: auto;
-    padding: 0 10%; 
-    background: linear-gradient(to right, rgba(15, 17, 21, 0.85), rgba(15, 17, 21, 0.2)), 
-                url('juana-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
-}
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); 
-}
-.hero p {
-    font-size: 1.2rem;
-    color: #e4e6eb; 
-    max-width: 600px;
-    margin-bottom: 2.5rem;
-    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
-}
-.btn {
-    display: inline-block;
-    background-color: #fff;
-    color: #0f1115;
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-}
-.btn:hover {
-    background-color: #e4e6eb;
-    transform: translateY(-2px);
-}
-.btn-secondary {
-    background-color: transparent !important;
-    color: #fff !important;
-    border: 1px solid #4b5563 !important;
-}
-.btn-secondary:hover {
-    background-color: #161920 !important;
-    border-color: #fff !important;
-}
-.badge {
-    display: inline-block;
-    background-color: #262930;
-    color: #fff;
-    padding: 0.4rem 1rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: 20px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 1px solid #4b5563;
-}
-.hero-content {
-    max-width: 700px;
-}
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-/* =======================================================
-   RUANGAN KANDUNGAN GLOBAL 
-   ======================================================= */
-.content-area {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-.content-area h2 {
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: 1.5rem;
-}
-.blog-card {
-    background-color: #161920; 
-    border: 1px solid #262930;  
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    transition: border-color 0.3s ease;
-    text-align: left;
-}
-.blog-card:hover {
-    border-color: #4b5563; 
-}
-.blog-card h3 {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-.blog-card .date {
-    font-size: 0.85rem;
-    color: #6b7280;
-    margin-bottom: 1rem;
-}
-.blog-card p {
-    color: #9ca3af;
-}
-.form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    background-color: #161920;
-    border: 1px solid #262930;
-    color: #fff;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-}
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: #fff; 
-}
 .menu-overlay {
     position: fixed;
     top: 0;
-    left: -100%; 
+    left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #0f1115; 
-    z-index: 2000;
-    transition: left 0.5s ease-in-out;
-    overflow-y: auto;
+    background-color: #0f1115;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
+
 .menu-overlay.open {
-    left: 0;
+    opacity: 1;
+    visibility: visible;
 }
+
 .close-btn {
     position: absolute;
-    top: 20px;
-    left: 35px;
-    font-size: 2.5rem;
-    background: transparent;
+    top: 2rem;
+    left: 2rem;
+    background: none;
     border: none;
-    color: #9ca3af;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-.close-btn:hover {
     color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
 }
+
+.close-btn:hover {
+    transform: rotate(90deg);
+}
+
 .overlay-container {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
 }
+
 .overlay-left {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-right: 1px solid #262930;
-    padding: 2rem;
+    padding-left: 10%;
+    background-color: #0f1115;
 }
+
 .overlay-nav ul {
     list-style: none;
-    padding: 0;
-    text-align: center;
 }
-.overlay-nav ul li {
-    margin: 1.5rem 0;
+
+.overlay-nav li {
+    margin-bottom: 2rem;
 }
-.overlay-nav ul li a {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #9ca3af;
+
+.overlay-nav a {
+    color: #4b5563;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 2.5rem;
+    font-weight: 700;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
 }
-.overlay-nav ul li a:hover, 
-.overlay-nav ul li a.active {
+
+.overlay-nav a:hover,
+.overlay-nav a.active {
     color: #fff;
+    padding-left: 15px;
 }
+
 .overlay-right {
     flex: 1;
+    background-color: #161920;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem 2rem;
-    background-color: #161920; 
+    padding: 4rem;
+    border-left: 1px solid #262930;
 }
+
+/* Profile Inside Menu */
 .profile-box {
     max-width: 450px;
     text-align: center;
 }
+
 .overlay-profile-img {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
     object-fit: cover;
-    border-radius: 8px; 
     margin-bottom: 1.5rem;
-    border: 2px solid #262930;
+    border: 1px solid #262930;
 }
+
 .profile-box h2 {
     font-size: 1.8rem;
     color: #fff;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
 }
+
 .profile-subtitle {
-    font-size: 0.9rem;
-    color: #9ca3af;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.divider {
-    width: 50px;
-    margin: 1.5rem auto;
-    border: none;
-    border-top: 2px solid #4b5563;
-}
-.quotes {
+    color: #0892b1;
     font-size: 0.95rem;
-    color: #9ca3af;
-    line-height: 1.6;
-    font-style: italic;
-    text-align: center;
-}
-/* =======================================================
-   GAYA UNTUK BAHAGIAN SKILLS 
-   ======================================================= */
-.skills-section {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid #262930; 
-}
-.skills-section h2 {
-    font-size: 2.2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 2rem;
-    color: #fff;
+    font-weight: 600;
 }
-.skills-container {
-    display: flex;
-    gap: 3rem;
-    text-align: left;
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #262930;
+    margin: 1.5rem auto;
+    width: 50px;
 }
-.skills-column {
-    flex: 1;
-    background-color: #161920; 
-    border: 1px solid #262930;
-    padding: 2rem;
-    border-radius: 8px;
-}
-.skills-column h3 {
-    font-size: 1.3rem;
-    font-style: italic;
-    color: #fff;
-    margin-bottom: 1.2rem;
-    border-bottom: 1px solid #262930;
-    padding-bottom: 0.5rem;
-}
-.skills-column ul {
-    list-style-type: disc;
-    padding-left: 1.2rem;
+
+.quotes {
     color: #9ca3af;
-}
-.skills-column ul li {
-    margin-bottom: 0.8rem;
+    font-style: italic;
     line-height: 1.6;
     font-size: 1rem;
 }
-.skills-column ul li strong {
-    color: #e4e6eb; 
-}
+
 /* =======================================================
-   GAYA UNTUK BAHAGIAN SOFTWARE GRID 
+   5. HERO SECTION
    ======================================================= */
-.software-section {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid #262930; 
-    text-align: left;
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    background: radial-gradient(circle at 50% 30%, #161920 0%, #0f1115 70%);
 }
-.software-section h2 {
-    font-size: 2.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    color: #fff;
+
+.hero-content {
+    max-width: 800px;
 }
-.software-desc {
+
+.badge {
+    background-color: #161920;
+    border: 1px solid #262930;
     color: #9ca3af;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:not(.btn-secondary):not(.btn-resume-view):not(.btn-resume-download) {
+    background-color: #fff;
+    color: #0f1115;
+    border: 1px solid #fff;
+}
+
+.btn:not(.btn-secondary):not(.btn-resume-view):not(.btn-resume-download):hover {
+    background-color: #e4e6eb;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #262930;
+}
+
+.btn-secondary:hover {
+    background-color: #161920;
+    border-color: #4b5563;
+    transform: translateY(-2px);
+}
+
+/* =======================================================
+   6. ABOUT ME SECTION (CENTERED STYLE)
+   ======================================================= */
+.about-centered-container {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.about-avatar-wrapper {
+    display: inline-block;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.about-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #262930;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.about-title {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.about-description p {
+    color: #9ca3af;
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+/* =======================================================
+   7. SKILLS & SOFTWARE SECTION
+   ======================================================= */
+.skills-section, .software-section, .achievements-section {
+    padding: 4rem 0;
+    border-top: 1px solid #262930;
+}
+
+.skills-section h2, .software-section h2, .achievements-section h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.skills-container {
+    display: flex;
+    gap: 4rem;
+}
+
+.skills-column {
+    flex: 1;
+}
+
+.skills-column h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.skills-column ul {
+    list-style: none;
+}
+
+.skills-column li {
+    color: #9ca3af;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 15px;
+}
+
+.skills-column li::before {
+    content: "•";
+    color: #4b5563;
+    position: absolute;
+    left: 0;
+}
+
+/* Software Grid */
+.software-desc, .achievements-desc {
+    color: #4b5563;
+    margin-top: -1.5rem;
     margin-bottom: 2.5rem;
     font-size: 1rem;
 }
+
 .software-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
 }
+
 .software-item {
     background-color: #161920;
     border: 1px solid #262930;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    text-align: center;
     gap: 1rem;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
+
 .software-item:hover {
     border-color: #4b5563;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
 }
+
 .software-item img {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
-    filter: grayscale(20%); 
-    transition: filter 0.3s ease;
+    border-radius: 4px;
 }
-.software-item:hover img {
-    filter: grayscale(0%); 
-}
+
 .software-item span {
+    color: #e4e6eb;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #e4e6eb;
 }
+
 /* =======================================================
-   GAYA HALAMAN ABOUT (MEMUSAT & CYAN GLOW)
+   8. ACHIEVEMENTS SECTION
    ======================================================= */
-.about-centered-container {
-    max-width: 850px;
-    margin: 60px auto 80px auto;
-    padding: 0 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;  
-}
-.about-avatar-wrapper {
-    width: 210px;
-    height: 210px;
-    border-radius: 50%; 
-    padding: 2px;
-    background: hsl(189, 92%, 38%); 
-    box-shadow: 0 0 25px rgba(33, 226, 244, 0.544); 
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; 
-}
-.about-avatar {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 50%; 
-    display: block;
-}
-.about-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #0892b1; 
-    line-height: 1.4;
-    margin-bottom: 2.5rem;
-    max-width: 700px;
-}
-.about-description {
-    max-width: 780px;
-}
-.about-description p {
-    font-size: 1.1rem;
-    color: #cbd5e1; 
-    line-height: 1.8;
-    margin-bottom: 1.8rem;
-    font-weight: 400;
-}
-/* =======================================================
-   GAYA UNTUK BAHAGIAN ACHIEVEMENTS 
-   ======================================================= */
-.achievements-section {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid #262930; 
-    text-align: left;
-}
-.achievements-section h2 {
-    font-size: 2.2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    color: #fff;
-}
-.achievements-desc {
-    color: #9ca3af;
-    margin-bottom: 2.5rem;
-    font-size: 1rem;
-}
 .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     gap: 1.5rem;
 }
+
 .achievement-item {
     background-color: #161920;
     border: 1px solid #262930;
@@ -505,330 +438,392 @@ header > div {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-    text-align: center;
 }
-.achievement-item:hover {
-    border-color: #4b5563;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-.achievement-item .sem-title {
-    font-size: 0.9rem;
+
+.sem-title {
+    color: #fff;
     font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.sem-session {
+    color: #4b5563;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.cgpa-label {
     color: #9ca3af;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-.achievement-item .sem-session {
-    font-size: 0.75rem;
-    color: #6b7280;
-    margin-bottom: 0.5rem;
-}
-.achievement-item .cgpa-label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #cbd5e1;
-    background-color: #262930;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-}
-.achievement-item .cgpa-value {
-    font-size: 1.8rem;
+
+.cgpa-value {
+    color: #fff;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #fff; 
+    line-height: 1;
     margin-top: 0.2rem;
-}
-/* =======================================================
-   REKABENTUK RESPONSIF (MESRA TELEFON / TABLET)
-   ======================================================= */
-@media (max-width: 1024px) {
-    .achievements-grid {
-        grid-template-columns: repeat(3, 1fr); 
-    }
-}
-@media (max-width: 768px) {
-    body { 
-        padding-top: 0px; 
-    }
-    header > div {
-        padding: 12px 1rem !important; 
-    }
-    .unisza-top-logo {
-        height: 32px; 
-    }
-    .hero {
-        padding: 0 2rem;
-        background-attachment: scroll; 
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .content-area h2 {
-        font-size: 2rem;
-    }
-    .overlay-container {
-        flex-direction: column;
-    }
-    .overlay-left {
-        border-right: none;
-        border-bottom: 1px solid #262930;
-        padding-top: 5rem;
-    }
-    .overlay-nav ul li a {
-        font-size: 1.6rem;
-    }
-    .overlay-right {
-        padding: 2rem 1rem;
-    }
-    .overlay-profile-img {
-        width: 140px;
-        height: 140px;
-    }
-    .skills-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .software-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
-    }
-    .about-centered-container {
-        margin-top: 40px;
-    }
-    .about-avatar-wrapper {
-        width: 160px;
-        height: 160px;
-    }
-    .about-title {
-        font-size: 1.7rem;
-    }
-    .about-description p {
-        font-size: 1rem;
-    }
-    .achievements-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 1rem;
-    }
-    .achievement-item .cgpa-value {
-        font-size: 1.5rem;
-    }
-}
-/* =======================================================
-   KOD UTK HALAMAN SELAIN HOME (ABOUT, BLOG, CONTACT)
-   ======================================================= */
-.halaman-gelap .hamburger div {
-    background-color: #ffffff !important;
-}
-.halaman-gelap .hamburger {
-    position: fixed;
-    top: 20px;
-    left: 2rem;
-    z-index: 1000;
-}
-[data-aos] {
-    pointer-events: none;
-}
-.aos-animate {
-    pointer-events: auto;
-}
-/* =======================================================
-   GAYA UNTUK BAHAGIAN FOOTER (WARNA CERAH MATTE MATATCHING NAVBAR)
-   ======================================================= */
-.site-footer {
-    background-color: rgba(240, 242, 245, 0.95); 
-    backdrop-filter: blur(10px);
-    border-top: 1px solid #d1d5db; 
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); 
-    padding: 2.5rem 2rem;
-    margin-top: 5rem; 
-    width: 100%;
-    text-align: center;
-}
-.footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: center;
-}
-.site-footer .copyright {
-    color: #0f1115; 
-    font-size: 0.95rem;
-    font-weight: 600; 
-}
-.site-footer .footer-subtext {
-    color: #4b5563; 
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-@media (max-width: 768px) {
-    .site-footer {
-        padding: 2rem 1rem;
-        margin-top: 3rem;
-    }
-}
-/* =======================================================
-   GAYA UNTUK POPUP NOTIFIKASI (TOAST MESSAGE)
-   ======================================================= */
-.toast-popup {
-    position: fixed;
-    top: -100px; 
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(240, 242, 245, 0.98); 
-    backdrop-filter: blur(10px);
-    border: 1px solid #d1d5db;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    padding: 1rem 2rem;
-    border-radius: 30px; 
-    z-index: 9999; 
-    transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-}
-.toast-popup.show {
-    top: 40px; 
-}
-.toast-content {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-.toast-icon {
-    background-color: #10b981; 
-    color: white;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    font-weight: bold;
-}
-.toast-message {
-    color: #0f1115;
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin: 0;
 }
 
 /* =======================================================
-   GAYA INTERACTIVE TAB PROJECTS (MULA SEBAGAI TERSEMBUNYI LENGKAP)
+   9. INTERACTIVE PROJECTS SYSTEM (TABS)
    ======================================================= */
 .project-tabs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.8rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tab-btn {
     background-color: #161920;
-    border: 1px solid #262930;
     color: #9ca3af;
+    border: 1px solid #262930;
     padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
     font-size: 0.9rem;
     font-weight: 500;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tab-btn:hover, .tab-btn.active {
+.tab-btn:hover {
+    color: #fff;
+    border-color: #4b5563;
+    transform: translateY(-1px);
+}
+
+.tab-btn.active {
     background-color: #fff;
     color: #0f1115;
     border-color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.15);
 }
 
+/* Tab Content Window */
 .project-tab-content {
-    display: none;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: all 0.4s ease-out;
+    display: none; 
+    width: 100%;
 }
 
-.project-tab-content.active-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+.project-tab-content:first-of-type {
+    display: block; 
 }
 
 .project-showcase {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    gap: 3.5rem;
     background-color: #161920;
     border: 1px solid #262930;
-    padding: 2.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
+    padding: 3rem;
     align-items: center;
-    text-align: left;
+    min-height: 380px;
+}
+
+/* Animation on Tab Switching */
+.active-content {
+    animation: fadeInTab 0.5s ease forwards;
+}
+
+@keyframes fadeInTab {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .project-info h3 {
     font-size: 1.8rem;
     color: #fff;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
 }
 
 .project-info p {
     color: #9ca3af;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Media Element Configurations */
+.project-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .project-media img {
     width: 100%;
+    max-width: 400px;
     height: auto;
-    max-height: 300px;
+    border-radius: 8px;
     object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid #262930;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.4);
 }
 
-.project-media img:hover {
-    transform: scale(1.02);
-}
-
-/* KEMASKINI GAYA: KUNCI SAIZ VIDEO SUPAYA KEKAL KECIL SEMASA PLAY */
-.project-media .video-wrapper {
+/* Media Video Wrappers */
+.video-wrapper {
     width: 100%;
     max-width: 320px; 
-    margin: 0 auto;    
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
-    border: 1px solid #262930;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
     background-color: #000;
+    border: 1px solid #262930;
+    line-height: 0; 
 }
 
-.project-media .video-wrapper video {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 320px !important; /* Kunci lebar maksimum */
-    max-height: 200px !important; /* Kunci tinggi maksimum */
+.video-wrapper video {
+    width: 100%;
+    height: auto;
     display: block;
-    object-fit: contain !important; /* Memastikan tiada regangan imej (no stretching) */
+}
+
+/* =======================================================
+   10. MY RESUME SECTION (KAD INTERAKTIF BARU)
+   ======================================================= */
+.resume-section {
+    text-align: center;
+    width: 100%;
+}
+
+.resume-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.resume-box {
+    background-color: #161920;
+    border: 1px solid #262930;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Glow Effect Menyamai Tema Identiti Media */
+.resume-box:hover {
+    border-color: #0892b1;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(8, 146, 177, 0.15);
+}
+
+.resume-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: floatIcon 3s ease-in-out infinite; 
+}
+
+.resume-title {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.resume-desc {
+    color: #9ca3af;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 550px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.resume-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Custom Buttons Inside Resume Card */
+.btn-resume-view {
+    background-color: #fff !important;
+    color: #0f1115 !important;
+    border: 1px solid #fff !important;
+}
+
+.btn-resume-view:hover {
+    background-color: #e4e6eb !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.btn-resume-download {
+    background-color: transparent !important;
+    color: #0892b1 !important;
+    border: 1px solid #0892b1 !important;
+}
+
+.btn-resume-download:hover {
+    background-color: #0892b1 !important;
+    color: #fff !important;
+    box-shadow: 0 0 15px rgba(8, 146, 177, 0.5);
+}
+
+/* Keyframes Terapung Lembut */
+@keyframes floatIcon {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* =======================================================
+   11. CONTACT SECTION & CONTACT FORM
+   ======================================================= */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: #161920;
+    border: 1px solid #262930;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
     outline: none;
+    border-color: #4b5563;
+}
+
+/* Toast Message Notification */
+.toast-popup {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #161920;
+    border: 1px solid #262930;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 1000;
+    transform: translateY(150%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast-popup.show {
+    transform: translateY(0);
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.toast-icon {
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.toast-message {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* =======================================================
+   12. FOOTER DESIGN
+   ======================================================= */
+.site-footer {
+    border-top: 1px solid #262930;
+    padding: 3rem 0;
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.copyright {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.footer-subtext {
+    color: #4b5563;
+    font-size: 0.85rem;
+}
+
+/* =======================================================
+   13. MEDIA QUERIES (RESPONSIVENESS)
+   ======================================================= */
+@media (max-width: 960px) {
+    .overlay-container {
+        flex-direction: column;
+    }
+    .overlay-right {
+        border-left: none;
+        border-top: 1px solid #262930;
+        padding: 3rem 2rem;
+    }
+    .overlay-left {
+        padding-left: 2rem;
+        padding-top: 6rem;
+        align-items: flex-start;
+    }
+    .overlay-nav a {
+        font-size: 2rem;
+    }
+    .project-showcase {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        text-align: center;
+    }
+    .project-media {
+        order: -1; 
+    }
 }
 
 @media (max-width: 768px) {
-    .project-showcase {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem;
+    .hero h1 {
+        font-size: 2.8rem;
     }
-    .tab-btn {
+    .skills-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .resume-box {
+        padding: 2rem 1rem;
+    }
+    .resume-cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .resume-cta-buttons .btn {
         width: 100%;
-        text-align: center;
     }
 }
