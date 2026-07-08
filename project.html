@@ -6,68 +6,6 @@
     <title>Projects | Juana_Blog</title>
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <style>
-        /* =======================================================
-           CUSTOM STYLES FOR 3D MODELING IMAGE SLIDER
-           ======================================================= */
-        .slider-container {
-            position: relative;
-            width: 100%;
-            max-width: 440px;
-            height: 250px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            background-color: #000;
-        }
-
-        .slider-track {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.4s ease-in-out;
-        }
-
-        .slider-track img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 10;
-            user-select: none;
-        }
-
-        .slider-btn:hover {
-            background-color: #0892b1;
-            box-shadow: 0 0 10px rgba(8, 146, 177, 0.5);
-        }
-
-        .slider-btn.prev {
-            left: 10px;
-        }
-
-        .slider-btn.next {
-            right: 10px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -147,7 +85,6 @@
                 </div>
             </div>
 
-            <!-- KEMAS KINI BAHAGIAN 3D MODELING BERSERTA SLIDER 6 GAMBAR -->
             <div id="3d-modeling" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -155,18 +92,7 @@
                         <p>Focuses on hard-surface modeling, complex polygon topologies, and realistic PBR texturing techniques. Developed structural and character models using advanced digital sculpting tools.</p>
                     </div>
                     <div class="project-media">
-                        <div class="slider-container">
-                            <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
-                            <div class="slider-track" id="sliderTrack">
-                                <img src="project-images/3D1.png" alt="3D Modeling 1">
-                                <img src="project-images/3D2.png" alt="3D Modeling 2">
-                                <img src="project-images/3D3.png" alt="3D Modeling 3">
-                                <img src="project-images/3D4.png" alt="3D Modeling 4">
-                                <img src="project-images/3D5.png" alt="3D Modeling 5">
-                                <img src="project-images/3D6.png" alt="3D Modeling 6">
-                            </div>
-                            <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
-                        </div>
+                        <img src="project-images/3d-modeling.png" alt="3D Modeling Showcase">
                     </div>
                 </div>
             </div>
@@ -287,35 +213,6 @@
                 setTimeout(() => { targetTab.classList.add("active-content"); }, 10);
             }
             evt.currentTarget.classList.add("active");
-        }
-
-        /* =======================================================
-           JAVASCRIPT LOGIC FOR 3D MODELING IMAGE SLIDER
-           ======================================================= */
-        let currentSlideIndex = 0;
-
-        function moveSlide(direction) {
-            const track = document.getElementById('sliderTrack');
-            const slides = track.getElementsByTagName('img');
-            const totalSlides = slides.length;
-
-            if (totalSlides === 0) return;
-
-            // Mengira indeks gambar seterusnya
-            currentSlideIndex += direction;
-
-            // Jika terlebih ke kanan, kembali ke gambar pertama
-            if (currentSlideIndex >= totalSlides) {
-                currentSlideIndex = 0;
-            }
-            // Jika terlebih ke kiri, pergi ke gambar terakhir
-            if (currentSlideIndex < 0) {
-                currentSlideIndex = totalSlides - 1;
-            }
-
-            // Menggerakkan track menggunakan CSS transform
-            const amountToMove = -currentSlideIndex * 100;
-            track.style.transform = `translateX(${amountToMove}%)`;
         }
     </script>
 </body>

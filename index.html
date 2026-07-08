@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-        <header>
+    <header>
         <div>
             <button class="hamburger" id="hamburgerBtn" aria-label="Open Menu">
                 <div></div>
@@ -30,8 +30,7 @@
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="#projects-section" id="navProjects">Projects</a></li>
-                        <li><a href="#resume-section" id="navResume">Resume</a></li>
+                        <li><a href="project.html">Projects</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -53,20 +52,19 @@
             </div>
         </div>
     </div>
-    <section class="hero" style="padding-top: 100px;"> 
+
+    <section class="hero" style="padding-top: 100px;">
         <div class="hero-content">
             <span class="badge" data-aos="fade-up">Software Development Student</span>
-            
             <h1 data-aos="fade-up" data-aos-delay="200">Hi, I am Juana.</h1>
-            
             <p data-aos="fade-up" data-aos-delay="400">Crafting clean code and building modern web applications. Currently studying at Faculty of Informatics and Computing (FIK), UniSZA.</p>
-            
             <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
                 <a href="#about-section" class="btn">View My Profile</a>
                 <a href="#contact-section" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
     </section>
+
     <main class="content-area" style="max-width: 1100px; margin: 0 auto; padding: 4rem 2rem;">
         <section id="about-section" class="about-centered-container" style="margin-top: 20px; border-bottom: 1px solid #262930; padding-bottom: 5rem;">
             <div class="about-avatar-wrapper" data-aos="fade-up">
@@ -81,6 +79,7 @@
                 </p>
             </div>
         </section>
+
         <section id="skills-section" class="skills-section" style="border-top: none;">
             <h2 data-aos="fade-up">Skills</h2>
             <div class="skills-container" data-aos="fade-up" data-aos-delay="200">
@@ -106,6 +105,7 @@
                 </div>
             </div>
         </section>
+
         <section class="software-section">
             <h2 data-aos="fade-up">Software</h2>
             <p class="software-desc" data-aos="fade-up" data-aos-delay="100">Software that I use to complete projects and daily tasks.</p>
@@ -120,6 +120,7 @@
                 <div class="software-item"><img src="images 8.jpg" alt="Maya Autodesk"><span>Maya Autodesk</span></div>
             </div>
         </section>
+
         <section class="achievements-section" style="border-bottom: 1px solid #262930; padding-bottom: 4rem;">
             <h2 data-aos="fade-up">Achievements</h2>
             <p class="achievements-desc" data-aos="fade-up" data-aos-delay="100">Academic performance and academic development throughout the semesters.</p>
@@ -132,165 +133,33 @@
             </div>
         </section>
 
-        <!-- RUANGAN PROJECTS -->
-        <section id="projects-section" class="content-area" style="margin-top: 4rem; padding-top: 2rem;">
-            <h2 style="text-align: center; text-transform: uppercase; letter-spacing: 1px;" data-aos="fade-down">My Projects</h2>
-            <p style="text-align: center; color: #9ca3af; margin-bottom: 3rem;" data-aos="fade-up">Select a category below to view project descriptions and media.</p>
-
-            <!-- Menu Butang Tab Subjek -->
-            <div class="project-tabs" data-aos="fade-up">
-                <button class="tab-btn" onclick="openProject(event, '3d-animation')">3D Animation</button>
-                <button class="tab-btn" onclick="openProject(event, '3d-modeling')">3D Modeling</button>
-                <button class="tab-btn" onclick="openProject(event, 'web-app')">Web Application Development</button>
-                <button class="tab-btn" onclick="openProject(event, 'digital-audio')">Digital Audio & Video</button>
-                <button class="tab-btn" onclick="openProject(event, 'software-dev')">Software Development</button>
-                <button class="tab-btn" onclick="openProject(event, 'game-dev')">Computer Game Development</button>
-                <button class="tab-btn" onclick="openProject(event, 'multimedia')">Multimedia Application Development</button>
-            </div>
-
-            <!-- Kandungan Tab Projek -->
-            <div id="3d-animation" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>3D Animation</h3>
-                        <p>Detailed exploration of keyframing, rigging, and character fluid motion controls. This project demonstrates high-quality rendering passes and cinematic timing sequences tailored for creative storytelling.</p>
+        <section id="resume-section" class="resume-section" style="margin-top: 4rem; padding-top: 4rem; border-top: 1px solid #262930;">
+            <div class="resume-container" data-aos="fade-up">
+                <div class="resume-box">
+                    <div class="resume-header">
+                        <span class="resume-icon-inline"> 📄 </span>
+                        <h2 class="resume-title">My Resume</h2>
                     </div>
-                    <div class="project-media">
-                        <div class="video-wrapper">
-                            <video controls poster="project-images/3d-animation.png" preload="metadata" playsinline webkit-playsinline>
-                                <source src="3D Animation.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="3d-modeling" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>3D Modeling</h3>
-                        <p>Focuses on hard-surface modeling, complex polygon topologies, and realistic PBR texturing techniques. Developed structural and character models using advanced digital sculpting tools.</p>
-                    </div>
-                    <div class="project-media">
-                        <img src="project-images/3d-modeling.png" alt="3D Modeling Showcase">
-                    </div>
-                </div>
-            </div>
-
-            <div id="web-app" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>Web Application Development</h3>
-                        <p>A full-stack deployment project utilizing clean database logic and intuitive client-side UI workflows. Features optimized API integration and seamless state management systems.</p>
-                    </div>
-                    <div class="project-media">
-                        <img src="project-images/web-app.png" alt="Web App Showcase">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Digital Audio & Video (MENGGUNAKAN VIDEO) -->
-            <div id="digital-audio" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>Digital Audio & Video</h3>
-                        <p>Showcasing video compositing techniques, precise multi-track sound engineering, color grading parameters, and post-production asset generation for immersive broadcasting quality.</p>
-                    </div>
-                    <div class="project-media">
-                        <div class="video-wrapper">
-                            <video controls poster="project-images/digital-audio.png" preload="metadata" playsinline webkit-playsinline>
-                                <source src="FINAL VIDEO.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="software-dev" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>Software Development</h3>
-                        <p>Architected using industry-standard structural design patterns. Emphasizes clean syntax execution, system performance profiling, and effective automated unit testing operations.</p>
-                    </div>
-                    <div class="project-media">
-                        <img src="project-images/software-dev.png" alt="Software Showcase">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Computer Game Development (MENGGUNAKAN VIDEO) -->
-            <div id="game-dev" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>Computer Game Development</h3>
-                        <p>Interactive gameplay mechanisms constructed with real-time physics engines, asset state machines, smart non-player character AI pathfinding, and dynamic particle systems.</p>
-                    </div>
-                    <div class="project-media">
-                        <div class="video-wrapper">
-                            <video controls poster="project-images/game-dev.png" preload="metadata" playsinline webkit-playsinline>
-                                <source src="Game Development.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7. Multimedia Application Development (MENGGUNAKAN VIDEO) -->
-            <div id="multimedia" class="project-tab-content">
-                <div class="project-showcase">
-                    <div class="project-info">
-                        <h3>Multimedia Application Development</h3>
-                        <p>An integration platform bridging interactive graphic interfaces, user experience responsiveness guidelines, hypermedia linkages, and high-fidelity localized media formats.</p>
-                    </div>
-                    <div class="project-media">
-                        <div class="video-wrapper">
-                            <video controls poster="image_69e57b.png" preload="metadata" playsinline webkit-playsinline>
-                                <source src="077510_Digital Content.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+                    <p class="resume-desc">Review my academic qualifications, technical proficiencies, and structural multimedia project histories. You can view the full document or save a copy directly to your device.</p>
+                    <div class="resume-cta-buttons">
+                        <a href="resume.pdf" target="_blank" class="btn btn-resume-view">View Resume</a>
+                        <a href="resume.pdf" download="Nur_Juana_Resume.pdf" class="btn btn-resume-download">Download CV</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- RUANGAN RESUME -->
-<section id="resume-section" class="resume-section" style="margin-top: 4rem; padding-top: 4rem; border-top: 1px solid #262930;">
-    <div class="resume-container" data-aos="fade-up">
-        <div class="resume-box">
-            <!-- Ikon dan Tajuk digabungkan dalam satu wrapper -->
-            <div class="resume-header">
-                <span class="resume-icon-inline">📄</span>
-                <h2 class="resume-title">My Resume</h2>
-            </div>
-            
-            <p class="resume-desc">
-                Review my academic qualifications, technical proficiencies, and structural multimedia project histories. 
-                You can view the full document or save a copy directly to your device.
-            </p>
-            <div class="resume-cta-buttons">
-                <a href="resume.pdf" target="_blank" class="btn btn-resume-view">View Resume</a>
-                <a href="resume.pdf" download="Nur_Juana_Resume.pdf" class="btn btn-resume-download">Download CV</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- RUANGAN CONTACT -->
         <section id="contact-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #262930;">
             <h2 data-aos="fade-up" style="font-size: 2.2rem; margin-bottom: 1.5rem; color: #fff;">Get In Touch</h2>
             <form id="contactForm" data-aos="fade-up" data-aos-delay="200" style="max-width: 600px;">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="text" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="email" placeholder="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
                 </div>
                 <div style="text-align: left;">
                     <button type="submit" class="btn">Send Message</button>
@@ -298,90 +167,42 @@
             </form>
         </section>
     </main>
+
     <footer class="site-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div class="footer-container">
             <p class="copyright">&copy; 2026 Juana_Blog. All Rights Reserved.</p>
             <p class="footer-subtext">Designed & Built with ❤️ by Juana</p>
         </div>
     </footer>
+
     <div id="toastPopup" class="toast-popup">
         <div class="toast-content">
             <span class="toast-icon">✓</span>
             <p class="toast-message">Message has been sent!</p>
         </div>
     </div>
-    
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000, 
-            once: true      
-        });
+        AOS.init({ duration: 1000, once: true });
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
-        hamburgerBtn.addEventListener('click', () => {
-            menuOverlay.classList.add('open');
-        });
-        closeBtn.addEventListener('click', () => {
-            menuOverlay.classList.remove('open');
-        });
+
+        hamburgerBtn.addEventListener('click', () => { menuOverlay.classList.add('open'); });
+        closeBtn.addEventListener('click', () => { menuOverlay.classList.remove('open'); });
+        
         document.querySelectorAll('.overlay-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuOverlay.classList.remove('open');
-            });
+            link.addEventListener('click', () => { menuOverlay.classList.remove('open'); });
         });
+
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
+            event.preventDefault();
             const toast = document.getElementById('toastPopup');
-            toast.classList.add('show'); 
-            this.reset(); 
-            setTimeout(function() {
-                toast.classList.remove('show');
-            }, 3000);
+            toast.classList.add('show');
+            this.reset();
+            setTimeout(function() { toast.classList.remove('show'); }, 3000);
         });
-
-        // FUNGSI UTK KAWAL TAB PROJEK & PAUSE VIDEO BILA BERALIH TAB
-        function openProject(evt, projectName) {
-            const tabContents = document.getElementsByClassName("project-tab-content");
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active-content");
-                tabContents[i].style.display = "none";
-                
-                const videoElement = tabContents[i].querySelector('video');
-                if (videoElement) {
-                    videoElement.pause();
-                }
-            }
-
-            const tabButtons = document.getElementsByClassName("tab-btn");
-            for (let i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].classList.remove("active");
-            }
-
-            const targetTab = document.getElementById(projectName);
-            if (targetTab) {
-                targetTab.style.display = "block";
-                setTimeout(() => {
-                    targetTab.classList.add("active-content");
-                }, 10);
-            }
-            evt.currentTarget.classList.add("active");
-        }
-
-        const navProjects = document.getElementById('navProjects');
-        if (navProjects && menuOverlay) {
-            navProjects.addEventListener('click', () => {
-                menuOverlay.classList.remove('open');
-            });
-        }
-
-        const navResume = document.getElementById('navResume');
-        if (navResume && menuOverlay) {
-            navResume.addEventListener('click', () => {
-                menuOverlay.classList.remove('open');
-            });
-        }
     </script>
 </body>
 </html>
