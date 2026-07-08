@@ -20,7 +20,6 @@
             </div>
         </div>
     </header>
-
     <div class="menu-overlay" id="menuOverlay">
         <button class="close-btn" id="closeBtn">&times;</button>
         <div class="overlay-container">
@@ -52,7 +51,6 @@
             </div>
         </div>
     </div>
-
     <main class="content-area" style="max-width: 1100px; margin: 0 auto; padding: 8rem 2rem 4rem 2rem;">
         <section id="projects-section">
             <h2 style="text-align: center; text-transform: uppercase; letter-spacing: 1px; font-size: 2.2rem; color: #fff; margin-bottom: 0.5rem;" data-aos="fade-down">My Projects</h2>
@@ -67,7 +65,6 @@
                 <button class="tab-btn" onclick="openProject(event, 'game-dev')">Computer Game Development</button>
                 <button class="tab-btn" onclick="openProject(event, 'multimedia')">Multimedia Application Development</button>
             </div>
-
             <div id="3d-animation" class="project-tab-content active-content" style="display: block;">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -76,7 +73,7 @@
                     </div>
                     <div class="project-media">
                         <div class="video-wrapper">
-                            <video controls poster="project-images/digital-audio.png" preload="metadata" playsinline webkit-playsinline>
+                            <video controls poster="project-images/3d-animation.png" preload="metadata" playsinline webkit-playsinline>
                                 <source src="3D Animation.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -84,7 +81,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- KEMAS KINI BAHAGIAN 3D MODELING BERSERTA SLIDER 6 GAMBAR -->
             <div id="3d-modeling" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -92,11 +89,21 @@
                         <p>Focuses on hard-surface modeling, complex polygon topologies, and realistic PBR texturing techniques. Developed structural and character models using advanced digital sculpting tools.</p>
                     </div>
                     <div class="project-media">
-                        <img src="project-images/3d-modeling.png" alt="3D Modeling Showcase">
+                        <div class="slider-container">
+                            <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
+                            <div class="slider-track" id="sliderTrackProject">
+                                <img src="3D1.png" alt="3D Modeling 1">
+                                <img src="3D2.png" alt="3D Modeling 2">
+                                <img src="3D3.png" alt="3D Modeling 3">
+                                <img src="3D4.png" alt="3D Modeling 4">
+                                <img src="3D5.png" alt="3D Modeling 5">
+                                <img src="3D6.png" alt="3D Modeling 6">
+                            </div>
+                            <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+                        </div>
                     </div>
                 </div>
             </div>
-
             <div id="web-app" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -108,7 +115,6 @@
                     </div>
                 </div>
             </div>
-
             <div id="digital-audio" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -125,7 +131,6 @@
                     </div>
                 </div>
             </div>
-
             <div id="software-dev" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -137,7 +142,6 @@
                     </div>
                 </div>
             </div>
-
             <div id="game-dev" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -154,7 +158,6 @@
                     </div>
                 </div>
             </div>
-
             <div id="multimedia" class="project-tab-content">
                 <div class="project-showcase">
                     <div class="project-info">
@@ -183,25 +186,51 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({
+            duration: 1000, 
+            once: true      
+        });
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const closeBtn = document.getElementById('closeBtn');
         const menuOverlay = document.getElementById('menuOverlay');
-
-        hamburgerBtn.addEventListener('click', () => { menuOverlay.classList.add('open'); });
-        closeBtn.addEventListener('click', () => { menuOverlay.classList.remove('open'); });
-        
+        hamburgerBtn.addEventListener('click', () => {
+            menuOverlay.classList.add('open');
+        });
+        closeBtn.addEventListener('click', () => {
+            menuOverlay.classList.remove('open');
+        });
         document.querySelectorAll('.overlay-nav a').forEach(link => {
-            link.addEventListener('click', () => { menuOverlay.classList.remove('open'); });
+            link.addEventListener('click', () => {
+                menuOverlay.classList.remove('open');
+            });
         });
 
+        // KAWAL SLIDER IMAGES
+        let currentSlide = 0;
+        const totalSlides = 6;
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            
+            const trackIndex = document.getElementById('sliderTrackIndex');
+            const trackProject = document.getElementById('sliderTrackProject');
+            
+            if(trackIndex) trackIndex.style.transform = `translateX(-${currentSlide * 100}%)`;
+            if(trackProject) trackProject.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // FUNGSI UTK KAWAL TAB PROJEK & PAUSE VIDEO BILA BERALIH TAB
         function openProject(evt, projectName) {
             const tabContents = document.getElementsByClassName("project-tab-content");
             for (let i = 0; i < tabContents.length; i++) {
                 tabContents[i].classList.remove("active-content");
                 tabContents[i].style.display = "none";
+                
                 const videoElement = tabContents[i].querySelector('video');
-                if (videoElement) { videoElement.pause(); }
+                if (videoElement) {
+                    videoElement.pause();
+                }
             }
             const tabButtons = document.getElementsByClassName("tab-btn");
             for (let i = 0; i < tabButtons.length; i++) {
@@ -210,7 +239,9 @@
             const targetTab = document.getElementById(projectName);
             if (targetTab) {
                 targetTab.style.display = "block";
-                setTimeout(() => { targetTab.classList.add("active-content"); }, 10);
+                setTimeout(() => {
+                    targetTab.classList.add("active-content");
+                }, 10);
             }
             evt.currentTarget.classList.add("active");
         }
